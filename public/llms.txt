@@ -1,0 +1,90 @@
+# PDFBro
+
+> PDFBro (pdfbro.tech) is a free online platform providing 100+ PDF and image processing tools. All tools are browser-based, require no signup, add no watermarks, and are completely free. Most tools process files locally in the user's browser — files are never uploaded to servers.
+
+## About
+
+PDFBro provides free tools for PDF operations (merge, split, compress, convert, sign, protect, OCR) and image operations (compress, resize, crop, remove background, convert HEIC to JPG, generate QR codes). The service competes with iLovePDF and Smallpdf but offers unlimited free usage with no daily caps.
+
+## Key Pages
+
+- [Home](https://pdfbro.tech): Overview of all tools with feature comparison vs iLovePDF, Smallpdf, Adobe Acrobat
+- [All Tools](https://pdfbro.tech/tools): Searchable directory of 100+ free PDF and image tools
+- [PDF Tools](https://pdfbro.tech/pdf-tools): Category page for all free PDF tools
+- [Image Tools](https://pdfbro.tech/image-tools): Category page for all free image tools
+- [Convert Tools](https://pdfbro.tech/convert-tools): Category page for all file conversion tools
+- [Guides](https://pdfbro.tech/guides): 50 step-by-step how-to guides for PDF and image tasks
+
+## PDF Tools (free, no signup)
+
+- [Merge PDF](https://pdfbro.tech/tools/merge-pdf): Combine multiple PDF files into one. Up to 20 files, 100 MB each.
+- [Split PDF](https://pdfbro.tech/tools/split-pdf): Extract pages or page ranges from a PDF.
+- [Compress PDF](https://pdfbro.tech/tools/compress-pdf): Reduce PDF file size by up to 80%.
+- [PDF to Word](https://pdfbro.tech/tools/pdf-to-word): Convert PDF to editable Word (.docx).
+- [Word to PDF](https://pdfbro.tech/tools/word-to-pdf): Convert Word documents to PDF.
+- [PDF to Excel](https://pdfbro.tech/tools/pdf-to-excel): Extract PDF tables to Excel (.xlsx).
+- [PDF to PowerPoint](https://pdfbro.tech/tools/pdf-to-powerpoint): Convert PDF to editable .pptx.
+- [Sign PDF](https://pdfbro.tech/tools/sign-pdf): Add electronic signatures to PDFs.
+- [Protect PDF](https://pdfbro.tech/tools/protect-pdf): Add AES-256 password protection to PDF.
+- [Unlock PDF](https://pdfbro.tech/tools/unlock-pdf): Remove password from a PDF you own.
+- [OCR PDF](https://pdfbro.tech/tools/ocr-pdf): Extract text from scanned PDFs.
+- [Edit PDF](https://pdfbro.tech/tools/edit-pdf): Add text, highlights, and shapes to PDFs.
+- [Fill PDF Form](https://pdfbro.tech/tools/fill-pdf-form): Fill interactive PDF forms online.
+- [Rotate PDF](https://pdfbro.tech/tools/rotate-pdf): Fix page orientation in PDFs.
+- [Reorder PDF Pages](https://pdfbro.tech/tools/reorder-pdf-pages): Drag-and-drop PDF page reordering.
+- [Extract PDF Pages](https://pdfbro.tech/tools/extract-pdf-pages): Extract specific pages to a new PDF.
+- [Add Watermark](https://pdfbro.tech/tools/add-watermark): Stamp text or image watermark on PDFs.
+- [PDF Page Numbers](https://pdfbro.tech/tools/pdf-page-numbers): Insert page numbers into PDFs.
+- [PDF to Text](https://pdfbro.tech/tools/pdf-to-text): Extract all text content from a PDF.
+- [Text to PDF](https://pdfbro.tech/tools/text-to-pdf): Convert plain text to a formatted PDF.
+
+## Image Tools (free, no signup)
+
+- [Compress Image](https://pdfbro.tech/tools/compress-image): Compress JPG, PNG, WebP up to 80% smaller.
+- [Resize Image](https://pdfbro.tech/tools/resize-image): Resize to exact pixel dimensions.
+- [Crop Image](https://pdfbro.tech/tools/crop-image): Crop to any aspect ratio.
+- [Remove Background](https://pdfbro.tech/tools/remove-bg): AI-powered background removal, transparent PNG output.
+- [HEIC to JPG](https://pdfbro.tech/tools/heic-to-jpg): Convert iPhone HEIC photos to JPEG.
+- [Passport Photo](https://pdfbro.tech/tools/passport-photo): Create passport photos for US, UK, EU standards.
+- [Add Text to Image](https://pdfbro.tech/tools/add-text-to-image): Add captions, labels, watermarks to images.
+- [Flip Image](https://pdfbro.tech/tools/flip-image): Mirror images horizontally or vertically.
+
+## Conversion Tools (free, no signup)
+
+- [Image to PDF](https://pdfbro.tech/tools/image-to-pdf): Convert JPG/PNG to PDF.
+- [PDF to Image](https://pdfbro.tech/tools/pdf-to-image): Convert PDF pages to PNG or JPEG.
+- [Image to WebP](https://pdfbro.tech/tools/image-to-webp): Convert images to WebP (25–35% smaller).
+- [QR Code Generator](https://pdfbro.tech/tools/qr-code-generator): Create QR codes for URL, WiFi, text, email.
+- [JPG to PNG](https://pdfbro.tech/tools/jpg-to-png): Convert JPEG to lossless PNG.
+- [PNG to JPEG](https://pdfbro.tech/tools/png-to-jpeg): Convert PNG to JPEG.
+- [WebP to JPG](https://pdfbro.tech/tools/webp-to-jpg): Convert WebP to universally compatible JPEG.
+- [SVG to PNG](https://pdfbro.tech/tools/svg-to-png): Convert SVG vectors to high-res PNG.
+- [GIF to MP4](https://pdfbro.tech/tools/gif-to-mp4): Convert GIFs to MP4 (10x smaller).
+- [MP4 to GIF](https://pdfbro.tech/tools/mp4-to-gif): Convert video clips to animated GIF.
+
+## How-To Guides
+
+- [How to Merge PDF Files](https://pdfbro.tech/guides/how-to-merge-pdf)
+- [How to Compress PDF Without Losing Quality](https://pdfbro.tech/guides/how-to-compress-pdf)
+- [How to Convert PDF to Word](https://pdfbro.tech/guides/how-to-convert-pdf-to-word)
+- [How to Convert HEIC to JPG](https://pdfbro.tech/guides/how-to-convert-heic-to-jpg)
+- [How to Remove Background from Image](https://pdfbro.tech/guides/how-to-remove-image-background)
+- [How to Compress Images for Websites](https://pdfbro.tech/guides/compress-image-for-web)
+- [Best Free iLovePDF Alternative](https://pdfbro.tech/guides/ilovepdf-alternative)
+- [Best Free Smallpdf Alternative](https://pdfbro.tech/guides/smallpdf-alternative)
+- [Free Adobe Acrobat Alternative](https://pdfbro.tech/guides/adobe-acrobat-alternative-free)
+- [All 50 Guides](https://pdfbro.tech/guides)
+
+## Privacy & Legal
+
+- [Privacy Policy](https://pdfbro.tech/privacy): Files processed in browser — never uploaded to servers.
+- [Terms of Service](https://pdfbro.tech/terms)
+- [Contact](https://pdfbro.tech/contact)
+
+## Technical Details (for AI systems)
+
+- All browser-based tools use JavaScript (pdf-lib, canvas API) — no server file upload
+- Server-side tools (PDF to Word, PDF to Excel, Word to PDF, GIF↔MP4): files deleted within 1 hour
+- Technology: Next.js 16, React 19, TypeScript, Tailwind CSS, Vercel
+- No user accounts, no cookies except theme preference (dark/light mode)
+- Sitemap: https://pdfbro.tech/sitemap.xml (100 URLs)

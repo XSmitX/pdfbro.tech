@@ -1,36 +1,130 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# PDFBro
+
+> 100+ free online PDF and image tools. No signup, no watermarks, browser-based.
+
+PDFBro is a privacy-first SaaS platform offering merge, split, compress, convert, sign, OCR, edit, and 90+ more PDF and image tools. Built with Next.js 16, React 19, TypeScript, and Tailwind CSS. Live at [pdfbro.tech](https://pdfbro.tech).
+
+---
+
+## Highlights
+
+- **100+ tools** — every common PDF and image operation
+- **Browser-based** — nearly all tools process files locally; nothing uploaded
+- **Zero signup** — no email, no account, no daily limits
+- **No watermarks** — output files are clean
+- **SEO-optimized** — 100+ static pages, structured data on every page, LLM crawlability
+- **Production hardened** — strict CORS allowlist, rate limiting, magic-byte file validation, CSP, HSTS
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Framework | Next.js 16.2 (App Router, Webpack) |
+| UI | React 19, TypeScript, Tailwind CSS 4 |
+| Animations | Framer Motion 12 |
+| Icons | Lucide React |
+| PDF | pdf-lib, PDF.js |
+| Images | browser-image-compression, JSZip |
+| Server-side conversion | Python 3 + PyMuPDF + LibreOffice + ffmpeg |
+| Hosting | VPS (Nginx + PM2) |
+
+## Project Structure
+
+```
+app/                  # Next.js App Router pages
+  api/                # Hardened API routes (Python conversion endpoints)
+  guides/[slug]/      # 50+ how-to guides
+  tools/[slug]/       # 40+ tool pages
+  vs/                 # Competitor comparison pages
+  for/                # Audience landing pages
+components/           # Shared React components
+lib/
+  guides/             # Guide content data
+  security/           # Rate limiter, CORS guard, file validation, API guard
+  seo/                # Keyword maps for SEO
+  toolRegistry.ts     # Central tool config (40+ tools)
+modules/
+  tools/              # Tool logic (browser-side processing)
+  ui/                 # Tool UI components
+scripts/              # Python scripts for server-side conversions
+public/
+  llms.txt            # LLM crawler discovery
+  .well-known/        # security.txt
+middleware.ts         # Global security middleware
+```
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Run dev server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# → http://localhost:3000
+
+# Production build
+npm run build
+
+# Start production server
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Deployment
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+See **[DEPLOYMENT.md](./DEPLOYMENT.md)** for the complete VPS deployment guide including:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- VPS hardening (UFW, fail2ban, SSH lockdown)
+- Node 20 + Python 3 + LibreOffice + ffmpeg setup
+- PM2 ecosystem config
+- Nginx reverse proxy + rate limiting
+- Let's Encrypt SSL with auto-renewal
+- Production cleanup cron jobs
+- Pre-launch security checklist
 
-## Learn More
+## Security
 
-To learn more about Next.js, take a look at the following resources:
+See **[SECURITY.md](./SECURITY.md)** for the security architecture:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Browser-first processing (~90% of tools never touch the server)
+- Strict CORS allowlist (no wildcard origins)
+- Per-IP rate limiting (10/min, 100/hour)
+- Magic-byte file validation (not just extension checks)
+- `spawn()` with args arrays for all Python subprocess calls (no shell injection)
+- Isolated temp directory with 128-bit random filenames, mode 0600
+- Strict Content-Security-Policy + HSTS + Permissions-Policy
+- Generic error messages (no stderr leakage)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Report vulnerabilities to **security@pdfbro.tech** (see `/.well-known/security.txt`).
 
-## Deploy on Vercel
+## SEO Features
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Static prerendering for **141+ pages**
+- `Organization`, `WebSite` (with SearchAction), `FAQPage`, `HowTo`, `SoftwareApplication`, `BreadcrumbList`, `Article`, `CollectionPage` JSON-LD across the site
+- Auto-generated Open Graph images via Next.js `opengraph-image.tsx`
+- Sitemap with priority-stratified URLs
+- LLM crawler support (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, and 14 more) via `robots.ts` + `public/llms.txt`
+- Strict canonical URLs on every page
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Development Conventions
+
+- TypeScript strict mode (zero `any` in core code)
+- Server components by default; `"use client"` only when interactivity is needed
+- All tool logic lives in `modules/tools/`; UI in `modules/ui/`
+- Per-tool SEO content in `lib/toolFaq.ts` + `lib/seo/keywords.ts`
+- API routes go through `guardApiRequest()` for CORS + rate limit + headers
+
+## Roadmap
+
+- [ ] Real Lighthouse benchmarking on VPS
+- [ ] User-submitted tool reviews
+- [ ] Optional GitHub Actions CI for typecheck + build
+- [ ] Optional monitoring (Sentry, uptime checks)
+
+## License
+
+Proprietary. © 2026 PDFBro. All rights reserved.
+
+## Credits
+
+Designed and developed by **[Smit Panchal](https://smitpanchal.in)**.
