@@ -1,4 +1,3 @@
-// Shared Annotation types re-exported from editPDF for use in canvas helper
 export type {
   Annotation,
   TextAnnotation,
@@ -8,5 +7,8 @@ export type {
   LineAnnotation,
   FreehandAnnotation,
   ImageAnnotation,
+  StampAnnotation,
+  UnderlineAnnotation,
+  StrikethroughAnnotation,
   EditPDFOptions,
 } from "@/modules/tools/editPDF";
