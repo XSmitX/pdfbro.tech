@@ -50,12 +50,25 @@ export const metadata: Metadata = {
   authors: [{ name: "PDFBro", url: "https://pdfbro.tech" }],
   creator: "PDFBro",
   publisher: "PDFBro",
+  applicationName: "PDFBro",
   category: "technology",
-  icons: {
-    icon: [{ url: "/logo.svg", type: "image/svg+xml" }],
-    shortcut: "/logo.svg",
-    apple: "/logo.svg",
+  appleWebApp: {
+    capable: true,
+    title: "PDFBro",
+    statusBarStyle: "default",
   },
+  icons: {
+    icon: [
+      { url: "/favicon/favicon.ico", sizes: "any" },
+      { url: "/favicon/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/favicon/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon/web-app-manifest-192x192.png", sizes: "192x192", type: "image/png" },
+      { url: "/favicon/web-app-manifest-512x512.png", sizes: "512x512", type: "image/png" },
+    ],
+    shortcut: "/favicon/favicon.ico",
+    apple: [{ url: "/favicon/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+  },
+  manifest: "/favicon/site.webmanifest",
   openGraph: {
     type: "website",
     locale: "en_US",
