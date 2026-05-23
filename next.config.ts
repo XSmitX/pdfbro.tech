@@ -18,11 +18,11 @@ import path from "path";
 //   base-uri: self
 const CSP_DIRECTIVES = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net",
+  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://www.googletagmanager.com https://*.googletagmanager.com",
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "img-src 'self' data: blob: https:",
   "font-src 'self' data: https://fonts.gstatic.com",
-  "connect-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://api.qrserver.com",
+  "connect-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://api.qrserver.com https://www.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com https://*.analytics.google.com",
   "worker-src 'self' blob:",
   "frame-ancestors 'none'",
   "form-action 'self'",

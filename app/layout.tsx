@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { ThemeProvider } from "@/lib/themeContext";
 import SecurityProvider from "@/components/SecurityProvider";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 // next/font/google: self-hosted, zero render-blocking, preloaded automatically
 const inter = Inter({
@@ -112,6 +113,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         className={`${inter.className} min-h-screen antialiased overflow-x-hidden`}
         style={{ backgroundColor: "var(--bg-primary)", color: "var(--text-primary)" }}
       >
+        <GoogleAnalytics />
         <SecurityProvider>
           <ThemeProvider>
             <div className="flex min-h-screen flex-col w-full page-wrapper">
