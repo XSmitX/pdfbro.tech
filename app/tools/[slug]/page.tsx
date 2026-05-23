@@ -59,29 +59,74 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
+const CATEGORY_PAGE_URL: Record<string, string> = {
+  pdf: `${BASE_URL}/pdf-tools`,
+  image: `${BASE_URL}/image-tools`,
+  convert: `${BASE_URL}/convert-tools`,
+  utility: `${BASE_URL}/tools`,
+};
+
 function ToolJsonLd({ tool }: { tool: NonNullable<ReturnType<typeof getToolBySlug>> }) {
   const seoContent = getToolSeoContent(tool.slug);
   const kw = TOOL_KEYWORDS[tool.slug];
   const toolUrl = `${BASE_URL}/tools/${tool.slug}`;
+  const categoryUrl = CATEGORY_PAGE_URL[tool.category] ?? `${BASE_URL}/tools`;
+  const modifyDate = new Date().toISOString().split("T")[0];
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebPage",
+        "@id": `${toolUrl}#webpage`,
+        url: toolUrl,
+        name: kw?.metaTitle ?? `${tool.name} Online Free | PDFBro`,
+        description: kw?.metaDescription ?? tool.longDescription,
+        inLanguage: "en-US",
+        dateModified: modifyDate,
+        isPartOf: { "@id": `${BASE_URL}/#website` },
+        breadcrumb: { "@id": `${toolUrl}#breadcrumb` },
+      },
+      {
         "@type": "SoftwareApplication",
         "@id": `${toolUrl}#software`,
         name: `${tool.name} — PDFBro`,
+        alternateName: `${tool.name} Online Free`,
         applicationCategory: "UtilitiesApplication",
+        applicationSubCategory: tool.category === "pdf" ? "PDF Tools" : tool.category === "image" ? "Image Tools" : "File Conversion",
         operatingSystem: "Web, Windows, macOS, Linux, Android, iOS",
-        offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        offers: {
+          "@type": "Offer",
+          price: "0",
+          priceCurrency: "USD",
+          availability: "https://schema.org/InStock",
+          priceValidUntil: "2030-12-31",
+        },
         description: tool.longDescription,
         url: toolUrl,
-        provider: { "@type": "Organization", name: "PDFBro", url: BASE_URL },
+        image: `${BASE_URL}/favicon/web-app-manifest-512x512.png`,
+        provider: { "@id": `${BASE_URL}/#organization` },
+        isPartOf: {
+          "@type": "WebSite",
+          "@id": `${BASE_URL}/#website`,
+          name: "PDFBro",
+          url: BASE_URL,
+        },
         browserRequirements: "Requires JavaScript. Works in Chrome, Firefox, Safari, Edge.",
         featureList: [...tool.tags, ...(kw?.secondary ?? [])].join(", "),
+        keywords: kw ? [kw.primary, ...kw.secondary, ...kw.longTail].join(", ") : tool.tags.join(", "),
+        dateModified: modifyDate,
+        inLanguage: "en-US",
+        about: {
+          "@type": "WebPage",
+          "@id": categoryUrl,
+          name: tool.category === "pdf" ? "Free PDF Tools Online" : tool.category === "image" ? "Free Image Tools Online" : "Free File Conversion Tools",
+          url: categoryUrl,
+        },
       },
       {
         "@type": "BreadcrumbList",
+        "@id": `${toolUrl}#breadcrumb`,
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
           { "@type": "ListItem", position: 2, name: "All Tools", item: `${BASE_URL}/tools` },
@@ -90,6 +135,7 @@ function ToolJsonLd({ tool }: { tool: NonNullable<ReturnType<typeof getToolBySlu
       },
       {
         "@type": "FAQPage",
+        "@id": `${toolUrl}#faq`,
         mainEntity: seoContent.faq.map(({ q, a }) => ({
           "@type": "Question",
           name: q,
@@ -99,13 +145,18 @@ function ToolJsonLd({ tool }: { tool: NonNullable<ReturnType<typeof getToolBySlu
       // HowTo schema for tools with steps
       ...(seoContent.howTo && seoContent.howTo.length > 0 ? [{
         "@type": "HowTo",
+        "@id": `${toolUrl}#howto`,
         name: `How to use ${tool.name} online free`,
         description: tool.longDescription,
+        inLanguage: "en-US",
+        totalTime: "PT2M",
+        tool: [{ "@type": "HowToTool", name: "PDFBro", url: BASE_URL }],
         step: seoContent.howTo.map((step) => ({
           "@type": "HowToStep",
           position: step.step,
           name: step.title,
           text: step.desc,
+          url: `${toolUrl}#step-${step.step}`,
         })),
       }] : []),
     ],
@@ -132,6 +183,36 @@ export default async function ToolPage({ params }: PageProps) {
     <>
       <ToolJsonLd tool={tool} />
       <ToolPageClient tool={tool} seoContent={seoContent} primaryKeyword={kw?.primary} secondaryKeywords={kw?.secondary} />
+
+      {/* ── Server-rendered SEO content (visible to Google on first crawl) ── */}
+      <div className="sr-only" aria-hidden="true">
+        <h2>{kw?.metaTitle ?? `${tool.name} — Free Online Tool`}</h2>
+        <p>{kw?.metaDescription ?? tool.longDescription}</p>
+        {kw && (
+          <ul>
+            {[kw.primary, ...kw.secondary].map((k) => <li key={k}>{k}</li>)}
+          </ul>
+        )}
+        {seoContent.howTo && seoContent.howTo.length > 0 && (
+          <ol>
+            {seoContent.howTo.map((step) => (
+              <li key={step.step}>
+                <strong>{step.title}</strong>: {step.desc}
+              </li>
+            ))}
+          </ol>
+        )}
+        {seoContent.faq.length > 0 && (
+          <dl>
+            {seoContent.faq.map(({ q, a }) => (
+              <div key={q}>
+                <dt>{q}</dt>
+                <dd>{a}</dd>
+              </div>
+            ))}
+          </dl>
+        )}
+      </div>
     </>
   );
 }

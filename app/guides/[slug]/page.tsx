@@ -35,6 +35,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       url,
       type: "article",
       siteName: "PDFBro",
+      images: [{ url: "https://pdfbro.tech/favicon/web-app-manifest-512x512.png", width: 512, height: 512 }],
+      publishedTime: "2025-05-01T00:00:00Z",
+      modifiedTime: new Date().toISOString(),
+      authors: ["https://pdfbro.tech"],
+      section: guide.category,
+      tags: guide.keywords.slice(0, 6),
     },
     twitter: {
       card: "summary_large_image",
@@ -44,12 +50,15 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-function buildJsonLd(guide: GuideData) {
+function buildJsonLd(guide: GuideData, wordCount: number) {
   const url = `${BASE_URL}/guides/${guide.slug}`;
+  const publishDate = "2025-05-01";
+  const modifyDate = new Date().toISOString().split("T")[0];
 
   const graph: object[] = [
     {
       "@type": "BreadcrumbList",
+      "@id": `${url}#breadcrumb`,
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
         { "@type": "ListItem", position: 2, name: "Guides", item: `${BASE_URL}/guides` },
@@ -58,15 +67,56 @@ function buildJsonLd(guide: GuideData) {
     },
     {
       "@type": "Article",
+      "@id": `${url}#article`,
       headline: guide.title,
+      name: guide.title,
       description: guide.metaDescription,
       url,
-      publisher: { "@type": "Organization", name: "PDFBro", url: BASE_URL },
-      author: { "@type": "Organization", name: "PDFBro" },
-      mainEntityOfPage: { "@type": "WebPage", "@id": url },
+      inLanguage: "en-US",
+      datePublished: publishDate,
+      dateModified: modifyDate,
+      wordCount,
+      image: {
+        "@type": "ImageObject",
+        url: `${BASE_URL}/favicon/web-app-manifest-512x512.png`,
+        width: 512,
+        height: 512,
+      },
+      publisher: {
+        "@type": "Organization",
+        "@id": `${BASE_URL}/#organization`,
+        name: "PDFBro",
+        url: BASE_URL,
+        logo: {
+          "@type": "ImageObject",
+          url: `${BASE_URL}/favicon/web-app-manifest-512x512.png`,
+          width: 512,
+          height: 512,
+        },
+      },
+      author: {
+        "@type": "Organization",
+        "@id": `${BASE_URL}/#organization`,
+        name: "PDFBro",
+        url: BASE_URL,
+      },
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": url,
+        isPartOf: { "@id": `${BASE_URL}/#website` },
+      },
+      isPartOf: {
+        "@type": "WebSite",
+        "@id": `${BASE_URL}/#website`,
+        name: "PDFBro",
+        url: BASE_URL,
+      },
+      keywords: guide.keywords.join(", "),
+      articleSection: guide.category,
     },
     {
       "@type": "FAQPage",
+      "@id": `${url}#faq`,
       mainEntity: guide.faq.map(({ q, a }) => ({
         "@type": "Question",
         name: q,
@@ -80,13 +130,19 @@ function buildJsonLd(guide: GuideData) {
   if (stepsSection?.steps) {
     graph.push({
       "@type": "HowTo",
+      "@id": `${url}#howto`,
       name: guide.title,
       description: guide.metaDescription,
+      inLanguage: "en-US",
+      totalTime: "PT5M",
+      tool: [{ "@type": "HowToTool", name: "PDFBro", url: BASE_URL }],
+      supply: [],
       step: stepsSection.steps.map((step) => ({
         "@type": "HowToStep",
         position: step.n,
         name: step.title,
         text: step.body,
+        url: `${url}#step-${step.n}`,
       })),
     });
   }
@@ -193,7 +249,7 @@ export default async function GuidePage({ params }: PageProps) {
 
   return (
     <>
-      <Script id={`jsonld-guide-${guide.slug}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildJsonLd(guide)) }} />
+      <Script id={`jsonld-guide-${guide.slug}`} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(buildJsonLd(guide, wordCount)) }} />
 
       <div className="min-h-screen relative" style={{ zIndex: 1 }}>
         <PageBackground variant="tool-page" accentColor={catMeta.color} />

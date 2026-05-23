@@ -39,12 +39,29 @@ const FAQS = [
 
 const JSONLD = {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: FAQS.flatMap(s => s.items.map(item => ({
-    "@type": "Question",
-    name: item.q,
-    acceptedAnswer: { "@type": "Answer", text: item.a },
-  }))),
+  "@graph": [
+    {
+      "@type": "FAQPage",
+      "@id": "https://pdfbro.tech/faq#faqpage",
+      name: "PDFBro FAQ — Frequently Asked Questions",
+      description: "Answers to the most common questions about PDFBro — limits, privacy, file safety, supported formats, and how tools work.",
+      url: "https://pdfbro.tech/faq",
+      inLanguage: "en-US",
+      isPartOf: { "@id": "https://pdfbro.tech/#website" },
+      mainEntity: FAQS.flatMap(s => s.items.map(item => ({
+        "@type": "Question",
+        name: item.q,
+        acceptedAnswer: { "@type": "Answer", text: item.a },
+      }))),
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://pdfbro.tech" },
+        { "@type": "ListItem", position: 2, name: "FAQ", item: "https://pdfbro.tech/faq" },
+      ],
+    },
+  ],
 };
 
 export default function FAQPage() {

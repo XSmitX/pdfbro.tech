@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Script from "next/script";
 import { ArrowRight } from "lucide-react";
 import PageBackground from "@/components/PageBackground";
 
@@ -23,9 +24,45 @@ const STUDENT_WORKFLOWS = [
   { title: "QR codes for presentations", desc: "Add QR codes to your presentation slides linking to sources, demos, or survey forms.", tool: "qr-code-generator", toolName: "QR Code Generator" },
 ];
 
+const STUDENTS_JSONLD = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://pdfbro.tech/for/students#webpage",
+      url: "https://pdfbro.tech/for/students",
+      name: "Free PDF Tools for Students — Merge, Compress, Convert | PDFBro",
+      description: "Free PDF tools built for students. No signup, no cost, no limits.",
+      inLanguage: "en-US",
+      datePublished: "2025-05-01",
+      dateModified: "2026-05-23",
+      isPartOf: { "@id": "https://pdfbro.tech/#website" },
+      about: { "@id": "https://pdfbro.tech/#organization" },
+      audience: { "@type": "Audience", audienceType: "Students" },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://pdfbro.tech" },
+        { "@type": "ListItem", position: 2, name: "For Students", item: "https://pdfbro.tech/for/students" },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: [
+        { "@type": "Question", name: "Are PDFBro tools free for students?", acceptedAnswer: { "@type": "Answer", text: "Yes. All 100+ PDFBro tools are completely free for students with no usage limits, no signup required, and no watermarks on output files." } },
+        { "@type": "Question", name: "Can I use PDFBro to merge assignment PDFs?", acceptedAnswer: { "@type": "Answer", text: "Yes. Use PDFBro's Merge PDF tool to combine your cover page, assignment body, and appendices into one PDF. Free, no signup, browser-based." } },
+        { "@type": "Question", name: "How do I compress a PDF for submission?", acceptedAnswer: { "@type": "Answer", text: "Use PDFBro's Compress PDF tool at pdfbro.tech/tools/compress-pdf. Upload your PDF, choose compression level, and download the smaller file instantly." } },
+      ],
+    },
+  ],
+};
+
 export default function ForStudentsPage() {
   return (
-    <div className="min-h-screen relative" style={{ zIndex: 1 }}>
+    <>
+      <Script id="jsonld-for-students" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(STUDENTS_JSONLD) }} />
+      <div className="min-h-screen relative" style={{ zIndex: 1 }}>
       <PageBackground variant="tools" />
       <section className="relative py-16" style={{ borderBottom: "1px solid var(--border-subtle)" }}>
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -84,5 +121,6 @@ export default function ForStudentsPage() {
         </div>
       </section>
     </div>
+    </>
   );
 }

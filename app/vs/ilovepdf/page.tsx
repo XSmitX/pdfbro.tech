@@ -30,17 +30,40 @@ const ROWS = [
 
 const JSONLD = {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  name: "PDFBro vs iLovePDF Comparison",
-  description: "Full comparison of PDFBro and iLovePDF: features, limits, privacy, price.",
-  url: "https://pdfbro.tech/vs/ilovepdf",
-  breadcrumb: {
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://pdfbro.tech" },
-      { "@type": "ListItem", position: 2, name: "PDFBro vs iLovePDF", item: "https://pdfbro.tech/vs/ilovepdf" },
-    ],
-  },
+  "@graph": [
+    {
+      "@type": ["WebPage", "Article"],
+      "@id": "https://pdfbro.tech/vs/ilovepdf#webpage",
+      url: "https://pdfbro.tech/vs/ilovepdf",
+      name: "PDFBro vs iLovePDF — Full Comparison 2026 | Which is Better?",
+      headline: "PDFBro vs iLovePDF — Full Comparison 2026",
+      description: "Full comparison of PDFBro and iLovePDF: features, limits, privacy, price. Find out which free PDF tool is right for you.",
+      inLanguage: "en-US",
+      datePublished: "2025-05-01",
+      dateModified: "2026-05-23",
+      isPartOf: { "@id": "https://pdfbro.tech/#website" },
+      author: { "@id": "https://pdfbro.tech/#organization" },
+      publisher: { "@id": "https://pdfbro.tech/#organization" },
+      image: { "@type": "ImageObject", url: "https://pdfbro.tech/favicon/web-app-manifest-512x512.png" },
+      speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", "h2"] },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://pdfbro.tech" },
+        { "@type": "ListItem", position: 2, name: "PDFBro vs iLovePDF", item: "https://pdfbro.tech/vs/ilovepdf" },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: [
+        { "@type": "Question", name: "Is PDFBro better than iLovePDF?", acceptedAnswer: { "@type": "Answer", text: "PDFBro is better than iLovePDF for free users because it has no daily task limits (iLovePDF limits free users to 2 tasks per hour), processes files in the browser for better privacy, offers 100+ tools vs iLovePDF's 25+, and includes image tools that iLovePDF does not offer." } },
+        { "@type": "Question", name: "What is the difference between PDFBro and iLovePDF?", acceptedAnswer: { "@type": "Answer", text: "PDFBro processes files in your browser with no server uploads, has no daily limits, and offers both PDF and image tools. iLovePDF uploads files to its servers, limits free users to 2 tasks per hour, and focuses only on PDF tools." } },
+        { "@type": "Question", name: "Is PDFBro free like iLovePDF?", acceptedAnswer: { "@type": "Answer", text: "Both PDFBro and iLovePDF are free, but PDFBro has no daily limits or task caps while iLovePDF free tier restricts users to 2 tasks per hour. PDFBro is more generous for free users." } },
+        { "@type": "Question", name: "Does PDFBro have a mobile app like iLovePDF?", acceptedAnswer: { "@type": "Answer", text: "PDFBro is web-only and works in mobile browsers. iLovePDF has dedicated iOS and Android apps. If you need a native mobile app, iLovePDF has an advantage there." } },
+      ],
+    },
+  ],
 };
 
 export default function VsIlovePDF() {

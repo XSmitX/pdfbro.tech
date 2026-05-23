@@ -67,20 +67,74 @@ const PDF_FEATURES = [
   { icon: Lock, title: "PDF to Image", desc: "Convert PDF pages to PNG or JPG images", href: "/tools/pdf-to-image", color: "#06b6d4" },
 ];
 
+const PDF_TOOL_ITEMS = [
+  { name: "Merge PDF", url: "https://pdfbro.tech/tools/merge-pdf", desc: "Combine multiple PDF files into one document" },
+  { name: "Split PDF", url: "https://pdfbro.tech/tools/split-pdf", desc: "Extract pages or page ranges from a PDF" },
+  { name: "Compress PDF", url: "https://pdfbro.tech/tools/compress-pdf", desc: "Reduce PDF file size by up to 80%" },
+  { name: "PDF to Word", url: "https://pdfbro.tech/tools/pdf-to-word", desc: "Convert PDF to editable Word document" },
+  { name: "Word to PDF", url: "https://pdfbro.tech/tools/word-to-pdf", desc: "Convert Word documents to PDF" },
+  { name: "PDF to Excel", url: "https://pdfbro.tech/tools/pdf-to-excel", desc: "Extract PDF tables to Excel spreadsheets" },
+  { name: "PDF to PowerPoint", url: "https://pdfbro.tech/tools/pdf-to-powerpoint", desc: "Convert PDF to editable PowerPoint presentation" },
+  { name: "Sign PDF", url: "https://pdfbro.tech/tools/sign-pdf", desc: "Add electronic signature to any PDF" },
+  { name: "Protect PDF", url: "https://pdfbro.tech/tools/protect-pdf", desc: "Password protect PDF with AES-256 encryption" },
+  { name: "Unlock PDF", url: "https://pdfbro.tech/tools/unlock-pdf", desc: "Remove password from a PDF you own" },
+  { name: "OCR PDF", url: "https://pdfbro.tech/tools/ocr-pdf", desc: "Extract text from scanned PDF files" },
+  { name: "Edit PDF", url: "https://pdfbro.tech/tools/edit-pdf", desc: "Add text, highlights, and shapes to PDFs" },
+  { name: "Fill PDF Form", url: "https://pdfbro.tech/tools/fill-pdf-form", desc: "Fill interactive PDF forms online" },
+  { name: "Rotate PDF", url: "https://pdfbro.tech/tools/rotate-pdf", desc: "Fix page orientation in PDFs" },
+  { name: "Add Watermark", url: "https://pdfbro.tech/tools/add-watermark", desc: "Stamp text or image watermarks on PDFs" },
+  { name: "PDF Page Numbers", url: "https://pdfbro.tech/tools/pdf-page-numbers", desc: "Insert page numbers into PDFs" },
+  { name: "Extract PDF Pages", url: "https://pdfbro.tech/tools/extract-pdf-pages", desc: "Extract specific pages to a new PDF" },
+  { name: "Reorder PDF Pages", url: "https://pdfbro.tech/tools/reorder-pdf-pages", desc: "Drag-and-drop PDF page reordering" },
+  { name: "PDF to Text", url: "https://pdfbro.tech/tools/pdf-to-text", desc: "Extract all text content from a PDF" },
+  { name: "Text to PDF", url: "https://pdfbro.tech/tools/text-to-pdf", desc: "Convert plain text to a formatted PDF" },
+];
+
 const JSONLD = {
   "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  name: "Free PDF Tools Online — PDFBro",
-  description: "Complete suite of free online PDF tools. No signup required. Browser-based.",
-  url: "https://pdfbro.tech/pdf-tools",
-  publisher: { "@type": "Organization", name: "PDFBro", url: "https://pdfbro.tech" },
-  breadcrumb: {
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://pdfbro.tech" },
-      { "@type": "ListItem", position: 2, name: "PDF Tools", item: "https://pdfbro.tech/pdf-tools" },
-    ],
-  },
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://pdfbro.tech/pdf-tools#webpage",
+      name: "Free PDF Tools Online — Merge PDF, Compress PDF, Convert PDF | PDFBro",
+      description: "Complete suite of free online PDF tools. Merge PDF, split PDF, compress PDF, convert PDF to Word, Excel, PowerPoint, sign PDF, OCR and 20+ more. No signup required. Browser-based.",
+      url: "https://pdfbro.tech/pdf-tools",
+      inLanguage: "en-US",
+      isPartOf: { "@id": "https://pdfbro.tech/#website" },
+      publisher: { "@id": "https://pdfbro.tech/#organization" },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://pdfbro.tech" },
+        { "@type": "ListItem", position: 2, name: "PDF Tools", item: "https://pdfbro.tech/pdf-tools" },
+      ],
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://pdfbro.tech/pdf-tools#toollist",
+      name: "Free PDF Tools Online",
+      description: "Complete list of free online PDF tools on PDFBro — no signup, no watermarks, browser-based.",
+      url: "https://pdfbro.tech/pdf-tools",
+      numberOfItems: PDF_TOOL_ITEMS.length,
+      itemListElement: PDF_TOOL_ITEMS.map((tool, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: tool.name,
+        description: tool.desc,
+        url: tool.url,
+        item: {
+          "@type": "SoftwareApplication",
+          name: `${tool.name} — PDFBro`,
+          url: tool.url,
+          applicationCategory: "UtilitiesApplication",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          description: tool.desc,
+        },
+      })),
+    },
+  ],
 };
 
 export default function PDFToolsPage() {

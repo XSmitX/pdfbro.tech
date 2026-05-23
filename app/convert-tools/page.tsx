@@ -63,20 +63,72 @@ const CONVERT_FEATURES = [
   { icon: FileOutput, title: "PDF to Text", desc: "Extract all text content from a PDF", href: "/tools/pdf-to-text", color: "#ea580c" },
 ];
 
+const CONVERT_TOOL_ITEMS = [
+  { name: "PDF to Word", url: "https://pdfbro.tech/tools/pdf-to-word", desc: "Convert PDF to editable Word (.docx) document" },
+  { name: "Word to PDF", url: "https://pdfbro.tech/tools/word-to-pdf", desc: "Convert Word .doc/.docx files to PDF" },
+  { name: "PDF to Excel", url: "https://pdfbro.tech/tools/pdf-to-excel", desc: "Extract PDF tables to Excel (.xlsx) spreadsheets" },
+  { name: "PDF to PowerPoint", url: "https://pdfbro.tech/tools/pdf-to-powerpoint", desc: "Convert PDF to editable PowerPoint (.pptx)" },
+  { name: "Image to PDF", url: "https://pdfbro.tech/tools/image-to-pdf", desc: "Convert JPG, PNG, or WebP images to a PDF" },
+  { name: "PDF to Image", url: "https://pdfbro.tech/tools/pdf-to-image", desc: "Convert PDF pages to PNG or JPEG images" },
+  { name: "HEIC to JPG", url: "https://pdfbro.tech/tools/heic-to-jpg", desc: "Convert iPhone HEIC/HEIF photos to JPEG" },
+  { name: "Image to WebP", url: "https://pdfbro.tech/tools/image-to-webp", desc: "Convert JPG/PNG to WebP for smaller file sizes" },
+  { name: "JPG to PNG", url: "https://pdfbro.tech/tools/jpg-to-png", desc: "Convert JPEG images to lossless PNG format" },
+  { name: "PNG to JPG", url: "https://pdfbro.tech/tools/png-to-jpeg", desc: "Convert PNG images to compressed JPEG" },
+  { name: "WebP to JPG", url: "https://pdfbro.tech/tools/webp-to-jpg", desc: "Convert WebP images to JPEG" },
+  { name: "WebP to PNG", url: "https://pdfbro.tech/tools/webp-to-png", desc: "Convert WebP images to PNG, preserving transparency" },
+  { name: "SVG to PNG", url: "https://pdfbro.tech/tools/svg-to-png", desc: "Convert SVG vector graphics to high-resolution PNG" },
+  { name: "SVG to JPG", url: "https://pdfbro.tech/tools/svg-to-jpg", desc: "Convert SVG vector files to JPEG" },
+  { name: "GIF to MP4", url: "https://pdfbro.tech/tools/gif-to-mp4", desc: "Convert animated GIFs to MP4 video (10x smaller)" },
+  { name: "MP4 to GIF", url: "https://pdfbro.tech/tools/mp4-to-gif", desc: "Convert MP4 video clips to animated GIF" },
+  { name: "Text to PDF", url: "https://pdfbro.tech/tools/text-to-pdf", desc: "Convert plain text or .txt files to formatted PDF" },
+  { name: "PDF to Text", url: "https://pdfbro.tech/tools/pdf-to-text", desc: "Extract all text content from a PDF" },
+];
+
 const JSONLD = {
   "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  name: "Free File Conversion Tools Online — PDFBro",
-  description: "Convert PDF, images, Word, and video files online for free. No signup. Browser-based.",
-  url: "https://pdfbro.tech/convert-tools",
-  publisher: { "@type": "Organization", name: "PDFBro", url: "https://pdfbro.tech" },
-  breadcrumb: {
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://pdfbro.tech" },
-      { "@type": "ListItem", position: 2, name: "Conversion Tools", item: "https://pdfbro.tech/convert-tools" },
-    ],
-  },
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://pdfbro.tech/convert-tools#webpage",
+      name: "Free File Converter Online — PDF to Word, HEIC to JPG, Image to PDF | PDFBro",
+      description: "Free file converters online: PDF to Word, Word to PDF, PDF to Excel, HEIC to JPG, Image to WebP, GIF to MP4, SVG to PNG and 30+ more. No signup, browser-based.",
+      url: "https://pdfbro.tech/convert-tools",
+      inLanguage: "en-US",
+      isPartOf: { "@id": "https://pdfbro.tech/#website" },
+      publisher: { "@id": "https://pdfbro.tech/#organization" },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://pdfbro.tech" },
+        { "@type": "ListItem", position: 2, name: "Conversion Tools", item: "https://pdfbro.tech/convert-tools" },
+      ],
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://pdfbro.tech/convert-tools#toollist",
+      name: "Free File Conversion Tools Online",
+      description: "Complete list of free file conversion tools on PDFBro — no signup, no watermarks, browser-based.",
+      url: "https://pdfbro.tech/convert-tools",
+      numberOfItems: CONVERT_TOOL_ITEMS.length,
+      itemListElement: CONVERT_TOOL_ITEMS.map((tool, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: tool.name,
+        description: tool.desc,
+        url: tool.url,
+        item: {
+          "@type": "SoftwareApplication",
+          name: `${tool.name} — PDFBro`,
+          url: tool.url,
+          applicationCategory: "UtilitiesApplication",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          description: tool.desc,
+        },
+      })),
+    },
+  ],
 };
 
 export default function ConvertToolsPage() {

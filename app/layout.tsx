@@ -25,6 +25,9 @@ export const metadata: Metadata = {
   description:
     "PDFBro: 100+ free online PDF and image tools. Merge PDF, split PDF, compress PDF, convert PDF to Word, PDF to Excel, compress images, remove backgrounds, HEIC to JPG, QR code generator and more. No signup, no watermarks, browser-based.",
   keywords: [
+    "PDFBro",
+    "PDF Bro",
+    "pdfbro",
     "PDF converter",
     "merge PDF",
     "compress PDF",
@@ -53,6 +56,7 @@ export const metadata: Metadata = {
   publisher: "PDFBro",
   applicationName: "PDFBro",
   category: "technology",
+  classification: "Utilities, PDF Tools, Image Tools, File Conversion",
   appleWebApp: {
     capable: true,
     title: "PDFBro",
@@ -81,6 +85,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    site: "@pdfbro",
     title: "PDFBro — Free PDF & Image Tools Online | No Signup",
     description: "100+ free browser-based PDF and image tools. No signup, no limits, no watermarks.",
     creator: "@pdfbro",
@@ -97,6 +102,10 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  other: {
+    "ai-content-declaration": "human-created",
+    "revisit-after": "7 days",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -108,6 +117,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)" />
         {/* llms.txt — LLM/AI crawler discovery */}
         <link rel="alternate" type="text/plain" href="https://pdfbro.tech/llms.txt" title="LLMs.txt" />
+        {/* Brand identity — link rel="me" for entity disambiguation */}
+        <link rel="me" href="https://twitter.com/pdfbro" />
+        <link rel="me" href="https://x.com/pdfbro" />
+        {/* Preconnect to analytics/font CDNs for performance */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
       </head>
       <body
         className={`${inter.className} min-h-screen antialiased overflow-x-hidden`}

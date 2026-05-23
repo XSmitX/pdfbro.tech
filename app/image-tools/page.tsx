@@ -52,20 +52,68 @@ const IMAGE_FEATURES = [
   { icon: ImageIcon, title: "HEIC to JPG", desc: "Convert iPhone HEIC photos to JPEG", href: "/tools/heic-to-jpg", color: "#16a34a" },
 ];
 
+const IMAGE_TOOL_ITEMS = [
+  { name: "Compress Image", url: "https://pdfbro.tech/tools/compress-image", desc: "Compress JPG, PNG, WebP images by up to 80% without quality loss" },
+  { name: "Resize Image", url: "https://pdfbro.tech/tools/resize-image", desc: "Resize images to exact pixel dimensions or percentage" },
+  { name: "Crop Image", url: "https://pdfbro.tech/tools/crop-image", desc: "Crop images to any aspect ratio or custom dimensions" },
+  { name: "Remove Background", url: "https://pdfbro.tech/tools/remove-bg", desc: "AI-powered background removal, transparent PNG output" },
+  { name: "HEIC to JPG", url: "https://pdfbro.tech/tools/heic-to-jpg", desc: "Convert iPhone HEIC/HEIF photos to JPEG" },
+  { name: "Passport Photo", url: "https://pdfbro.tech/tools/passport-photo", desc: "Create passport photos for US, UK, EU and 50+ international standards" },
+  { name: "Add Text to Image", url: "https://pdfbro.tech/tools/add-text-to-image", desc: "Add captions, labels, and text overlays to images" },
+  { name: "Flip Image", url: "https://pdfbro.tech/tools/flip-image", desc: "Mirror images horizontally or vertically" },
+  { name: "Image to WebP", url: "https://pdfbro.tech/tools/image-to-webp", desc: "Convert images to WebP format for faster websites" },
+  { name: "JPG to PNG", url: "https://pdfbro.tech/tools/jpg-to-png", desc: "Convert JPEG images to lossless PNG" },
+  { name: "PNG to JPG", url: "https://pdfbro.tech/tools/png-to-jpeg", desc: "Convert PNG images to compressed JPEG" },
+  { name: "WebP to JPG", url: "https://pdfbro.tech/tools/webp-to-jpg", desc: "Convert WebP images to JPEG" },
+  { name: "SVG to PNG", url: "https://pdfbro.tech/tools/svg-to-png", desc: "Convert SVG vector graphics to high-resolution PNG" },
+  { name: "QR Code Generator", url: "https://pdfbro.tech/tools/qr-code-generator", desc: "Create QR codes for URLs, WiFi, text, email, and phone" },
+];
+
 const JSONLD = {
   "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  name: "Free Image Tools Online — PDFBro",
-  description: "Compress, resize, convert and edit images for free. No signup. Browser-based.",
-  url: "https://pdfbro.tech/image-tools",
-  publisher: { "@type": "Organization", name: "PDFBro", url: "https://pdfbro.tech" },
-  breadcrumb: {
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://pdfbro.tech" },
-      { "@type": "ListItem", position: 2, name: "Image Tools", item: "https://pdfbro.tech/image-tools" },
-    ],
-  },
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://pdfbro.tech/image-tools#webpage",
+      name: "Free Image Tools Online — Compress, Resize, Convert & Edit | PDFBro",
+      description: "Free online image tools: compress image, resize image, crop image, remove background, HEIC to JPG, QR code generator, passport photo. No signup, no watermarks, browser-based.",
+      url: "https://pdfbro.tech/image-tools",
+      inLanguage: "en-US",
+      isPartOf: { "@id": "https://pdfbro.tech/#website" },
+      publisher: { "@id": "https://pdfbro.tech/#organization" },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://pdfbro.tech" },
+        { "@type": "ListItem", position: 2, name: "Image Tools", item: "https://pdfbro.tech/image-tools" },
+      ],
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://pdfbro.tech/image-tools#toollist",
+      name: "Free Image Tools Online",
+      description: "Complete list of free online image tools on PDFBro — no signup, no watermarks, browser-based.",
+      url: "https://pdfbro.tech/image-tools",
+      numberOfItems: IMAGE_TOOL_ITEMS.length,
+      itemListElement: IMAGE_TOOL_ITEMS.map((tool, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: tool.name,
+        description: tool.desc,
+        url: tool.url,
+        item: {
+          "@type": "SoftwareApplication",
+          name: `${tool.name} — PDFBro`,
+          url: tool.url,
+          applicationCategory: "UtilitiesApplication",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          description: tool.desc,
+        },
+      })),
+    },
+  ],
 };
 
 export default function ImageToolsPage() {

@@ -1,7 +1,34 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Script from "next/script";
 import { Code2, ArrowRight } from "lucide-react";
 import PageBackground from "@/components/PageBackground";
+
+const DEVS_JSONLD = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://pdfbro.tech/for/developers#webpage",
+      url: "https://pdfbro.tech/for/developers",
+      name: "PDFBro for Developers — Free PDF Tools, Tech Stack & Architecture",
+      description: "PDFBro developer overview: Next.js, React, pdf-lib, PDF.js, browser-based architecture.",
+      inLanguage: "en-US",
+      datePublished: "2025-05-01",
+      dateModified: "2026-05-23",
+      isPartOf: { "@id": "https://pdfbro.tech/#website" },
+      about: { "@id": "https://pdfbro.tech/#organization" },
+      audience: { "@type": "Audience", audienceType: "Developers" },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://pdfbro.tech" },
+        { "@type": "ListItem", position: 2, name: "For Developers", item: "https://pdfbro.tech/for/developers" },
+      ],
+    },
+  ],
+};
 
 export const metadata: Metadata = {
   title: "PDFBro for Developers — Free PDF Tools, Tech Stack & Architecture",
@@ -32,7 +59,9 @@ const DEVTOOLS = [
 
 export default function ForDevelopersPage() {
   return (
-    <div className="min-h-screen relative" style={{ zIndex: 1 }}>
+    <>
+      <Script id="jsonld-for-developers" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(DEVS_JSONLD) }} />
+      <div className="min-h-screen relative" style={{ zIndex: 1 }}>
       <PageBackground variant="tools" />
       <section className="relative py-16" style={{ borderBottom: "1px solid var(--border-subtle)" }}>
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -95,5 +124,6 @@ export default function ForDevelopersPage() {
         </div>
       </section>
     </div>
+    </>
   );
 }

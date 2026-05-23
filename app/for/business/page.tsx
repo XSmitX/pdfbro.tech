@@ -1,7 +1,42 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Script from "next/script";
 import { ArrowRight } from "lucide-react";
 import PageBackground from "@/components/PageBackground";
+
+const BUSINESS_JSONLD = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://pdfbro.tech/for/business#webpage",
+      url: "https://pdfbro.tech/for/business",
+      name: "Free PDF Tools for Business — Contracts, Invoices, Reports | PDFBro",
+      description: "Free PDF tools for business teams. Sign contracts, protect invoices, compress reports. No subscription.",
+      inLanguage: "en-US",
+      datePublished: "2025-05-01",
+      dateModified: "2026-05-23",
+      isPartOf: { "@id": "https://pdfbro.tech/#website" },
+      about: { "@id": "https://pdfbro.tech/#organization" },
+      audience: { "@type": "Audience", audienceType: "Business" },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://pdfbro.tech" },
+        { "@type": "ListItem", position: 2, name: "For Business", item: "https://pdfbro.tech/for/business" },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: [
+        { "@type": "Question", name: "Is PDFBro free for business use?", acceptedAnswer: { "@type": "Answer", text: "Yes. All PDFBro tools are free for commercial and business use. No subscription, no per-user pricing, no limits." } },
+        { "@type": "Question", name: "Can I use PDFBro to sign contracts?", acceptedAnswer: { "@type": "Answer", text: "Yes. PDFBro's Sign PDF tool lets you add electronic signatures to contracts, NDAs, and agreements. Free, browser-based, legally valid." } },
+        { "@type": "Question", name: "Is PDFBro safe for confidential business documents?", acceptedAnswer: { "@type": "Answer", text: "Yes. Most PDFBro tools process files entirely in your browser — your files never leave your device. For server-side tools, files are deleted within 1 hour." } },
+      ],
+    },
+  ],
+};
 
 export const metadata: Metadata = {
   title: "Free PDF Tools for Business — Contracts, Invoices, Reports | PDFBro",
@@ -19,7 +54,9 @@ const WORKFLOWS = [
 
 export default function ForBusinessPage() {
   return (
-    <div className="min-h-screen relative" style={{ zIndex: 1 }}>
+    <>
+      <Script id="jsonld-for-business" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BUSINESS_JSONLD) }} />
+      <div className="min-h-screen relative" style={{ zIndex: 1 }}>
       <PageBackground variant="tools" />
       <section className="relative py-16" style={{ borderBottom: "1px solid var(--border-subtle)" }}>
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
@@ -72,5 +109,6 @@ export default function ForBusinessPage() {
         </div>
       </section>
     </div>
+    </>
   );
 }

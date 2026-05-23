@@ -28,10 +28,38 @@ const ROWS = [
 
 const JSONLD = {
   "@context": "https://schema.org",
-  "@type": "WebPage",
-  name: "PDFBro vs Smallpdf Comparison 2025",
-  description: "Honest comparison of PDFBro and Smallpdf free PDF tools.",
-  url: "https://pdfbro.tech/vs/smallpdf",
+  "@graph": [
+    {
+      "@type": ["WebPage", "Article"],
+      "@id": "https://pdfbro.tech/vs/smallpdf#webpage",
+      url: "https://pdfbro.tech/vs/smallpdf",
+      name: "PDFBro vs Smallpdf — Full Comparison 2026",
+      headline: "PDFBro vs Smallpdf — Full Comparison 2026",
+      description: "Honest comparison of PDFBro and Smallpdf: daily limits, price, privacy, features.",
+      inLanguage: "en-US",
+      datePublished: "2025-05-01",
+      dateModified: "2026-05-23",
+      isPartOf: { "@id": "https://pdfbro.tech/#website" },
+      author: { "@id": "https://pdfbro.tech/#organization" },
+      publisher: { "@id": "https://pdfbro.tech/#organization" },
+      speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", "h2"] },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://pdfbro.tech" },
+        { "@type": "ListItem", position: 2, name: "PDFBro vs Smallpdf", item: "https://pdfbro.tech/vs/smallpdf" },
+      ],
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: [
+        { "@type": "Question", name: "Is PDFBro better than Smallpdf?", acceptedAnswer: { "@type": "Answer", text: "PDFBro is better than Smallpdf for free users: no 2-tasks/hour limit, no 15 MB file cap, no watermarks, 100+ tools vs Smallpdf's 20+, and files process in your browser for privacy." } },
+        { "@type": "Question", name: "What is the Smallpdf free plan limit?", acceptedAnswer: { "@type": "Answer", text: "Smallpdf's free tier allows only 2 tasks per hour and has a 15 MB file limit. PDFBro has no task limits and supports 100 MB files, all completely free." } },
+        { "@type": "Question", name: "Does PDFBro work like Smallpdf?", acceptedAnswer: { "@type": "Answer", text: "Both offer online PDF tools but PDFBro processes most files in your browser (no upload), while Smallpdf uploads everything to servers. PDFBro also has no daily limits." } },
+      ],
+    },
+  ],
 };
 
 export default function VsSmallpdf() {

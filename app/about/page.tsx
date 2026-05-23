@@ -67,18 +67,66 @@ const TECH_STACK = [
 
 const JSONLD = {
   "@context": "https://schema.org",
-  "@type": "AboutPage",
-  name: "About PDFBro",
-  description: "PDFBro is a free, browser-based PDF and image tools platform. No signup required.",
-  url: "https://pdfbro.tech/about",
-  mainEntity: {
-    "@type": "Organization",
-    name: "PDFBro",
-    url: "https://pdfbro.tech",
-    description: "Free online PDF and image processing tools. Browser-based, no signup, no watermarks.",
-    foundingDate: "2025",
-    knowsAbout: ["PDF processing", "image compression", "file conversion", "web tools"],
-  },
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      "@id": "https://pdfbro.tech/about#webpage",
+      name: "About PDFBro — Free PDF & Image Tools Built for Everyone",
+      description: "PDFBro is a free, browser-based PDF and image tools platform. No signup required.",
+      url: "https://pdfbro.tech/about",
+      inLanguage: "en-US",
+      isPartOf: { "@id": "https://pdfbro.tech/#website" },
+      breadcrumb: {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://pdfbro.tech" },
+          { "@type": "ListItem", position: 2, name: "About", item: "https://pdfbro.tech/about" },
+        ],
+      },
+      mainEntity: { "@id": "https://pdfbro.tech/#organization" },
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://pdfbro.tech/#organization",
+      name: "PDFBro",
+      alternateName: ["PDF Bro", "pdfbro.tech", "PDF Bro Tech"],
+      url: "https://pdfbro.tech",
+      description: "PDFBro (pdfbro.tech) is a free, browser-based PDF and image tools platform offering 100+ free tools. No signup required. No watermarks. No daily limits. The best free alternative to iLovePDF, Smallpdf, and Adobe Acrobat.",
+      foundingDate: "2025",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://pdfbro.tech/favicon/web-app-manifest-512x512.png",
+        contentUrl: "https://pdfbro.tech/favicon/web-app-manifest-512x512.png",
+        width: 512,
+        height: 512,
+        caption: "PDFBro",
+      },
+      knowsAbout: [
+        "PDF processing",
+        "PDF compression",
+        "PDF merging",
+        "PDF to Word conversion",
+        "image compression",
+        "image editing",
+        "file conversion",
+        "online browser-based tools",
+        "document processing",
+      ],
+      sameAs: [
+        "https://twitter.com/pdfbro",
+        "https://x.com/pdfbro",
+      ],
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "customer support",
+        url: "https://pdfbro.tech/contact",
+        availableLanguage: "English",
+      },
+      areaServed: "Worldwide",
+      serviceType: ["PDF Tools", "Image Tools", "File Conversion", "Online Utilities"],
+      numberOfEmployees: { "@type": "QuantitativeValue", value: 1 },
+    },
+  ],
 };
 
 export default function AboutPage() {
