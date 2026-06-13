@@ -7,7 +7,6 @@ import { ThemeProvider } from "@/lib/themeContext";
 import SecurityProvider from "@/components/SecurityProvider";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 
-// next/font/google: self-hosted, zero render-blocking, preloaded automatically
 const inter = Inter({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800", "900"],
@@ -23,40 +22,26 @@ export const metadata: Metadata = {
     template: "%s | PDFBro — Free Online Tools",
   },
   description:
-    "PDFBro: 100+ free online PDF and image tools. Merge PDF, split PDF, compress PDF, convert PDF to Word, PDF to Excel, compress images, remove backgrounds, HEIC to JPG, QR code generator and more. No signup, no watermarks, browser-based.",
+    "PDFBro: 100+ free online PDF and image tools. Merge PDF, split PDF, compress PDF, convert PDF to Word/excel/powerpoint, sign PDF, compress images, remove backgrounds, HEIC to JPG, QR code generator. No signup, no watermarks, browser-based.",
   keywords: [
-    "PDFBro",
-    "PDF Bro",
-    "pdfbro",
-    "PDF converter",
-    "merge PDF",
-    "compress PDF",
-    "PDF to Word",
-    "free PDF tools",
-    "online PDF editor",
-    "split PDF",
-    "PDF to Excel",
-    "PDF to JPG",
-    "JPG to PDF",
-    "compress image online",
-    "image compressor",
-    "resize image",
-    "remove background",
-    "HEIC to JPG",
-    "free online tools no signup",
-    "PDF tools no watermark",
-    "browser-based PDF tools",
-    "free PDF tools no sign up",
-    "ilovepdf alternative",
-    "smallpdf alternative",
-    "free adobe acrobat alternative",
+    "PDFBro", "PDF Bro", "pdfbro",
+    "PDF converter", "merge PDF", "compress PDF", "PDF to Word",
+    "free PDF tools", "online PDF editor", "split PDF", "PDF to Excel",
+    "PDF to JPG", "JPG to PDF", "compress image online", "image compressor",
+    "resize image", "remove background", "HEIC to JPG",
+    "free online tools no signup", "PDF tools no watermark",
+    "browser-based PDF tools", "free PDF tools no sign up",
+    "ilovepdf alternative", "smallpdf alternative",
+    "free adobe acrobat alternative", "best free pdf editor 2026",
+    "free document converter", "online image editor free",
+    "free pdf merger no limit", "pdf compressor no loss",
   ],
   authors: [{ name: "PDFBro", url: "https://pdfbro.tech" }],
   creator: "PDFBro",
   publisher: "PDFBro",
   applicationName: "PDFBro",
   category: "technology",
-  classification: "Utilities, PDF Tools, Image Tools, File Conversion",
+  classification: "Utilities, PDF Tools, Image Tools, File Conversion, Online Services",
   appleWebApp: {
     capable: true,
     title: "PDFBro",
@@ -79,9 +64,17 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://pdfbro.tech",
     siteName: "PDFBro",
-    title: "PDFBro — Free PDF & Image Tools Online | No Signup",
+    title: "PDFBro — Free PDF & Image Tools Online | No Signup, No Watermarks",
     description:
-      "100+ free browser-based tools. Merge PDF, split PDF, compress PDF, convert PDF to Word, Excel, PowerPoint, compress images, remove backgrounds, HEIC to JPG, and more. No signup, no watermarks.",
+      "100+ free browser-based tools. Merge PDF, split PDF, compress PDF, convert PDF to Word, Excel, PowerPoint, compress images, remove backgrounds, HEIC to JPG, QR code generator. No signup, no watermarks, no daily limits.",
+    images: [
+      {
+        url: "https://pdfbro.tech/favicon/web-app-manifest-512x512.png",
+        width: 512,
+        height: 512,
+        alt: "PDFBro — Free PDF & Image Tools Online",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -89,6 +82,7 @@ export const metadata: Metadata = {
     title: "PDFBro — Free PDF & Image Tools Online | No Signup",
     description: "100+ free browser-based PDF and image tools. No signup, no limits, no watermarks.",
     creator: "@pdfbro",
+    images: ["https://pdfbro.tech/favicon/web-app-manifest-512x512.png"],
   },
   robots: {
     index: true,
@@ -103,8 +97,11 @@ export const metadata: Metadata = {
     },
   },
   other: {
-    "ai-content-declaration": "human-created",
+    "ai-content-declaration": "human-curated",
     "revisit-after": "7 days",
+    "rating": "general",
+    "document-type": "Web Application",
+    "page-topic": "Free Online PDF and Image Tools",
   },
 };
 
@@ -117,12 +114,57 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="theme-color" content="#fafafa" media="(prefers-color-scheme: light)" />
         {/* llms.txt — LLM/AI crawler discovery */}
         <link rel="alternate" type="text/plain" href="https://pdfbro.tech/llms.txt" title="LLMs.txt" />
+        {/* llms-full.txt — comprehensive AI crawler content */}
+        <link rel="alternate" type="text/plain" href="https://pdfbro.tech/llms-full.txt" title="LLMs Full" />
         {/* Brand identity — link rel="me" for entity disambiguation */}
         <link rel="me" href="https://twitter.com/pdfbro" />
         <link rel="me" href="https://x.com/pdfbro" />
         {/* Preconnect to analytics/font CDNs for performance */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        {/* Schema.org JSON-LD — Organization + WebSite — must be in <head> */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "@id": "https://pdfbro.tech/#organization",
+                  name: "PDFBro",
+                  alternateName: ["PDF Bro", "pdfbro.tech"],
+                  url: "https://pdfbro.tech",
+                  logo: "https://pdfbro.tech/favicon/web-app-manifest-512x512.png",
+                  sameAs: ["https://twitter.com/pdfbro", "https://x.com/pdfbro"],
+                  contactPoint: {
+                    "@type": "ContactPoint",
+                    contactType: "customer support",
+                    url: "https://pdfbro.tech/contact",
+                    availableLanguage: "English",
+                  },
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": "https://pdfbro.tech/#website",
+                  url: "https://pdfbro.tech",
+                  name: "PDFBro",
+                  description: "100+ free online PDF and image tools. No signup, no watermarks, browser-based.",
+                  publisher: { "@id": "https://pdfbro.tech/#organization" },
+                  inLanguage: "en-US",
+                  potentialAction: {
+                    "@type": "SearchAction",
+                    target: {
+                      "@type": "EntryPoint",
+                      urlTemplate: "https://pdfbro.tech/tools?q={search_term_string}",
+                    },
+                    "query-input": "required name=search_term_string",
+                  },
+                },
+              ],
+            }),
+          }}
+        />
       </head>
       <body
         className={`${inter.className} min-h-screen antialiased overflow-x-hidden`}

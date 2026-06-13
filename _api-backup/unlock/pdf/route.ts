@@ -85,7 +85,6 @@ export async function POST(req: NextRequest) {
     outputPath = path.join(PDFBRO_TMP, `unlock_${id}_out.pdf`);
     await writeFile(inputPath, fileCheck.buffer!, { mode: 0o600 });
 
-    // ── SAFE: spawn() with args array — no shell, no injection ──
     const result = await runPython(scriptPath, inputPath, outputPath, pwCheck.password!);
 
     if (!result.success) {
@@ -134,14 +133,12 @@ function runPython(
   password: string,
 ): Promise<{ success: boolean; error?: string }> {
   return new Promise((resolve) => {
-    // Args as separate array elements — Python receives them as argv,
-    // not parsed by a shell. Special characters in `password` are safe.
-    const child = spawn("python", [scriptPath, inputPath, outputPath, password], {
+    const child = spawn("python", [scriptPath, inputPath, outputPath], {
       timeout: 55_000,
       windowsHide: true,
-      // Critical: shell defaults to false. Confirming explicitly.
       shell: false,
       stdio: ["ignore", "pipe", "pipe"],
+      env: { ...process.env, PDFBRO_PASSWORD: password },
     });
 
     let stdout = "";

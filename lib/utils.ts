@@ -34,7 +34,14 @@ export function formatBytes(bytes: number, decimals = 2): string {
 
 /** Generate a unique ID */
 export function generateId(): string {
-  return Math.random().toString(36).slice(2, 11);
+  const arr = new Uint32Array(2);
+  if (typeof crypto !== "undefined" && crypto.getRandomValues) {
+    crypto.getRandomValues(arr);
+  } else {
+    arr[0] = Math.floor(Math.random() * 0xffffffff);
+    arr[1] = Math.floor(Math.random() * 0xffffffff);
+  }
+  return arr[0].toString(36).slice(0, 8) + arr[1].toString(36).slice(0, 8);
 }
 
 /** Download a Blob as a file */

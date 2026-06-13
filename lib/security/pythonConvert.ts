@@ -32,6 +32,7 @@ import {
 } from "./validation";
 
 const PDFBRO_TMP = path.join(os.tmpdir(), "pdfbro");
+const MAX_REQUEST_BODY = 160 * 1024 * 1024; // 160 MB — slightly above largest file limit
 
 export interface ConversionConfig {
   /** Filename of the Python script in /scripts/ */
@@ -64,6 +65,11 @@ export async function runProtectedConversion(
   let outputPath = "";
 
   try {
+    const contentLength = parseInt(req.headers.get("content-length") || "0", 10);
+    if (contentLength > MAX_REQUEST_BODY) {
+      return genericErrorResponse("Request body too large", 413, respHeaders);
+    }
+
     if (!existsSync(PDFBRO_TMP)) {
       await mkdir(PDFBRO_TMP, { recursive: true, mode: 0o700 });
     }
@@ -134,7 +140,7 @@ export async function runProtectedConversion(
 
 function runPython(args: string[], timeoutMs: number): Promise<{ success: boolean; error?: string }> {
   return new Promise((resolve) => {
-    const child = spawn("python", args, {
+    const child = spawn("python3", args, {
       timeout: timeoutMs,
       windowsHide: true,
       shell: false,
@@ -142,19 +148,15 @@ function runPython(args: string[], timeoutMs: number): Promise<{ success: boolea
     });
 
     let stdout = "";
-    let stderr = "";
 
     child.stdout.on("data", (d: Buffer) => { stdout += d.toString(); });
-    child.stderr.on("data", (d: Buffer) => { stderr += d.toString(); });
+    child.stderr.on("data", () => {}); // discard stderr — never leak to client
 
     child.on("close", (code) => {
       if (code === 0 && stdout.includes("SUCCESS")) {
         resolve({ success: true });
       } else {
-        resolve({
-          success: false,
-          error: (stderr.trim() || stdout.trim() || `exit ${code}`).slice(0, 500),
-        });
+        resolve({ success: false, error: `exit ${code}` });
       }
     });
 

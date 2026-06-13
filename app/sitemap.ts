@@ -2,6 +2,8 @@ import type { MetadataRoute } from "next";
 import { TOOLS } from "@/lib/toolRegistry";
 import { GUIDES } from "@/lib/guides/index";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://pdfbro.tech";
   // Static launch date for stable content pages

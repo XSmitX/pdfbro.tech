@@ -5,6 +5,7 @@ import Script from "next/script";
 import { ArrowRight, Shield, Zap, Globe, CheckCircle2 } from "lucide-react";
 import ToolCard from "@/components/ToolCard";
 import { TOOLS, getToolsByCategory } from "@/lib/toolRegistry";
+import { getOrganizationSchema } from "@/lib/seo/jsonld";
 import { HeroSection, CTASection } from "./HomeAnimations";
 
 export const metadata: Metadata = {
@@ -127,118 +128,15 @@ const HOME_FAQ = [
   },
 ];
 
+const ORG_JSONLD_DATA = getOrganizationSchema(HOME_FAQ);
 const ORG_JSONLD = {
   "@context": "https://schema.org",
   "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://pdfbro.tech/#organization",
-      name: "PDFBro",
-      alternateName: ["PDF Bro", "pdfbro.tech", "PDF Bro Tech"],
-      url: "https://pdfbro.tech",
-      logo: {
-        "@type": "ImageObject",
-        "@id": "https://pdfbro.tech/#logo",
-        url: "https://pdfbro.tech/favicon/web-app-manifest-512x512.png",
-        contentUrl: "https://pdfbro.tech/favicon/web-app-manifest-512x512.png",
-        width: 512,
-        height: 512,
-        caption: "PDFBro — Free PDF & Image Tools Online",
-      },
-      image: { "@id": "https://pdfbro.tech/#logo" },
-      description: "PDFBro (pdfbro.tech) offers 100+ free online PDF and image processing tools. No signup required. Browser-based and completely free. The best free alternative to iLovePDF, Smallpdf, and Adobe Acrobat.",
-      foundingDate: "2025",
-      knowsAbout: [
-        "PDF processing",
-        "PDF compression",
-        "PDF merging",
-        "PDF conversion",
-        "image compression",
-        "image editing",
-        "file conversion",
-        "online tools",
-        "browser-based tools",
-        "document processing",
-      ],
-      sameAs: [
-        "https://twitter.com/pdfbro",
-        "https://x.com/pdfbro",
-      ],
-      contactPoint: {
-        "@type": "ContactPoint",
-        contactType: "customer support",
-        url: "https://pdfbro.tech/contact",
-        availableLanguage: "English",
-      },
-      areaServed: "Worldwide",
-      serviceType: ["PDF Tools", "Image Tools", "File Conversion", "Online Utilities"],
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://pdfbro.tech/#website",
-      url: "https://pdfbro.tech",
-      name: "PDFBro",
-      alternateName: ["PDF Bro", "pdfbro.tech"],
-      description: "100+ free online PDF and image tools. Merge PDF, compress PDF, convert PDF to Word, Excel, PowerPoint, image compressor, HEIC to JPG, remove background, QR code generator, and more. No signup, no watermarks.",
-      publisher: { "@id": "https://pdfbro.tech/#organization" },
-      inLanguage: "en-US",
-      potentialAction: [
-        {
-          "@type": "SearchAction",
-          target: { "@type": "EntryPoint", urlTemplate: "https://pdfbro.tech/tools?q={search_term_string}" },
-          "query-input": "required name=search_term_string",
-        },
-        {
-          "@type": "ViewAction",
-          name: "View All PDF Tools",
-          target: "https://pdfbro.tech/pdf-tools",
-        },
-        {
-          "@type": "ViewAction",
-          name: "View All Image Tools",
-          target: "https://pdfbro.tech/image-tools",
-        },
-      ],
-    },
-    {
-      "@type": "WebApplication",
-      "@id": "https://pdfbro.tech/#webapp",
-      name: "PDFBro",
-      alternateName: "PDF Bro",
-      url: "https://pdfbro.tech",
-      applicationCategory: "UtilitiesApplication",
-      operatingSystem: "Web, Windows, macOS, Linux, Android, iOS",
-      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-      description: "Free online PDF and image tools. 100+ tools including merge PDF, compress PDF, PDF to Word, HEIC to JPG, remove background, QR code generator. No signup required.",
-      provider: { "@id": "https://pdfbro.tech/#organization" },
-      browserRequirements: "Requires JavaScript. Works in Chrome, Firefox, Safari, Edge.",
-      numberOfDownloads: "unlimited",
-      featureList: "Merge PDF, Split PDF, Compress PDF, PDF to Word, Word to PDF, PDF to Excel, PDF to PowerPoint, Sign PDF, OCR PDF, Compress Image, Remove Background, HEIC to JPG, QR Code Generator, Image to PDF, Resize Image, Crop Image",
-    },
-    {
-      "@type": "FAQPage",
-      "@id": "https://pdfbro.tech/#faq",
-      mainEntity: HOME_FAQ.map(({ q, a }) => ({
-        "@type": "Question",
-        name: q,
-        acceptedAnswer: { "@type": "Answer", text: a },
-      })),
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://pdfbro.tech/#webpage",
-      url: "https://pdfbro.tech",
-      name: "PDFBro — Free PDF Tools Online",
-      isPartOf: { "@id": "https://pdfbro.tech/#website" },
-      about: { "@id": "https://pdfbro.tech/#organization" },
-      inLanguage: "en-US",
-      datePublished: "2025-05-01",
-      dateModified: "2026-05-23",
-      speakable: {
-        "@type": "SpeakableSpecification",
-        cssSelector: ["h1", "h2", ".page-description", "#faq"],
-      },
-    },
+    ORG_JSONLD_DATA.organization,
+    ORG_JSONLD_DATA.website,
+    ORG_JSONLD_DATA.webApplication,
+    ORG_JSONLD_DATA.faqPage,
+    ORG_JSONLD_DATA.webPage,
   ],
 };
 

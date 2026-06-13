@@ -85,10 +85,12 @@ export async function POST(req: NextRequest) {
     outputPath = path.join(PDFBRO_TMP, `protect_${id}_out.pdf`);
     await writeFile(inputPath, fileCheck.buffer!, { mode: 0o600 });
 
-    const args = [scriptPath, inputPath, outputPath, userPw.password!];
-    if (ownerPassword) args.push(ownerPassword);
+    const args = [scriptPath, inputPath, outputPath];
 
-    const result = await runPython(args);
+    const childEnv = { ...process.env, PDFBRO_USER_PASSWORD: userPw.password! } as Record<string, string>;
+    if (ownerPassword) childEnv.PDFBRO_OWNER_PASSWORD = ownerPassword;
+
+    const result = await runPython(args, childEnv);
 
     if (!result.success) {
       return genericErrorResponse(
@@ -125,13 +127,14 @@ export async function POST(req: NextRequest) {
   }
 }
 
-function runPython(args: string[]): Promise<{ success: boolean; error?: string }> {
+function runPython(args: string[], extraEnv?: Record<string, string>): Promise<{ success: boolean; error?: string }> {
   return new Promise((resolve) => {
     const child = spawn("python", args, {
       timeout: 55_000,
       windowsHide: true,
       shell: false,
       stdio: ["ignore", "pipe", "pipe"],
+      env: extraEnv ? { ...process.env, ...extraEnv } : process.env,
     });
 
     let stdout = "";
