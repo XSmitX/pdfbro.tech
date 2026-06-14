@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { TOOLS } from "@/lib/toolRegistry";
 import { GUIDES } from "@/lib/guides/index";
+import { BLOG_POSTS } from "@/lib/blog/data";
 
 export const dynamic = "force-static";
 
@@ -36,6 +37,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/sitemap-html`, lastModified: seoUpdateDate, changeFrequency: "monthly", priority: 0.6 },
     // Alternatives hub — high-traffic "X alternative" keyword
     { url: `${baseUrl}/alternatives`, lastModified: seoUpdateDate, changeFrequency: "monthly", priority: 0.88 },
+    // Competitor comparison pages
+    { url: `${baseUrl}/vs/sejda`, lastModified: seoUpdateDate, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${baseUrl}/vs/pdf2go`, lastModified: seoUpdateDate, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${baseUrl}/vs/pdffiller`, lastModified: seoUpdateDate, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${baseUrl}/vs/pdfescape`, lastModified: seoUpdateDate, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${baseUrl}/vs/canva`, lastModified: seoUpdateDate, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${baseUrl}/vs/google-docs`, lastModified: seoUpdateDate, changeFrequency: "monthly", priority: 0.85 },
+    // Blog
+    { url: `${baseUrl}/blog`, lastModified: seoUpdateDate, changeFrequency: "weekly", priority: 0.85 },
   ];
 
   const HIGH_PRIORITY_TOOL_SLUGS = new Set([
@@ -70,5 +80,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: HIGH_PRIORITY_GUIDE_SLUGS.has(guide.slug) ? 0.92 : 0.82,
   }));
 
-  return [...staticRoutes, ...toolRoutes, ...guideRoutes];
+  const compressPdfToRoutes: MetadataRoute.Sitemap = [
+    { url: `${baseUrl}/compress-pdf-to/50kb`, lastModified: seoUpdateDate, changeFrequency: "monthly", priority: 0.88 },
+    { url: `${baseUrl}/compress-pdf-to/100kb`, lastModified: seoUpdateDate, changeFrequency: "monthly", priority: 0.92 },
+    { url: `${baseUrl}/compress-pdf-to/200kb`, lastModified: seoUpdateDate, changeFrequency: "monthly", priority: 0.88 },
+    { url: `${baseUrl}/compress-pdf-to/500kb`, lastModified: seoUpdateDate, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${baseUrl}/compress-pdf-to/1mb`, lastModified: seoUpdateDate, changeFrequency: "monthly", priority: 0.92 },
+    { url: `${baseUrl}/compress-pdf-to/2mb`, lastModified: seoUpdateDate, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${baseUrl}/compress-pdf-to/5mb`, lastModified: seoUpdateDate, changeFrequency: "monthly", priority: 0.82 },
+  ];
+
+  const blogRoutes: MetadataRoute.Sitemap = BLOG_POSTS.map((post) => ({
+    url: `${baseUrl}/blog/${post.slug}`,
+    lastModified: seoUpdateDate,
+    changeFrequency: "monthly" as const,
+    priority: 0.82,
+  }));
+
+  return [...staticRoutes, ...toolRoutes, ...guideRoutes, ...compressPdfToRoutes, ...blogRoutes];
 }

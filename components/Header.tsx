@@ -193,6 +193,16 @@ export default function Header() {
             ))}
 
             <Link
+              href="/blog"
+              className="ml-1 text-sm font-medium px-3 py-2 rounded-lg transition-colors"
+              style={{ color: "var(--text-secondary)" }}
+              onMouseEnter={(e) => { e.currentTarget.style.color = "var(--text-primary)"; e.currentTarget.style.backgroundColor = "var(--bg-card)"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.color = "var(--text-secondary)"; e.currentTarget.style.backgroundColor = "transparent"; }}
+            >
+              Blog
+            </Link>
+
+            <Link
               href="/tools"
               className="ml-1 text-sm font-medium px-3 py-2 rounded-lg transition-colors"
               style={{ color: "var(--text-secondary)" }}

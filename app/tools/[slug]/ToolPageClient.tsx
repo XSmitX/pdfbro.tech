@@ -2,7 +2,7 @@
 
 import { Suspense, lazy } from "react";
 import Link from "next/link";
-import { ChevronLeft, CheckCircle2 } from "lucide-react";
+import { ChevronLeft, CheckCircle2, BookOpen } from "lucide-react";
 import { motion } from "framer-motion";
 import type { ToolConfig } from "@/lib/types";
 import type { ToolSeoContent } from "@/lib/toolFaq";
@@ -11,6 +11,131 @@ import ToolCard from "@/components/ToolCard";
 import PageBackground from "@/components/PageBackground";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import { TOOLS } from "@/lib/toolRegistry";
+
+const TOOL_RELATED_GUIDES: Record<string, { slug: string; title: string }[]> = {
+  "merge-pdf": [
+    { slug: "how-to-merge-pdf", title: "How to Merge PDF Files" },
+    { slug: "merge-pdf-without-software", title: "Merge PDF Without Software" },
+    { slug: "merge-pdf-no-watermark-free", title: "Merge PDF No Watermark" },
+  ],
+  "compress-pdf": [
+    { slug: "how-to-compress-pdf", title: "How to Compress PDF" },
+    { slug: "compress-pdf-for-email", title: "Compress PDF for Email" },
+    { slug: "how-to-reduce-pdf-file-size", title: "Reduce PDF File Size" },
+    { slug: "compress-pdf-to-1mb-free", title: "Compress PDF to 1MB" },
+  ],
+  "pdf-to-word": [
+    { slug: "how-to-convert-pdf-to-word", title: "How to Convert PDF to Word" },
+    { slug: "pdf-to-word-free-no-email", title: "PDF to Word Free No Email" },
+  ],
+  "word-to-pdf": [
+    { slug: "how-to-convert-word-to-pdf", title: "How to Convert Word to PDF" },
+  ],
+  "sign-pdf": [
+    { slug: "how-to-sign-pdf-online", title: "How to Sign PDF Online" },
+    { slug: "sign-pdf-free-no-subscription", title: "Sign PDF Free No Subscription" },
+  ],
+  "edit-pdf": [
+    { slug: "how-to-edit-pdf-online", title: "How to Edit PDF Online" },
+    { slug: "edit-pdf-without-adobe-acrobat-free", title: "Edit PDF Without Acrobat" },
+  ],
+  "remove-bg": [
+    { slug: "how-to-remove-image-background", title: "Remove Image Background" },
+    { slug: "remove-background-free-without-photoshop", title: "Remove Background Without Photoshop" },
+  ],
+  "heic-to-jpg": [
+    { slug: "how-to-convert-heic-to-jpg", title: "How to Convert HEIC to JPG" },
+    { slug: "heic-to-jpg-windows-10-free", title: "HEIC to JPG Windows 10 Free" },
+  ],
+  "compress-image": [
+    { slug: "how-to-compress-images-online", title: "Compress Images Online" },
+    { slug: "compress-image-for-web", title: "Compress Image for Web" },
+    { slug: "compress-images-batch-free", title: "Compress Images Batch Free" },
+  ],
+  "ocr-pdf": [
+    { slug: "how-to-use-ocr-on-pdf", title: "How to Use OCR on PDF" },
+    { slug: "ocr-pdf-free-no-credit-card", title: "OCR PDF Free No Credit Card" },
+  ],
+  "rotate-pdf": [
+    { slug: "how-to-rotate-pdf-pages", title: "How to Rotate PDF Pages" },
+  ],
+  "split-pdf": [
+    { slug: "how-to-split-pdf", title: "How to Split PDF" },
+    { slug: "split-pdf-into-individual-pages-free", title: "Split PDF Into Individual Pages" },
+  ],
+  "protect-pdf": [
+    { slug: "how-to-password-protect-pdf", title: "How to Password Protect PDF" },
+  ],
+  "unlock-pdf": [
+    { slug: "how-to-remove-pdf-password", title: "How to Remove PDF Password" },
+  ],
+  "add-watermark": [
+    { slug: "how-to-add-watermark-to-pdf", title: "How to Add Watermark to PDF" },
+  ],
+  "pdf-page-numbers": [
+    { slug: "how-to-add-page-numbers-to-pdf", title: "Add Page Numbers to PDF" },
+  ],
+  "extract-pdf-pages": [
+    { slug: "how-to-extract-pages-from-pdf", title: "How to Extract Pages from PDF" },
+  ],
+  "fill-pdf-form": [
+    { slug: "how-to-fill-pdf-form", title: "How to Fill PDF Form" },
+  ],
+  "pdf-to-excel": [
+    { slug: "how-to-convert-pdf-to-excel", title: "How to Convert PDF to Excel" },
+  ],
+  "pdf-to-powerpoint": [
+    { slug: "how-to-convert-pdf-to-powerpoint", title: "Convert PDF to PowerPoint" },
+  ],
+  "image-to-pdf": [
+    { slug: "how-to-convert-image-to-pdf", title: "How to Convert Image to PDF" },
+  ],
+  "pdf-to-image": [
+    { slug: "how-to-convert-pdf-to-jpg", title: "How to Convert PDF to JPG" },
+  ],
+  "qr-code-generator": [
+    { slug: "how-to-create-qr-code-free", title: "How to Create QR Code Free" },
+  ],
+  "resize-image": [
+    { slug: "how-to-resize-image-online", title: "How to Resize Image Online" },
+  ],
+  "crop-image": [
+    { slug: "how-to-crop-image-online", title: "How to Crop Image Online" },
+  ],
+  "passport-photo": [
+    { slug: "how-to-make-passport-photo", title: "How to Make Passport Photo" },
+  ],
+  "add-text-to-image": [
+    { slug: "how-to-add-text-to-image", title: "How to Add Text to Image" },
+  ],
+  "flip-image": [
+    { slug: "how-to-flip-image-online", title: "How to Flip Image Online" },
+  ],
+  "gif-to-mp4": [
+    { slug: "how-to-convert-gif-to-mp4", title: "How to Convert GIF to MP4" },
+  ],
+  "text-to-pdf": [
+    { slug: "how-to-convert-text-to-pdf", title: "How to Convert Text to PDF" },
+  ],
+  "pdf-to-text": [
+    { slug: "how-to-extract-text-from-pdf", title: "How to Extract Text from PDF" },
+  ],
+  "image-to-webp": [
+    { slug: "how-to-convert-image-to-webp", title: "How to Convert Image to WebP" },
+  ],
+  "jpg-to-png": [
+    { slug: "how-to-convert-jpg-to-png", title: "How to Convert JPG to PNG" },
+  ],
+  "png-to-jpeg": [
+    { slug: "how-to-convert-png-to-jpg", title: "How to Convert PNG to JPG" },
+  ],
+  "webp-to-jpg": [
+    { slug: "how-to-convert-webp-to-jpg", title: "How to Convert WebP to JPG" },
+  ],
+  "svg-to-png": [
+    { slug: "how-to-convert-svg-to-png", title: "How to Convert SVG to PNG" },
+  ],
+};
 
 const MergePDFTool = lazy(() => import("@/modules/ui/MergePDFTool"));
 const SplitPDFTool = lazy(() => import("@/modules/ui/SplitPDFTool"));
@@ -245,7 +370,7 @@ export default function ToolPageClient({ tool, seoContent, primaryKeyword, secon
                 {[
                   { label: "Max file size", value: tool.maxFileSize > 0 ? `${Math.round(tool.maxFileSize / 1024 / 1024)} MB` : "Unlimited" },
                   { label: "Max files", value: tool.maxFiles > 0 ? String(tool.maxFiles) : "Unlimited" },
-                  { label: "Processing", value: "In-browser", green: true },
+                  { label: "Processing", value: tool.processingType === "server" ? "Secure server" : "In-browser", green: tool.processingType !== "server" },
                   { label: "Cost", value: "Free Forever", green: true },
                 ].map(({ label, value, green }) => (
                   <div key={label} className="flex items-center justify-between text-sm">
@@ -282,6 +407,32 @@ export default function ToolPageClient({ tool, seoContent, primaryKeyword, secon
                 </div>
               </div>
             )}
+
+            {/* Related guides */}
+            {(() => {
+              const guides = TOOL_RELATED_GUIDES[tool.slug];
+              if (!guides || guides.length === 0) return null;
+              return (
+                <div>
+                  <h3 className="text-sm font-semibold mb-3 flex items-center gap-1.5" style={{ color: "var(--text-primary)" }}>
+                    <BookOpen className="h-3.5 w-3.5" style={{ color: tool.color }} />
+                    Related Guides
+                  </h3>
+                  <div className="space-y-1.5">
+                    {guides.map((g) => (
+                      <Link
+                        key={g.slug}
+                        href={`/guides/${g.slug}`}
+                        className="block rounded-xl p-2.5 text-xs font-medium transition-all hover:scale-[1.01]"
+                        style={{ backgroundColor: "var(--bg-secondary)", color: "var(--text-secondary)" }}
+                      >
+                        {g.title} →
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              );
+            })()}
 
             {/* Browse all CTA */}
             <Link

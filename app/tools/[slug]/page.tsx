@@ -51,10 +51,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       type: "website",
       images: [
         {
-          url: `${BASE_URL}/api/og?slug=${slug}`,
-          width: 1200,
-          height: 630,
-          alt: `${tool.name} — Free Online Tool`,
+          url: `${BASE_URL}/favicon/web-app-manifest-512x512.png`,
+          width: 512,
+          height: 512,
+          alt: `${tool.name} — Free Online Tool | PDFBro`,
         },
       ],
     },
@@ -62,7 +62,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       card: "summary_large_image",
       title: `${tool.name} — Free Online Tool`,
       description,
-      images: [`${BASE_URL}/api/og?slug=${slug}`],
+      images: [`${BASE_URL}/favicon/web-app-manifest-512x512.png`],
     },
     other: {
       "ai-content-declaration": "human-curated",
@@ -166,14 +166,6 @@ function ToolJsonLd({ tool }: { tool: NonNullable<ReturnType<typeof getToolBySlu
           "@id": categoryUrl,
           name: catName,
           url: categoryUrl,
-        },
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: "4.8",
-          bestRating: "5",
-          worstRating: "1",
-          ratingCount: "1250",
-          reviewCount: "850",
         },
         review: [
           {

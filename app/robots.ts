@@ -78,6 +78,5 @@ export default function robots(): MetadataRoute.Robots {
       { userAgent: "omgili", allow: "/" },
     ],
     sitemap: "https://pdfbro.tech/sitemap.xml",
-    host: "https://pdfbro.tech",
   };
 }

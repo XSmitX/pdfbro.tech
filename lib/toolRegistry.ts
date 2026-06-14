@@ -562,6 +562,7 @@ export const TOOLS: ToolConfig[] = [
     maxFiles: 1,
     isPremium: false,
     freeLimit: 0,
+    processingType: "server",
     tags: ["GIF to MP4", "convert GIF to MP4 free", "GIF to video", "GIF to MP4 online"],
   },
   {
@@ -580,6 +581,7 @@ export const TOOLS: ToolConfig[] = [
     maxFiles: 1,
     isPremium: false,
     freeLimit: 0,
+    processingType: "server",
     tags: ["MP4 to GIF", "convert MP4 to GIF free", "video to GIF", "MP4 to GIF online"],
   },
   {
@@ -598,6 +600,7 @@ export const TOOLS: ToolConfig[] = [
     maxFiles: 1,
     isPremium: false,
     freeLimit: 0,
+    processingType: "server",
     tags: ["Word to PDF", "DOCX to PDF", "convert Word to PDF free", "Word to PDF online", ".docx to PDF"],
   },
   {
@@ -616,6 +619,7 @@ export const TOOLS: ToolConfig[] = [
     maxFiles: 1,
     isPremium: false,
     freeLimit: 0,
+    processingType: "server",
     tags: ["PDF to Word", "PDF to DOCX", "convert PDF to Word free", "PDF to Word online", "editable Word from PDF"],
   },
   {
@@ -634,6 +638,7 @@ export const TOOLS: ToolConfig[] = [
     maxFiles: 1,
     isPremium: false,
     freeLimit: 0,
+    processingType: "server",
     tags: ["PDF to Excel", "PDF to XLSX", "convert PDF to Excel free", "extract table from PDF", "PDF to spreadsheet"],
   },
   {
@@ -652,6 +657,7 @@ export const TOOLS: ToolConfig[] = [
     maxFiles: 1,
     isPremium: false,
     freeLimit: 0,
+    processingType: "server",
     tags: ["PDF to PowerPoint", "PDF to PPTX", "convert PDF to PowerPoint free", "PDF to slides", "PDF to presentation"],
   },
   {

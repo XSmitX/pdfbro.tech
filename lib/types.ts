@@ -51,6 +51,8 @@ export interface ToolConfig {
   freeLimit: number;
   /** Tags for search */
   tags: string[];
+  /** How the tool processes files */
+  processingType?: "browser" | "server";
 }
 
 // ---- Window extension for pdf.js global ----
