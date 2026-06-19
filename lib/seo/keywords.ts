@@ -93,7 +93,7 @@ export const TOOL_KEYWORDS: Record<string, ToolKeywords> = {
     primary: "merge PDF",
     secondary: ["combine PDF files free", "merge PDF online free", "join PDF files", "PDF merger no signup", "combine multiple PDFs", "PDF combiner free"],
     longTail: ["merge PDF online free no sign up", "combine multiple PDF files into one online", "merge PDF without software", "merge PDF files for free no limit", "combine PDF documents online no registration"],
-    metaTitle: "Merge PDF Online Free — Combine PDF Files Instantly | PDFBro",
+    metaTitle: "Merge PDF Online Free — Combine PDF Files Instantly",
     metaDescription: "Merge multiple PDF files into one document free online. Drag to reorder, click Merge. Up to 20 files, 100 MB each. No signup, no watermarks, browser-based.",
     questions: [
       "how to merge PDF files for free",
@@ -116,7 +116,7 @@ export const TOOL_KEYWORDS: Record<string, ToolKeywords> = {
     primary: "split PDF",
     secondary: ["split PDF online free", "separate PDF pages", "split PDF into multiple files", "extract pages from PDF", "PDF splitter free", "divide PDF pages"],
     longTail: ["split PDF by page number online free", "separate PDF pages online no signup", "split PDF without Acrobat", "extract specific pages from PDF free", "split large PDF into smaller files"],
-    metaTitle: "Split PDF Online Free — Extract Pages Instantly | PDFBro",
+    metaTitle: "Split PDF Online Free — Extract Pages Instantly",
     metaDescription: "Split a PDF into multiple files by page range. Free, no signup, browser-based. Enter page ranges or single pages and download instantly.",
     questions: [
       "how to split a PDF into separate pages",
@@ -138,7 +138,7 @@ export const TOOL_KEYWORDS: Record<string, ToolKeywords> = {
     primary: "compress PDF",
     secondary: ["PDF compressor free", "reduce PDF size free", "compress PDF without losing quality", "compress PDF online", "PDF size reducer", "make PDF smaller"],
     longTail: ["compress PDF without losing quality free online", "reduce PDF file size online free no signup", "compress PDF for email free", "how to make PDF file size smaller", "compress PDF below 200kb"],
-    metaTitle: "Compress PDF Online Free — Reduce PDF Size by 80% | PDFBro",
+    metaTitle: "Compress PDF Online Free — Reduce PDF Size by 80%",
     metaDescription: "Compress PDF files and reduce size by up to 80% without losing quality. Free, no signup. Choose Low/Medium/High compression. Runs in browser.",
     questions: [
       "how to compress a PDF file size",
@@ -161,7 +161,7 @@ export const TOOL_KEYWORDS: Record<string, ToolKeywords> = {
     primary: "sign PDF online",
     secondary: ["e-sign PDF free", "electronic signature PDF", "sign PDF without Acrobat", "PDF signature online", "digital signature PDF"],
     longTail: ["sign PDF online free no signup no download", "add electronic signature to PDF free", "sign PDF on iPhone free", "create digital signature for PDF free", "e-sign documents online free no account"],
-    metaTitle: "Sign PDF Online Free — E-Sign PDF Instantly | PDFBro",
+    metaTitle: "Sign PDF Online Free — E-Sign PDF Instantly",
     metaDescription: "Add your electronic signature to any PDF online free. Draw, type, or upload your signature. No Adobe Acrobat, no signup. Legally valid e-signature.",
     questions: [
       "how to sign a PDF online for free",
@@ -184,7 +184,7 @@ export const TOOL_KEYWORDS: Record<string, ToolKeywords> = {
     primary: "OCR PDF",
     secondary: ["extract text from scanned PDF", "OCR online free", "scanned PDF to text", "searchable PDF free", "OCR scanner", "image PDF to text"],
     longTail: ["extract text from scanned PDF online free", "OCR PDF online no signup", "make scanned PDF searchable free", "convert image PDF to text online", "free OCR for scanned documents"],
-    metaTitle: "OCR PDF Free — Extract Text from Scanned PDF Instantly | PDFBro",
+    metaTitle: "OCR PDF Free — Extract Text from Scanned PDF Instantly",
     metaDescription: "Extract text from scanned PDFs using free OCR online. Convert scanned image-based PDFs to searchable text. Download as .txt. No signup required.",
     questions: [
       "how to extract text from a scanned PDF",
@@ -206,7 +206,7 @@ export const TOOL_KEYWORDS: Record<string, ToolKeywords> = {
     primary: "rotate PDF",
     secondary: ["rotate PDF pages online", "fix sideways PDF free", "rotate PDF pages free", "flip PDF pages online", "PDF orientation fix"],
     longTail: ["rotate specific pages in PDF online free", "fix sideways PDF pages online no signup", "change PDF page orientation free"],
-    metaTitle: "Rotate PDF Pages Online Free — Fix Orientation Instantly | PDFBro",
+    metaTitle: "Rotate PDF Pages Online Free — Fix Orientation Instantly",
     metaDescription: "Rotate PDF pages to fix sideways or upside-down pages. Free, no signup. Rotate all pages or select specific ones by 90°, 180°, or 270°.",
     questions: [
       "how to rotate pages in a PDF",
@@ -227,7 +227,7 @@ export const TOOL_KEYWORDS: Record<string, ToolKeywords> = {
     primary: "add watermark to PDF",
     secondary: ["PDF watermark online free", "watermark PDF without Acrobat", "stamp PDF online", "confidential watermark PDF", "brand PDF free"],
     longTail: ["add watermark to PDF online free no signup", "stamp CONFIDENTIAL on PDF free", "add draft watermark to PDF online", "text watermark PDF free"],
-    metaTitle: "Add Watermark to PDF Online Free — Stamp PDF Instantly | PDFBro",
+    metaTitle: "Add Watermark to PDF Online Free — Stamp PDF Instantly",
     metaDescription: "Add text or image watermarks to every PDF page online free. Customize position, opacity, font, and color. No Acrobat, no signup.",
     questions: [
       "how to add a watermark to a PDF for free",
@@ -248,7 +248,7 @@ export const TOOL_KEYWORDS: Record<string, ToolKeywords> = {
     primary: "remove PDF password",
     secondary: ["unlock PDF online free", "decrypt PDF", "remove PDF encryption", "PDF unlocker online", "PDF password remover"],
     longTail: ["remove password from PDF online free no signup", "unlock password protected PDF free", "decrypt PDF file online free", "remove open password from PDF"],
-    metaTitle: "Remove PDF Password Free Online — Unlock PDF Instantly | PDFBro",
+    metaTitle: "Remove PDF Password Free Online — Unlock PDF Instantly",
     metaDescription: "Remove password protection from a PDF you own. Free, browser-based, no signup. Enter the current password to download an unlocked PDF instantly.",
     questions: [
       "how to remove a password from a PDF",
@@ -269,7 +269,7 @@ export const TOOL_KEYWORDS: Record<string, ToolKeywords> = {
     primary: "password protect PDF",
     secondary: ["encrypt PDF online free", "secure PDF with password", "password protect PDF free", "AES-256 PDF encryption", "lock PDF file"],
     longTail: ["password protect PDF online free no software", "add password to PDF without Acrobat", "encrypt PDF free online", "secure PDF with AES 256 encryption free"],
-    metaTitle: "Password Protect PDF Online Free — Encrypt PDF Instantly | PDFBro",
+    metaTitle: "Password Protect PDF Online Free — Encrypt PDF Instantly",
     metaDescription: "Password protect any PDF with AES-256 encryption online free. No Adobe Acrobat needed. Add a password to prevent unauthorized access.",
     questions: [
       "how to password protect a PDF for free",
@@ -290,7 +290,7 @@ export const TOOL_KEYWORDS: Record<string, ToolKeywords> = {
     primary: "add page numbers to PDF",
     secondary: ["PDF page numbering online", "number PDF pages free", "insert page numbers PDF", "PDF header footer", "paginate PDF"],
     longTail: ["add page numbers to PDF online free no signup", "insert page numbers into PDF without Acrobat", "number pages in PDF for free"],
-    metaTitle: "Add Page Numbers to PDF Online Free — Paginate Instantly | PDFBro",
+    metaTitle: "Add Page Numbers to PDF Online Free — Paginate Instantly",
     metaDescription: "Insert custom page numbers into any PDF online free. Choose position (header/footer), starting number, font size. No signup, instant download.",
     questions: [
       "how to add page numbers to a PDF",
@@ -310,7 +310,7 @@ export const TOOL_KEYWORDS: Record<string, ToolKeywords> = {
     primary: "extract pages from PDF",
     secondary: ["pull pages from PDF free", "PDF page extractor online", "select PDF pages online", "extract PDF pages free", "save PDF pages separately"],
     longTail: ["extract specific pages from PDF online free no signup", "pull individual pages from PDF free", "save selected PDF pages online"],
-    metaTitle: "Extract PDF Pages Online Free — PDF Page Extractor | PDFBro",
+    metaTitle: "Extract PDF Pages Online Free — PDF Page Extractor",
     metaDescription: "Extract specific pages from any PDF online free. Click thumbnails or enter page ranges to create a new PDF from selected pages.",
     questions: [
       "how to extract pages from a PDF",
@@ -327,7 +327,7 @@ export const TOOL_KEYWORDS: Record<string, ToolKeywords> = {
     primary: "reorder PDF pages",
     secondary: ["rearrange PDF pages online free", "reorganize PDF pages", "sort PDF pages free", "PDF page organizer", "change PDF page order"],
     longTail: ["drag and drop to reorder PDF pages online free", "rearrange pages in PDF without Acrobat", "change page order in PDF free"],
-    metaTitle: "Reorder PDF Pages Online Free — Drag & Drop | PDFBro",
+    metaTitle: "Reorder PDF Pages Online Free — Drag & Drop",
     metaDescription: "Rearrange PDF pages by drag and drop online free. Visually reorganize your document page order and download instantly.",
     questions: [
       "how to change the order of pages in a PDF",
@@ -344,7 +344,7 @@ export const TOOL_KEYWORDS: Record<string, ToolKeywords> = {
     primary: "fill PDF form online",
     secondary: ["fillable PDF online free", "PDF form filler", "complete PDF form free", "fill PDF without Acrobat", "type on PDF form"],
     longTail: ["fill out PDF form online free no software", "fillable PDF form free no signup", "fill PDF form in browser free"],
-    metaTitle: "Fill PDF Form Online Free — No Adobe Acrobat | PDFBro",
+    metaTitle: "Fill PDF Form Online Free — No Adobe Acrobat",
     metaDescription: "Fill out PDF forms online free without Adobe Acrobat. Click into fields, type your data, check boxes. Download completed form instantly.",
     questions: [
       "how to fill out a PDF form electronically",
@@ -361,7 +361,7 @@ export const TOOL_KEYWORDS: Record<string, ToolKeywords> = {
     primary: "edit PDF online free",
     secondary: ["PDF editor free no watermark", "annotate PDF online", "add text to PDF free", "PDF editor no signup", "free PDF annotator", "highlight PDF online"],
     longTail: ["edit PDF online free no signup no watermark", "free PDF editor no Acrobat", "annotate PDF in browser free", "add notes to PDF online free", "draw on PDF online free"],
-    metaTitle: "Edit PDF Online Free — No Acrobat, No Watermark | PDFBro",
+    metaTitle: "Edit PDF Online Free — No Acrobat, No Watermark",
     metaDescription: "Edit PDF files online free. Add text, highlights, and shapes to any PDF in your browser. No Adobe Acrobat, no signup, no watermarks.",
     questions: [
       "how to edit a PDF for free without Acrobat",
@@ -383,7 +383,7 @@ export const TOOL_KEYWORDS: Record<string, ToolKeywords> = {
     primary: "edit Word document online free",
     secondary: ["online Word editor free", "edit DOCX online free", "Word editor no Microsoft Office", "DOCX editor browser", "edit Word file online"],
     longTail: ["edit Word document online free without Microsoft Word", "open DOCX file online free", "edit Word document in browser free"],
-    metaTitle: "Edit Word Document Online Free — No MS Word | PDFBro",
+    metaTitle: "Edit Word Document Online Free — No MS Word",
     metaDescription: "Edit Word .docx documents online free without Microsoft Word. Rich-text editor with formatting, save and download. No signup, no subscription.",
     questions: [
       "how to edit a Word document without Microsoft Word",
@@ -401,7 +401,7 @@ export const TOOL_KEYWORDS: Record<string, ToolKeywords> = {
     primary: "image to PDF",
     secondary: ["JPG to PDF online free", "convert image to PDF free", "PNG to PDF converter", "photos to PDF", "images to single PDF"],
     longTail: ["convert JPG to PDF online free no signup", "multiple images to one PDF free", "photos to PDF free no watermark", "batch image to PDF converter"],
-    metaTitle: "Image to PDF Converter Free Online — JPG, PNG to PDF | PDFBro",
+    metaTitle: "Image to PDF Converter Free Online — JPG, PNG to PDF",
     metaDescription: "Convert JPG, PNG, or WebP images to PDF online free. Combine up to 30 images into one PDF. Arrange order. No signup, no watermarks.",
     questions: [
       "how to convert an image to PDF for free",
@@ -419,7 +419,7 @@ export const TOOL_KEYWORDS: Record<string, ToolKeywords> = {
     primary: "PDF to image",
     secondary: ["PDF to JPG online free", "PDF to PNG converter", "convert PDF pages to images", "PDF to JPG converter", "export PDF as image"],
     longTail: ["convert PDF to JPG online free no signup", "PDF to image converter free no watermark", "convert each PDF page to image", "PDF to high quality JPG"],
-    metaTitle: "PDF to Image Converter Free — PDF to JPG/PNG | PDFBro",
+    metaTitle: "PDF to Image Converter Free — PDF to JPG/PNG",
     metaDescription: "Convert PDF pages to high-quality JPG or PNG images online free. Download all pages as a ZIP. No signup, browser-based, no watermarks.",
     questions: [
       "how to convert PDF to image for free",
@@ -437,7 +437,7 @@ export const TOOL_KEYWORDS: Record<string, ToolKeywords> = {
     primary: "PNG to JPG",
     secondary: ["convert PNG to JPEG free", "PNG to JPG online", "PNG to JPG converter no signup", "batch PNG to JPG", "change PNG to JPEG"],
     longTail: ["convert PNG to JPEG online free no signup", "batch PNG to JPG converter free", "convert transparent PNG to JPG with white background"],
-    metaTitle: "PNG to JPG Converter Free Online — Batch Convert | PDFBro",
+    metaTitle: "PNG to JPG Converter Free Online — Batch Convert",
     metaDescription: "Convert PNG images to JPG/JPEG online free. Adjust quality, handle transparency. Batch convert up to 20 files. No signup, no watermarks.",
     questions: [
       "how to convert PNG to JPG for free",
@@ -454,7 +454,7 @@ export const TOOL_KEYWORDS: Record<string, ToolKeywords> = {
     primary: "JPG to PNG",
     secondary: ["convert JPG to PNG free", "JPEG to PNG online", "JPG to PNG converter no signup", "batch JPG to PNG", "change JPEG to PNG"],
     longTail: ["convert JPEG to PNG online free no signup", "JPG to PNG lossless free", "batch JPG to PNG converter online"],
-    metaTitle: "JPG to PNG Converter Free Online — Lossless | PDFBro",
+    metaTitle: "JPG to PNG Converter Free Online — Lossless",
     metaDescription: "Convert JPG/JPEG images to lossless PNG online free. Batch convert multiple files. No signup, no watermarks. Instant download.",
     questions: [
       "how to convert JPG to PNG without losing quality",
@@ -471,7 +471,7 @@ export const TOOL_KEYWORDS: Record<string, ToolKeywords> = {
     primary: "WebP to JPG",
     secondary: ["convert WebP to JPEG free", "WebP to JPG online", "open WebP file", "WebP converter free", "save WebP as JPG"],
     longTail: ["convert WebP to JPG online free no signup", "WebP to JPEG batch converter free", "how to open WebP file on Windows", "download WebP as JPG"],
-    metaTitle: "WebP to JPG Converter Free Online | PDFBro",
+    metaTitle: "WebP to JPG Converter Free Online",
     metaDescription: "Convert WebP images to JPG/JPEG online free. Universal compatibility. Batch convert up to 20 files. No software, no signup. Instant download.",
     questions: [
       "how to convert WebP to JPG",
@@ -488,7 +488,7 @@ export const TOOL_KEYWORDS: Record<string, ToolKeywords> = {
     primary: "WebP to PNG",
     secondary: ["convert WebP to PNG free", "WebP to PNG online", "WebP converter transparent", "save WebP as PNG", "WebP to lossless PNG"],
     longTail: ["convert WebP to PNG online free no signup", "WebP to PNG with transparency", "WebP to PNG batch converter"],
-    metaTitle: "WebP to PNG Converter Free Online | PDFBro",
+    metaTitle: "WebP to PNG Converter Free Online",
     metaDescription: "Convert WebP images to PNG online free. Preserves transparency. Batch convert up to 20 files. No signup, no watermarks.",
     questions: [
       "how to convert WebP to PNG for free",
@@ -504,7 +504,7 @@ export const TOOL_KEYWORDS: Record<string, ToolKeywords> = {
     primary: "SVG to PNG",
     secondary: ["convert SVG to PNG free", "SVG to PNG online", "vector to PNG", "SVG converter free", "export SVG as PNG"],
     longTail: ["convert SVG to PNG online free high resolution", "SVG to PNG any size free", "vector to raster converter online", "SVG to PNG with transparent background"],
-    metaTitle: "SVG to PNG Converter Free Online — Any Resolution | PDFBro",
+    metaTitle: "SVG to PNG Converter Free Online — Any Resolution",
     metaDescription: "Convert SVG vector graphics to high-resolution PNG online free. Choose output size. Batch convert. No signup, no watermarks.",
     questions: [
       "how to convert SVG to PNG",
@@ -521,7 +521,7 @@ export const TOOL_KEYWORDS: Record<string, ToolKeywords> = {
     primary: "SVG to JPG",
     secondary: ["convert SVG to JPEG free", "SVG to JPG online", "vector to JPEG", "SVG to image converter", "rasterize SVG"],
     longTail: ["convert SVG to JPG online free no signup", "SVG vector to JPG image", "export SVG as JPEG"],
-    metaTitle: "SVG to JPG Converter Free Online | PDFBro",
+    metaTitle: "SVG to JPG Converter Free Online",
     metaDescription: "Convert SVG vector files to JPG online free. Batch convert. No signup, no watermarks. Instant download.",
     questions: ["how to convert SVG to JPG online", "can you change an SVG file to JPEG", "how to save an SVG as a JPG"],
     entities: ["SVG converter", "vector to raster", "image conversion"],
@@ -533,7 +533,7 @@ export const TOOL_KEYWORDS: Record<string, ToolKeywords> = {
     primary: "GIF to MP4",
     secondary: ["convert GIF to video free", "animated GIF to MP4", "GIF converter online", "GIF to MP4 free", "GIF to video converter"],
     longTail: ["convert animated GIF to MP4 online free no signup", "GIF to MP4 smaller file size", "convert GIF to video for Twitter", "convert GIF to MP4 without quality loss"],
-    metaTitle: "GIF to MP4 Converter Free Online — 10x Smaller | PDFBro",
+    metaTitle: "GIF to MP4 Converter Free Online — 10x Smaller",
     metaDescription: "Convert animated GIFs to MP4 video online free. MP4 is 10x smaller than GIF with smoother playback. Fast server conversion. No signup.",
     questions: [
       "how to convert GIF to MP4",
@@ -550,7 +550,7 @@ export const TOOL_KEYWORDS: Record<string, ToolKeywords> = {
     primary: "MP4 to GIF",
     secondary: ["convert video to GIF free", "MP4 to animated GIF", "video to GIF converter online", "create GIF from video", "make GIF from MP4"],
     longTail: ["convert MP4 to GIF online free no signup", "make GIF from video clip free", "convert video to GIF for social media free"],
-    metaTitle: "MP4 to GIF Converter Free Online | PDFBro",
+    metaTitle: "MP4 to GIF Converter Free Online",
     metaDescription: "Convert MP4 video clips to animated GIFs online free. Social media ready. Fast server conversion. No signup, instant download.",
     questions: [
       "how to convert a video to GIF",
@@ -567,7 +567,7 @@ export const TOOL_KEYWORDS: Record<string, ToolKeywords> = {
     primary: "Word to PDF",
     secondary: ["convert Word to PDF free", "DOCX to PDF online", "Word to PDF converter", "Word document to PDF", "convert DOC to PDF free"],
     longTail: ["convert Word to PDF free online no signup", "Word to PDF without Microsoft Office", "DOCX to PDF preserving formatting", "batch Word to PDF converter free"],
-    metaTitle: "Word to PDF Converter Free Online — Perfect Formatting | PDFBro",
+    metaTitle: "Word to PDF Converter Free Online — Perfect Formatting",
     metaDescription: "Convert Word .doc/.docx to PDF online free. Preserves fonts, images, tables, and all formatting. No Microsoft Word needed. No signup required.",
     questions: [
       "how to convert Word to PDF for free",
@@ -585,7 +585,7 @@ export const TOOL_KEYWORDS: Record<string, ToolKeywords> = {
     primary: "PDF to Word",
     secondary: ["convert PDF to Word free", "PDF to DOCX online", "editable Word from PDF", "PDF to Word converter free", "PDF to editable document"],
     longTail: ["convert PDF to Word free online no signup", "convert scanned PDF to Word free", "PDF to editable Word document", "extract text from PDF to Word"],
-    metaTitle: "PDF to Word Converter Free Online — Editable DOCX | PDFBro",
+    metaTitle: "PDF to Word Converter Free Online — Editable DOCX",
     metaDescription: "Convert PDF to editable Word (.docx) online free. Preserves text, headings, and tables. Works on scanned PDFs too. No signup required.",
     questions: [
       "how to convert PDF to Word for free",
@@ -603,7 +603,7 @@ export const TOOL_KEYWORDS: Record<string, ToolKeywords> = {
     primary: "PDF to Excel",
     secondary: ["convert PDF to Excel free", "PDF to XLSX online", "extract table from PDF", "PDF data to spreadsheet", "PDF spreadsheet converter"],
     longTail: ["convert PDF to Excel online free no signup", "extract tables from PDF to Excel free", "PDF to spreadsheet converter", "convert bank statement PDF to Excel"],
-    metaTitle: "PDF to Excel Converter Free Online — Extract Tables | PDFBro",
+    metaTitle: "PDF to Excel Converter Free Online — Extract Tables",
     metaDescription: "Convert PDF tables to editable Excel (.xlsx) spreadsheets online free. Perfect for invoices, reports, and financial data. No signup required.",
     questions: [
       "how to convert PDF to Excel for free",
@@ -621,7 +621,7 @@ export const TOOL_KEYWORDS: Record<string, ToolKeywords> = {
     primary: "PDF to PowerPoint",
     secondary: ["convert PDF to PPT free", "PDF to PPTX online", "PDF to slides free", "PDF PowerPoint converter", "convert PDF to presentation"],
     longTail: ["convert PDF to PowerPoint online free no signup", "PDF to editable PowerPoint free", "each PDF page to PPT slide free"],
-    metaTitle: "PDF to PowerPoint Converter Free Online — Editable PPTX | PDFBro",
+    metaTitle: "PDF to PowerPoint Converter Free Online — Editable PPTX",
     metaDescription: "Convert PDF to editable PowerPoint (.pptx) online free. Each page becomes an editable slide. Works in PowerPoint, Google Slides. No signup.",
     questions: [
       "how to convert PDF to PowerPoint for free",
@@ -638,7 +638,7 @@ export const TOOL_KEYWORDS: Record<string, ToolKeywords> = {
     primary: "text to PDF",
     secondary: ["TXT to PDF online free", "convert plain text to PDF", "notes to PDF free", "text file to PDF", "paste text create PDF"],
     longTail: ["convert text to PDF online free no signup", "TXT file to PDF free online", "paste text and convert to PDF", "create PDF from text online"],
-    metaTitle: "Text to PDF Converter Free Online — TXT to PDF | PDFBro",
+    metaTitle: "Text to PDF Converter Free Online — TXT to PDF",
     metaDescription: "Convert plain text or .txt files to formatted PDF online free. Choose font, size, margins. No signup, instant download.",
     questions: [
       "how to convert text to PDF for free",
@@ -655,7 +655,7 @@ export const TOOL_KEYWORDS: Record<string, ToolKeywords> = {
     primary: "extract text from PDF",
     secondary: ["PDF to text free", "copy text from PDF online", "PDF text extractor", "PDF to TXT online", "get text from PDF"],
     longTail: ["extract text from PDF online free no signup", "copy all text from PDF free", "PDF to plain text converter", "get readable text from PDF"],
-    metaTitle: "Extract Text from PDF Free Online — PDF to TXT | PDFBro",
+    metaTitle: "Extract Text from PDF Free Online — PDF to TXT",
     metaDescription: "Extract all text from any PDF online free. Copy to clipboard or download as .txt file. Works on native PDFs. No signup, no watermarks.",
     questions: [
       "how to extract text from a PDF for free",
@@ -672,7 +672,7 @@ export const TOOL_KEYWORDS: Record<string, ToolKeywords> = {
     primary: "image to WebP",
     secondary: ["convert image to WebP free", "JPG to WebP online", "PNG to WebP converter", "WebP optimizer free", "convert to WebP format"],
     longTail: ["convert images to WebP online free no signup", "JPG PNG to WebP for website free", "batch convert to WebP for web performance"],
-    metaTitle: "Image to WebP Converter Free — JPG/PNG to WebP | PDFBro",
+    metaTitle: "Image to WebP Converter Free — JPG/PNG to WebP",
     metaDescription: "Convert JPG, PNG, or GIF to WebP online free. WebP is 25–35% smaller than JPEG/PNG. Speed up your website. Batch convert. No signup.",
     questions: [
       "how to convert images to WebP for free",
@@ -689,7 +689,7 @@ export const TOOL_KEYWORDS: Record<string, ToolKeywords> = {
     primary: "HEIC to JPG",
     secondary: ["convert HEIC to JPEG free", "iPhone photos to JPG", "HEIC converter online", "HEIF to JPG free", "convert Apple photo format"],
     longTail: ["convert HEIC to JPG online free without software", "iPhone HEIC photo to JPEG online", "batch HEIC to JPG free", "open HEIC file on Windows free"],
-    metaTitle: "HEIC to JPG Converter Free Online — iPhone Photos | PDFBro",
+    metaTitle: "HEIC to JPG Converter Free Online — iPhone Photos",
     metaDescription: "Convert iPhone HEIC/HEIF photos to JPG online free. Works on PC and Mac. Batch convert up to 20 files. No software, no signup.",
     questions: [
       "how to convert HEIC to JPG for free",
@@ -707,7 +707,7 @@ export const TOOL_KEYWORDS: Record<string, ToolKeywords> = {
     primary: "QR code generator",
     secondary: ["create QR code free", "QR code maker online", "free QR code for URL", "WiFi QR code generator", "QR code creator no signup"],
     longTail: ["create QR code for free online no signup", "QR code generator free no expiry", "create WiFi QR code free", "free QR code generator for business", "download QR code as PNG SVG free"],
-    metaTitle: "Free QR Code Generator Online — URL, WiFi, Text | PDFBro",
+    metaTitle: "Free QR Code Generator Online — URL, WiFi, Text",
     metaDescription: "Create QR codes free online. Supports URLs, WiFi, text, email, and phone. Download PNG or SVG. No signup, no expiry, commercial use allowed.",
     questions: [
       "how to create a QR code for free",
@@ -726,7 +726,7 @@ export const TOOL_KEYWORDS: Record<string, ToolKeywords> = {
     primary: "compress image online",
     secondary: ["image compressor free", "reduce image file size", "compress JPG PNG WebP", "image optimizer no signup", "batch image compression"],
     longTail: ["compress image online free no signup no watermark", "reduce image size without losing quality free", "batch compress images free", "compress image for website free"],
-    metaTitle: "Compress Image Online Free — JPG, PNG, WebP | PDFBro",
+    metaTitle: "Compress Image Online Free — JPG, PNG, WebP",
     metaDescription: "Compress images online free without losing quality. Reduce JPG, PNG, WebP file size by up to 80%. Batch compress 20 images. No signup, no watermarks.",
     questions: [
       "how to compress an image for free",
@@ -744,7 +744,7 @@ export const TOOL_KEYWORDS: Record<string, ToolKeywords> = {
     primary: "resize image online",
     secondary: ["image resizer free", "change image size online", "resize JPG PNG free", "image dimensions online", "scale image free"],
     longTail: ["resize image online free no signup", "resize image to exact pixels free", "batch resize images free online", "resize image for social media"],
-    metaTitle: "Resize Image Online Free — Exact Pixels or % | PDFBro",
+    metaTitle: "Resize Image Online Free — Exact Pixels or %",
     metaDescription: "Resize images to exact pixel dimensions or by percentage online free. Lock aspect ratio to prevent distortion. Batch resize 20 images. No signup.",
     questions: [
       "how to resize an image for free",
@@ -762,7 +762,7 @@ export const TOOL_KEYWORDS: Record<string, ToolKeywords> = {
     primary: "crop image online",
     secondary: ["image cropper free", "crop photo online", "crop to aspect ratio free", "crop JPG PNG online", "trim image edges"],
     longTail: ["crop image online free no signup no watermark", "crop photo to 1:1 square free", "crop image to exact size free", "crop image for profile picture"],
-    metaTitle: "Crop Image Online Free — Any Ratio or Size | PDFBro",
+    metaTitle: "Crop Image Online Free — Any Ratio or Size",
     metaDescription: "Crop images online free with an interactive cropper. Standard ratios (1:1, 16:9, 4:3) or custom dimensions. No signup, no watermarks.",
     questions: [
       "how to crop an image for free",
@@ -779,7 +779,7 @@ export const TOOL_KEYWORDS: Record<string, ToolKeywords> = {
     primary: "remove background from image",
     secondary: ["background remover online free", "transparent background maker", "remove image background no watermark", "AI background removal", "cut out image"],
     longTail: ["remove background from image online free no signup no watermark", "auto background remover free", "transparent PNG creator free", "remove white background from image free"],
-    metaTitle: "Remove Background from Image Free Online | PDFBro",
+    metaTitle: "Remove Background from Image Free Online",
     metaDescription: "Remove backgrounds from photos automatically online free. Get transparent PNG instantly. AI-powered, no Photoshop, no signup, no watermarks.",
     questions: [
       "how to remove background from an image for free",
@@ -797,7 +797,7 @@ export const TOOL_KEYWORDS: Record<string, ToolKeywords> = {
     primary: "passport photo online free",
     secondary: ["passport photo maker", "ID photo online free", "US passport photo size", "visa photo maker free", "biometric photo creator"],
     longTail: ["make passport photo online free at home", "US passport photo 2x2 free online", "create passport photo from phone free", "free passport photo tool no signup"],
-    metaTitle: "Passport Photo Maker Free Online — US, UK, EU | PDFBro",
+    metaTitle: "Passport Photo Maker Free Online — US, UK, EU",
     metaDescription: "Create passport photos online free. Supports US (2x2\"), UK, EU, and 50+ international standards. Print-ready output. No signup required.",
     questions: [
       "how to make a passport photo at home for free",
@@ -815,7 +815,7 @@ export const TOOL_KEYWORDS: Record<string, ToolKeywords> = {
     primary: "add text to image online",
     secondary: ["text on photo free", "image text editor online", "caption photo free", "meme text generator", "label image online"],
     longTail: ["add text to image online free no signup no watermark", "add caption to photo free online", "put text on image free", "add watermark text to photo free"],
-    metaTitle: "Add Text to Image Online Free — Captions & Labels | PDFBro",
+    metaTitle: "Add Text to Image Online Free — Captions & Labels",
     metaDescription: "Add text to any image online free. Control font, size, color, position, and opacity. Perfect for captions, memes, and watermarks. No signup.",
     questions: [
       "how to add text to an image for free",
@@ -832,7 +832,7 @@ export const TOOL_KEYWORDS: Record<string, ToolKeywords> = {
     primary: "flip image online",
     secondary: ["mirror image free", "flip photo horizontally", "reverse image online", "mirror photo free", "rotate image mirror"],
     longTail: ["flip image online free no signup", "mirror image horizontally free online", "flip photo without software", "batch flip images online"],
-    metaTitle: "Flip Image Online Free — Mirror Photo | PDFBro",
+    metaTitle: "Flip Image Online Free — Mirror Photo",
     metaDescription: "Flip images horizontally or vertically online free. Mirror JPG, PNG, WebP instantly. Batch flip 20 images. No signup, no watermarks.",
     questions: [
       "how to mirror flip an image",
@@ -852,7 +852,7 @@ export const CATEGORY_KEYWORDS = {
     primary: "free PDF tools online",
     h1: "Free PDF Tools Online — Merge, Split, Compress & Convert",
     secondary: ["online PDF editor free", "best PDF tools 2026", "PDF tools no signup", "free PDF converter", "all PDF tools free"],
-    metaTitle: "Free PDF Tools Online — Merge, Split, Compress | PDFBro",
+    metaTitle: "Free PDF Tools Online — Merge, Split, Compress",
     metaDescription: "Complete suite of free online PDF tools. Merge PDF, split PDF, compress PDF, convert PDF to Word/Excel/PowerPoint, sign, protect. No signup required.",
     questions: [
       "what are the best free PDF tools online",
@@ -870,7 +870,7 @@ export const CATEGORY_KEYWORDS = {
     primary: "free image tools online",
     h1: "Free Image Tools Online — Compress, Resize, Convert & Edit",
     secondary: ["image compressor online free", "image editor online free", "resize image free", "remove background free", "all image tools online"],
-    metaTitle: "Free Image Tools Online — Compress, Resize, Edit | PDFBro",
+    metaTitle: "Free Image Tools Online — Compress, Resize, Edit",
     metaDescription: "Free online image tools: compress, resize, crop, remove backgrounds, convert HEIC to JPG, add text, and more. No signup, no watermarks.",
     questions: [
       "what are the best free image editing tools online",
@@ -884,7 +884,7 @@ export const CATEGORY_KEYWORDS = {
     primary: "file converter online free",
     h1: "Free File Conversion Tools Online — PDF, Images, Video",
     secondary: ["PDF converter free", "image format converter", "convert files online no signup", "document converter free", "all file converters"],
-    metaTitle: "Free File Converter Online — PDF, Images, Video | PDFBro",
+    metaTitle: "Free File Converter Online — PDF, Images, Video",
     metaDescription: "Convert PDF, Word, Excel, images, and video files online free. PDF to Word, Word to PDF, HEIC to JPG, Image to WebP, GIF to MP4 and 30+ more.",
     questions: [
       "how to convert files online for free",
@@ -898,7 +898,7 @@ export const CATEGORY_KEYWORDS = {
 
 // ── GUIDES INDEX PAGE ──────────────────────────────────────────
 export const GUIDES_INDEX_KEYWORDS = {
-  metaTitle: "Free PDF & Image How-To Guides — 60+ Tutorials | PDFBro",
+  metaTitle: "Free PDF & Image How-To Guides — 60+ Tutorials",
   metaDescription: "60+ free how-to guides for PDF and image tasks. Merge PDF, compress PDF, remove backgrounds, convert HEIC to JPG, alternatives to iLovePDF and more.",
   keywords: [
     "PDF tutorials free",
@@ -919,7 +919,7 @@ export const GUIDES_INDEX_KEYWORDS = {
 
 // ── TOOLS INDEX PAGE ───────────────────────────────────────────
 export const TOOLS_INDEX_KEYWORDS = {
-  metaTitle: "100+ Free PDF & Image Tools Online — No Signup | PDFBro",
+  metaTitle: "100+ Free PDF & Image Tools Online — No Signup",
   metaDescription: "Browse 100+ free online PDF and image tools. Merge, split, compress, convert, sign PDFs. Compress, resize, crop, convert images. No signup required.",
   h1: "All Free PDF & Image Tools Online — 100+ Tools",
   keywords: [
