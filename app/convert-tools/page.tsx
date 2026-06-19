@@ -249,7 +249,7 @@ export default function ConvertToolsPage() {
         <section className="py-12" style={{ backgroundColor: "var(--bg-secondary)", borderTop: "1px solid var(--border-subtle)" }}>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <p className="text-sm font-semibold mb-4" style={{ color: "var(--text-muted)" }}>Also explore</p>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3 mb-4">
               <Link href="/pdf-tools" className="rounded-xl px-4 py-2 text-sm font-medium transition-all hover:scale-105"
                 style={{ backgroundColor: "var(--bg-card)", border: "1px solid var(--border-subtle)", color: "var(--text-secondary)" }}>
                 Free PDF Tools →
@@ -260,8 +260,28 @@ export default function ConvertToolsPage() {
               </Link>
               <Link href="/tools" className="rounded-xl px-4 py-2 text-sm font-medium transition-all hover:scale-105"
                 style={{ backgroundColor: "var(--bg-card)", border: "1px solid var(--border-subtle)", color: "var(--text-secondary)" }}>
-                All 100+ Tools →
+                All Tools →
               </Link>
+              <Link href="/guides" className="rounded-xl px-4 py-2 text-sm font-medium transition-all hover:scale-105"
+                style={{ backgroundColor: "var(--bg-card)", border: "1px solid var(--border-subtle)", color: "var(--text-secondary)" }}>
+                How-To Guides →
+              </Link>
+            </div>
+            <p className="text-xs font-semibold mt-6 mb-3" style={{ color: "var(--text-muted)" }}>Popular Conversion Guides</p>
+            <div className="flex flex-wrap gap-2">
+              {[
+                { label: "How to Convert PDF to Word", href: "/guides/how-to-convert-pdf-to-word" },
+                { label: "How to Convert PDF to Excel", href: "/guides/how-to-convert-pdf-to-excel" },
+                { label: "How to Convert HEIC to JPG", href: "/guides/how-to-convert-heic-to-jpg" },
+                { label: "How to Convert Word to PDF", href: "/guides/how-to-convert-word-to-pdf" },
+                { label: "How to Convert GIF to MP4", href: "/guides/how-to-convert-gif-to-mp4" },
+                { label: "How to Convert Image to WebP", href: "/guides/how-to-convert-image-to-webp" },
+              ].map((g) => (
+                <Link key={g.href} href={g.href} className="rounded-full px-3 py-1.5 text-xs font-medium transition-all hover:scale-105"
+                  style={{ backgroundColor: "var(--bg-card)", border: "1px solid var(--border-subtle)", color: "var(--text-secondary)" }}>
+                  {g.label}
+                </Link>
+              ))}
             </div>
           </div>
         </section>

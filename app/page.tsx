@@ -50,8 +50,8 @@ const HERO_TOOLS = TOOLS.slice(0, 8);
 const FEATURES = [
   {
     icon: Shield,
-    title: "100% Private — Files Never Uploaded",
-    description: "Every tool processes files entirely in your browser. Nothing sent to servers. Your PDFs and images stay on your device.",
+    title: "Browser-Based Processing",
+    description: "Most tools process files entirely in your browser. Your PDFs and images stay on your device — nothing sent to servers. For server-side conversions, files are auto-deleted within 1 hour.",
     color: "var(--accent-green)",
     bg: "rgba(52,211,153,0.1)",
   },
@@ -72,33 +72,33 @@ const FEATURES = [
 ];
 
 const TOP_PDF_TOOLS = [
-  { label: "Merge PDF", href: "/tools/merge-pdf", vol: "480K+/mo" },
-  { label: "Compress PDF", href: "/tools/compress-pdf", vol: "420K+/mo" },
-  { label: "PDF to Word", href: "/tools/pdf-to-word", vol: "450K+/mo" },
-  { label: "Word to PDF", href: "/tools/word-to-pdf", vol: "600K+/mo" },
-  { label: "Split PDF", href: "/tools/split-pdf", vol: "195K+/mo" },
-  { label: "Sign PDF Online", href: "/tools/sign-pdf", vol: "48K+/mo" },
-  { label: "PDF to Excel", href: "/tools/pdf-to-excel", vol: "280K+/mo" },
-  { label: "Edit PDF Free", href: "/tools/edit-pdf", vol: "165K+/mo" },
-  { label: "PDF to PowerPoint", href: "/tools/pdf-to-powerpoint", vol: "240K+/mo" },
-  { label: "Protect PDF", href: "/tools/protect-pdf", vol: "36K+/mo" },
-  { label: "Unlock PDF", href: "/tools/unlock-pdf", vol: "65K+/mo" },
-  { label: "OCR PDF", href: "/tools/ocr-pdf", vol: "200K+/mo" },
+  { label: "Merge PDF", href: "/tools/merge-pdf" },
+  { label: "Compress PDF", href: "/tools/compress-pdf" },
+  { label: "PDF to Word", href: "/tools/pdf-to-word" },
+  { label: "Word to PDF", href: "/tools/word-to-pdf" },
+  { label: "Split PDF", href: "/tools/split-pdf" },
+  { label: "Sign PDF Online", href: "/tools/sign-pdf" },
+  { label: "PDF to Excel", href: "/tools/pdf-to-excel" },
+  { label: "Edit PDF Free", href: "/tools/edit-pdf" },
+  { label: "PDF to PowerPoint", href: "/tools/pdf-to-powerpoint" },
+  { label: "Protect PDF", href: "/tools/protect-pdf" },
+  { label: "Unlock PDF", href: "/tools/unlock-pdf" },
+  { label: "OCR PDF", href: "/tools/ocr-pdf" },
 ];
 
 const TOP_IMAGE_TOOLS = [
-  { label: "Compress Image Online", href: "/tools/compress-image", vol: "145K+/mo" },
-  { label: "Remove Background", href: "/tools/remove-bg", vol: "800K+/mo" },
-  { label: "HEIC to JPG", href: "/tools/heic-to-jpg", vol: "500K+/mo" },
-  { label: "Resize Image", href: "/tools/resize-image", vol: "130K+/mo" },
-  { label: "Crop Image Online", href: "/tools/crop-image", vol: "68K+/mo" },
-  { label: "Passport Photo Free", href: "/tools/passport-photo", vol: "400K+/mo" },
-  { label: "QR Code Generator", href: "/tools/qr-code-generator", vol: "1M+/mo" },
-  { label: "Image to WebP", href: "/tools/image-to-webp", vol: "35K+/mo" },
-  { label: "PNG to JPG", href: "/tools/png-to-jpeg", vol: "62K+/mo" },
-  { label: "WebP to JPG", href: "/tools/webp-to-jpg", vol: "35K+/mo" },
-  { label: "Add Text to Image", href: "/tools/add-text-to-image", vol: "78K+/mo" },
-  { label: "Flip Image Online", href: "/tools/flip-image", vol: "35K+/mo" },
+  { label: "Compress Image Online", href: "/tools/compress-image" },
+  { label: "Remove Background", href: "/tools/remove-bg" },
+  { label: "HEIC to JPG", href: "/tools/heic-to-jpg" },
+  { label: "Resize Image", href: "/tools/resize-image" },
+  { label: "Crop Image Online", href: "/tools/crop-image" },
+  { label: "Passport Photo Free", href: "/tools/passport-photo" },
+  { label: "QR Code Generator", href: "/tools/qr-code-generator" },
+  { label: "Image to WebP", href: "/tools/image-to-webp" },
+  { label: "PNG to JPG", href: "/tools/png-to-jpeg" },
+  { label: "WebP to JPG", href: "/tools/webp-to-jpg" },
+  { label: "Add Text to Image", href: "/tools/add-text-to-image" },
+  { label: "Flip Image Online", href: "/tools/flip-image" },
 ];
 
 const HOME_FAQ = [
@@ -112,7 +112,7 @@ const HOME_FAQ = [
   },
   {
     q: "Are my files safe and private?",
-    a: "Yes. Almost all PDF and image tools on PDFBro process files entirely within your web browser using JavaScript. Your files never leave your device. A small number of advanced conversions (PDF to Word, PDF to Excel, Word to PDF) use secure server processing — those files are deleted within 1 hour.",
+    a: "Yes. Most PDF and image tools on PDFBro process files entirely within your web browser using JavaScript — your files never leave your device. A small number of advanced conversions (PDF to Word, PDF to Excel, Word to PDF, GIF/MP4) use secure server processing — those files are deleted within 1 hour. We never store, share, or inspect your file contents.",
   },
   {
     q: "Will PDFBro add watermarks to my files?",

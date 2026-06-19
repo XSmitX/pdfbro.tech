@@ -257,7 +257,7 @@ export default function PDFToolsPage() {
         <section className="py-12" style={{ backgroundColor: "var(--bg-secondary)", borderTop: "1px solid var(--border-subtle)" }}>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <p className="text-sm font-semibold mb-4" style={{ color: "var(--text-muted)" }}>Also explore</p>
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3 mb-4">
               <Link href="/image-tools" className="rounded-xl px-4 py-2 text-sm font-medium transition-all hover:scale-105"
                 style={{ backgroundColor: "var(--bg-card)", border: "1px solid var(--border-subtle)", color: "var(--text-secondary)" }}>
                 Free Image Tools →
@@ -268,8 +268,28 @@ export default function PDFToolsPage() {
               </Link>
               <Link href="/tools" className="rounded-xl px-4 py-2 text-sm font-medium transition-all hover:scale-105"
                 style={{ backgroundColor: "var(--bg-card)", border: "1px solid var(--border-subtle)", color: "var(--text-secondary)" }}>
-                All 100+ Tools →
+                All Tools →
               </Link>
+              <Link href="/guides" className="rounded-xl px-4 py-2 text-sm font-medium transition-all hover:scale-105"
+                style={{ backgroundColor: "var(--bg-card)", border: "1px solid var(--border-subtle)", color: "var(--text-secondary)" }}>
+                How-To Guides →
+              </Link>
+            </div>
+            <p className="text-xs font-semibold mt-6 mb-3" style={{ color: "var(--text-muted)" }}>Popular PDF Guides</p>
+            <div className="flex flex-wrap gap-2">
+              {[
+                { label: "How to Merge PDF Files", href: "/guides/how-to-merge-pdf" },
+                { label: "How to Compress PDF Without Losing Quality", href: "/guides/how-to-compress-pdf" },
+                { label: "How to Convert PDF to Word", href: "/guides/how-to-convert-pdf-to-word" },
+                { label: "How to Reduce PDF File Size", href: "/guides/how-to-reduce-pdf-file-size" },
+                { label: "How to Sign a PDF Online", href: "/guides/how-to-sign-pdf-online" },
+                { label: "Best Free PDF Tools 2025", href: "/guides/best-free-pdf-tools-2025" },
+              ].map((g) => (
+                <Link key={g.href} href={g.href} className="rounded-full px-3 py-1.5 text-xs font-medium transition-all hover:scale-105"
+                  style={{ backgroundColor: "var(--bg-card)", border: "1px solid var(--border-subtle)", color: "var(--text-secondary)" }}>
+                  {g.label}
+                </Link>
+              ))}
             </div>
           </div>
         </section>

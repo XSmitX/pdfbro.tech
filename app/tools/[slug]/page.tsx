@@ -24,18 +24,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const kw = TOOL_KEYWORDS[slug];
   const url = `${BASE_URL}/tools/${slug}`;
 
-  const title = kw?.metaTitle ?? `${tool.name} Online Free — ${tool.description} | PDFBro`;
-  const description = kw?.metaDescription ?? `${tool.longDescription} 100% free, no signup, no watermarks. Works in your browser instantly — no software to install.`;
+  const title = kw?.metaTitle ?? `${tool.name} — Free Online ${tool.category === "pdf" ? "PDF" : tool.category === "image" ? "Image" : "File Conversion"} Tool | PDFBro`;
+  const description = kw?.metaDescription ?? `${tool.name}: ${tool.longDescription} Free online, no signup, no watermarks. ${tool.processingType === "server" ? "Secure server processing." : "Works directly in your browser."}`;
 
   const keywords = [
-    ...(kw ? [kw.primary, ...kw.secondary, ...kw.longTail, ...kw.questions] : []),
-    ...tool.tags,
+    ...(kw ? [kw.primary, ...kw.secondary.slice(0, 4)] : []),
+    ...tool.tags.slice(0, 5),
     `${tool.name.toLowerCase()} free`,
     `${tool.name.toLowerCase()} online`,
-    "no signup",
-    "no watermark",
-    "browser-based",
-    "free tool 2026",
   ].filter((v, i, arr) => arr.indexOf(v) === i);
 
   return {
@@ -65,8 +61,6 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       images: [`${BASE_URL}/favicon/web-app-manifest-512x512.png`],
     },
     other: {
-      "ai-content-declaration": "human-curated",
-      "generator": "PDFBro",
       "tool-category": tool.category,
     },
   };
@@ -167,14 +161,7 @@ function ToolJsonLd({ tool }: { tool: NonNullable<ReturnType<typeof getToolBySlu
           name: catName,
           url: categoryUrl,
         },
-        review: [
-          {
-            "@type": "Review",
-            reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-            author: { "@type": "Person", name: "PDFBro User" },
-            reviewBody: `${tool.name} is completely free and works perfectly in my browser. No signup needed.`,
-          },
-        ],
+
       },
 
       // ── BreadcrumbList ──────────────────────────────────
@@ -183,7 +170,7 @@ function ToolJsonLd({ tool }: { tool: NonNullable<ReturnType<typeof getToolBySlu
         "@id": `${toolUrl}#breadcrumb`,
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
-          { "@type": "ListItem", position: 2, name: "All Tools", item: `${BASE_URL}/tools` },
+          { "@type": "ListItem", position: 2, name: catName, item: categoryUrl },
           { "@type": "ListItem", position: 3, name: tool.name, item: toolUrl },
         ],
       },
@@ -261,9 +248,9 @@ export default async function ToolPage({ params }: PageProps) {
   return (
     <>
       <ToolJsonLd tool={tool} />
-      <ToolPageClient tool={tool} seoContent={seoContent} primaryKeyword={kw?.primary} secondaryKeywords={kw?.secondary} />
+      <ToolPageClient tool={tool} seoContent={seoContent} />
 
-      {/* Server-rendered SEO content (visible to search engines on first crawl) */}
+      {/* Server-rendered semantic content for search engines */}
       <div className="sr-only" aria-hidden="true">
         <article itemScope itemType="https://schema.org/Article">
           <h2 itemProp="headline">{kw?.metaTitle ?? `${tool.name} — Free Online Tool`}</h2>
@@ -271,36 +258,7 @@ export default async function ToolPage({ params }: PageProps) {
           <meta itemProp="datePublished" content="2025-05-01" />
           <meta itemProp="dateModified" content={new Date().toISOString().split("T")[0]} />
           <div itemProp="articleBody">
-            {kw && (
-              <section>
-                <h3>Keywords</h3>
-                <ul>
-                  {[kw.primary, ...kw.secondary].map((k) => <li key={k}>{k}</li>)}
-                </ul>
-              </section>
-            )}
-            {kw?.conversational && kw.conversational.length > 0 && (
-              <section>
-                <h3>Common Questions Answered</h3>
-                {kw.conversational.map((q, i) => <p key={i}>{q}</p>)}
-              </section>
-            )}
-            {kw?.entities && kw.entities.length > 0 && (
-              <section>
-                <h3>Related Concepts</h3>
-                <ul>
-                  {kw.entities.map((e) => <li key={e}>{e}</li>)}
-                </ul>
-              </section>
-            )}
-            {kw?.semantic && kw.semantic.length > 0 && (
-              <section>
-                <h3>Related Topics</h3>
-                <ul>
-                  {kw.semantic.map((s) => <li key={s}>{s}</li>)}
-                </ul>
-              </section>
-            )}
+            <p>{tool.name} is a {tool.processingType === "server" ? "secure server-side" : "browser-based"} tool on PDFBro. {tool.longDescription} No signup required, no watermarks added. {tool.maxFileSize > 0 ? `Maximum file size: ${Math.round(tool.maxFileSize / 1024 / 1024)} MB.` : ""}</p>
             {seoContent.howTo && seoContent.howTo.length > 0 && (
               <section itemScope itemType="https://schema.org/HowTo">
                 <h3>How to Use {tool.name}</h3>

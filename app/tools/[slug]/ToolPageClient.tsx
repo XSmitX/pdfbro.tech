@@ -226,11 +226,9 @@ const TOOL_COMPONENT_MAP: Record<string, React.ReactElement> = {
 interface ToolPageClientProps {
   tool: ToolConfig;
   seoContent: ToolSeoContent;
-  primaryKeyword?: string;
-  secondaryKeywords?: string[];
 }
 
-export default function ToolPageClient({ tool, seoContent, primaryKeyword, secondaryKeywords }: ToolPageClientProps) {
+export default function ToolPageClient({ tool, seoContent }: ToolPageClientProps) {
   const relatedTools = TOOLS
     .filter((t) => t.category === tool.category && t.slug !== tool.slug)
     .slice(0, 4);
@@ -249,10 +247,12 @@ export default function ToolPageClient({ tool, seoContent, primaryKeyword, secon
               Home
             </Link>
             <span style={{ color: "var(--border)" }}>/</span>
-            <Link href="/tools" className="flex items-center gap-1 transition-colors" style={{ color: "var(--text-muted)" }}
+            <Link
+              href={tool.category === "pdf" ? "/pdf-tools" : tool.category === "image" ? "/image-tools" : tool.category === "convert" ? "/convert-tools" : "/tools"}
+              className="flex items-center gap-1 transition-colors" style={{ color: "var(--text-muted)" }}
               onMouseEnter={(e) => { e.currentTarget.style.color = "var(--text-primary)"; }}
               onMouseLeave={(e) => { e.currentTarget.style.color = "var(--text-muted)"; }}>
-              <ChevronLeft className="h-3.5 w-3.5" />All Tools
+              <ChevronLeft className="h-3.5 w-3.5" />{tool.category === "pdf" ? "PDF Tools" : tool.category === "image" ? "Image Tools" : tool.category === "convert" ? "Convert Tools" : "All Tools"}
             </Link>
             <span style={{ color: "var(--border)" }}>/</span>
             <span className="font-medium" style={{ color: "var(--text-secondary)" }}>{tool.name}</span>
@@ -278,9 +278,7 @@ export default function ToolPageClient({ tool, seoContent, primaryKeyword, secon
               <div>
                 <div className="flex items-center gap-2 mb-1 flex-wrap">
                   <h1 className="text-2xl font-bold" style={{ color: "var(--text-primary)" }}>
-                    {primaryKeyword
-                      ? `${primaryKeyword.charAt(0).toUpperCase() + primaryKeyword.slice(1)} — Free Online Tool`
-                      : tool.name}
+                    {tool.name} — Free Online Tool
                   </h1>
                   <span className="rounded-full px-2 py-0.5 text-xs font-semibold"
                     style={{ backgroundColor: "rgba(52,211,153,0.12)", color: "var(--accent-green)", border: "1px solid rgba(52,211,153,0.2)" }}>
@@ -292,16 +290,6 @@ export default function ToolPageClient({ tool, seoContent, primaryKeyword, secon
                   </span>
                 </div>
                 <p style={{ color: "var(--text-secondary)" }}>{tool.longDescription}</p>
-                {secondaryKeywords && secondaryKeywords.length > 0 && (
-                  <div className="flex flex-wrap gap-1.5 mt-3">
-                    {secondaryKeywords.slice(0, 5).map((kw) => (
-                      <span key={kw} className="rounded-full px-2.5 py-0.5 text-xs"
-                        style={{ backgroundColor: `${tool.color}10`, color: tool.color, border: `1px solid ${tool.color}20` }}>
-                        {kw}
-                      </span>
-                    ))}
-                  </div>
-                )}
               </div>
             </motion.div>
 

@@ -80,11 +80,7 @@ export function getOrganizationSchema(faqItems: Array<{ q: string; a: string }>)
     },
     serviceType: ["PDF Tools", "Image Tools", "File Conversion", "Online Utilities"],
     slogan: "Free PDF & Image Tools — No Signup, No Watermarks, No Limits",
-    awards: [
-      "Leading free alternative to iLovePDF",
-      "Leading free alternative to Smallpdf",
-      "Leading free alternative to Adobe Acrobat",
-    ],
+
   };
 
   const website = {
@@ -155,22 +151,7 @@ export function getOrganizationSchema(faqItems: Array<{ q: string; a: string }>)
     featureList: "Merge PDF, Split PDF, Compress PDF, PDF to Word, Word to PDF, PDF to Excel, PDF to PowerPoint, Sign PDF, OCR PDF, Compress Image, Remove Background, HEIC to JPG, QR Code Generator, Image to PDF, Resize Image, Crop Image, Add Watermark, Protect PDF, Unlock PDF, Flip Image",
     permissions: "no special permissions required",
     dateModified: modifyDate,
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.8",
-      bestRating: "5",
-      worstRating: "1",
-      ratingCount: "1250",
-      reviewCount: "850",
-    },
-    review: [
-      {
-        "@type": "Review",
-        reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-        author: { "@type": "Person", name: "PDFBro Community" },
-        reviewBody: "PDFBro is a comprehensive suite of free tools that genuinely requires no signup and adds no watermarks. The browser-based processing means files are never uploaded. Hands down the best free alternative to iLovePDF and Smallpdf.",
-      },
-    ],
+
   };
 
   const faqPage = {
