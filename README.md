@@ -1,18 +1,18 @@
 # PDFBro
 
-> 100+ free online PDF and image tools. No signup, no watermarks, browser-based.
+> Free online PDF and image tools. No signup, no watermarks, browser-based.
 
-PDFBro is a privacy-first SaaS platform offering merge, split, compress, convert, sign, OCR, edit, and 90+ more PDF and image tools. Built with Next.js 16, React 19, TypeScript, and Tailwind CSS. Live at [pdfbro.tech](https://pdfbro.tech).
+PDFBro is a privacy-first SaaS platform offering merge, split, compress, convert, sign, OCR, edit, and more PDF and image tools. Built with Next.js 16, React 19, TypeScript, and Tailwind CSS. Live at [pdfbro.tech](https://pdfbro.tech).
 
 ---
 
 ## Highlights
 
-- **100+ tools** — every common PDF and image operation
+- **Tools** — every common PDF and image operation
 - **Browser-based** — nearly all tools process files locally; nothing uploaded
 - **Zero signup** — no email, no account, no daily limits
 - **No watermarks** — output files are clean
-- **SEO-optimized** — 100+ static pages, structured data on every page, LLM crawlability
+- **SEO-optimized** — static pages, structured data on every page, LLM crawlability
 - **Production hardened** — strict CORS allowlist, rate limiting, magic-byte file validation, CSP, HSTS
 
 ## Tech Stack

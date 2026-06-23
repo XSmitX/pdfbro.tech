@@ -138,7 +138,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   "@id": "https://pdfbro.tech/#website",
                   url: "https://pdfbro.tech",
                   name: "PDFBro",
-                  description: "100+ free online PDF and image tools. No signup, no watermarks, browser-based.",
+                  description: "Free online PDF and image tools. No signup, no watermarks, browser-based.",
                   publisher: { "@id": "https://pdfbro.tech/#organization" },
                   inLanguage: "en-US",
                   potentialAction: {

@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Upload, FileText, Image, X, GripVertical } from "lucide-react";
+import { Upload, FileText, Image, X, GripVertical, ShieldCheck } from "lucide-react";
 import { cn, formatBytes } from "@/lib/utils";
 import type { UploadedFile } from "@/lib/types";
 
@@ -111,6 +111,11 @@ export default function DropZone({
               >
                 Browse Files
               </button>
+
+              <div className="mt-5 flex items-center gap-2 rounded-xl px-3 py-2 text-xs" style={{ backgroundColor: "rgba(16,185,129,0.06)", border: "1px solid rgba(16,185,129,0.15)", color: "var(--accent-green)" }}>
+                <ShieldCheck className="h-3.5 w-3.5 flex-shrink-0" />
+                <span>Processing locally — your file never leaves your device</span>
+              </div>
             </motion.div>
           ) : (
             <motion.div

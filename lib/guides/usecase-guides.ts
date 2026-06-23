@@ -26,7 +26,7 @@ export const USECASE_GUIDES: GuideData[] = [
       },
     ],
     proTips: [
-      "Bookmark PDFBro's All Tools page for quick access across all 100+ tools without searching.",
+      "Bookmark PDFBro's All Tools page for quick access across all tools without searching.",
       "Use keyboard shortcuts: Ctrl+D to bookmark in most browsers, then access PDFBro tools in one click.",
       "For recurring PDF workflows (same task weekly), keep the specific tool page open in a pinned browser tab.",
     ],

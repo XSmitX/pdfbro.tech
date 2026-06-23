@@ -20,7 +20,7 @@ const ROWS = [
   { feature: "Watermarks", pdfbro: "Never", pdffiller: "On free tier", win: "pdfbro" },
   { feature: "File size limit", pdfbro: "100 MB", pdffiller: "100 MB", win: "tie" },
   { feature: "Browser-based", pdfbro: "Yes", pdffiller: "Server-based", win: "pdfbro" },
-  { feature: "Number of tools", pdfbro: "100+", pdffiller: "20+", win: "pdfbro" },
+  { feature: "Number of tools", pdfbro: "35+", pdffiller: "20+", win: "pdfbro" },
   { feature: "e-Signature", pdfbro: "Yes - basic", pdffiller: "Yes - advanced", win: "pdffiller" },
   { feature: "Form filling", pdfbro: "Yes", pdffiller: "Yes - specialized", win: "pdffiller" },
   { feature: "PDF editing", pdfbro: "Annotations", pdffiller: "Full editor", win: "pdffiller" },
@@ -57,8 +57,8 @@ const JSONLD = {
     {
       "@type": "FAQPage",
       mainEntity: [
-        { "@type": "Question", name: "Is PDFBro better than PDFfiller?", acceptedAnswer: { "@type": "Answer", text: "PDFBro is better than PDFfiller for users wanting a completely free PDF tool with no signup required. PDFBro offers 100+ tools, processes files in the browser, and has no watermarks. PDFfiller is better for advanced e-signatures and specialized form filling but costs $8/month minimum." } },
-        { "@type": "Question", name: "What is the difference between PDFBro and PDFfiller?", acceptedAnswer: { "@type": "Answer", text: "PDFBro is a free, browser-based PDF toolkit with 100+ tools and no signup required. PDFfiller is a paid service ($8/month) specializing in form filling, e-signatures, and full PDF editing with server-based processing." } },
+        { "@type": "Question", name: "Is PDFBro better than PDFfiller?", acceptedAnswer: { "@type": "Answer", text: "PDFBro is better than PDFfiller for users wanting a completely free PDF tool with no signup required. PDFBro processes files in the browser and has no watermarks. PDFfiller is better for advanced e-signatures and specialized form filling but costs $8/month minimum." } },
+        { "@type": "Question", name: "What is the difference between PDFBro and PDFfiller?", acceptedAnswer: { "@type": "Answer", text: "PDFBro is a free, browser-based PDF toolkit with no signup required. PDFfiller is a paid service ($8/month) specializing in form filling, e-signatures, and full PDF editing with server-based processing." } },
         { "@type": "Question", name: "Does PDFBro have e-signatures like PDFfiller?", acceptedAnswer: { "@type": "Answer", text: "PDFBro offers basic e-signature functionality for free. PDFfiller offers more advanced e-signature features including document workflows, templates, and multi-party signing, but requires a paid subscription." } },
         { "@type": "Question", name: "Is PDFBro completely free unlike PDFfiller?", acceptedAnswer: { "@type": "Answer", text: "Yes, PDFBro is completely free forever with no paid tiers, no signup required, and no watermarks. PDFfiller starts at $8/month and requires signing up before you can use its tools." } },
       ],
@@ -119,7 +119,7 @@ export default function VsPdffiller() {
 
           <div className="grid gap-4 sm:grid-cols-2 mb-10">
             {[
-              { title: "Choose PDFBro if you…", items: ["Want completely free PDF tools forever", "Don't want to create an account", "Value browser-based privacy", "Need 100+ tools including image processing"], color: "var(--accent-blue)" },
+              { title: "Choose PDFBro if you…", items: ["Want completely free PDF tools forever", "Don't want to create an account", "Value browser-based privacy", "Need PDF and image processing tools"], color: "var(--accent-blue)" },
               { title: "Choose PDFfiller if you…", items: ["Need advanced e-signature workflows", "Work heavily with PDF forms", "Need a full PDF text editor", "Budget $8+/month for premium features"], color: "#f97316" },
             ].map((block) => (
               <div key={block.title} className="rounded-2xl p-5" style={{ backgroundColor: "var(--bg-card)", border: "1px solid var(--border-subtle)" }}>

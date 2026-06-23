@@ -6,14 +6,14 @@ import { GUIDES, GUIDE_CATEGORY_META } from "@/lib/guides/index";
 export const metadata: Metadata = {
   title: "Sitemap — All Pages | PDFBro Free PDF & Image Tools",
   description:
-    "Complete list of all pages on PDFBro — 100+ free PDF tools, image tools, file converters, how-to guides, and more. Browse every tool and resource.",
+    "Complete list of all pages on PDFBro — free PDF tools, image tools, file converters, how-to guides, and more. Browse every tool and resource.",
   alternates: { canonical: "https://pdfbro.tech/sitemap-html" },
   robots: { index: true, follow: true },
 };
 
 const STATIC_PAGES = [
   { label: "Home — Free PDF & Image Tools", href: "/" },
-  { label: "All Tools — 100+ Free Online Tools", href: "/tools" },
+  { label: "All Tools — Free Online Tools", href: "/tools" },
   { label: "Free PDF Tools — Merge, Split, Compress, Convert", href: "/pdf-tools" },
   { label: "Free Image Tools — Compress, Resize, Convert & Edit", href: "/image-tools" },
   { label: "Free File Converters — PDF, Images, Video", href: "/convert-tools" },
@@ -72,7 +72,7 @@ export default function HTMLSitemapPage() {
           PDFBro — Complete Site Map
         </h1>
         <p className="text-base mb-12" style={{ color: "var(--text-secondary)" }}>
-          Every page on PDFBro — 100+ free PDF tools, image tools, file converters, and how-to guides. No signup required.
+          Every page on PDFBro — free PDF tools, image tools, file converters, and how-to guides. No signup required.
         </p>
 
         {/* ── Main Pages ── */}

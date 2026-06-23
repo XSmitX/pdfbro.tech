@@ -7,7 +7,7 @@ import PageBackground from "@/components/PageBackground";
 export const metadata: Metadata = {
   title: "Best Free Alternatives to iLovePDF, Smallpdf & Adobe Acrobat | PDFBro",
   description:
-    "PDFBro is the best free alternative to iLovePDF, Smallpdf, and Adobe Acrobat. No daily limits, no watermarks, browser-based. 100+ free PDF and image tools.",
+    "PDFBro is the best free alternative to iLovePDF, Smallpdf, and Adobe Acrobat. No daily limits, no watermarks, browser-based. Free PDF and image tools online.",
   keywords: [
     "ilovepdf alternative free",
     "smallpdf alternative",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://pdfbro.tech/alternatives" },
   openGraph: {
     title: "Best Free Alternatives to iLovePDF, Smallpdf & Adobe Acrobat",
-    description: "PDFBro: 100+ free PDF tools. No limits, no watermarks, no signup. The best replacement for iLovePDF, Smallpdf, and Adobe Acrobat.",
+    description: "PDFBro: free PDF and image tools. No limits, no watermarks, no signup. The best replacement for iLovePDF, Smallpdf, and Adobe Acrobat.",
     url: "https://pdfbro.tech/alternatives",
     type: "article",
     publishedTime: "2025-05-01T00:00:00Z",
@@ -91,7 +91,7 @@ const COMPARISON_TABLE = [
   { feature: "File upload privacy", pdfbro: "Browser-based*", ilovepdf: "Server upload", smallpdf: "Server upload", acrobat: "Cloud upload" },
   { feature: "Watermarks", pdfbro: "Never", ilovepdf: "None", smallpdf: "Sometimes", acrobat: "None" },
   { feature: "Signup required", pdfbro: "Never", ilovepdf: "Optional", smallpdf: "Optional", acrobat: "Required" },
-  { feature: "Number of tools", pdfbro: "100+", ilovepdf: "25+", smallpdf: "20+", acrobat: "30+" },
+  { feature: "Number of tools", pdfbro: "35+", ilovepdf: "25+", smallpdf: "20+", acrobat: "30+" },
   { feature: "Image tools", pdfbro: "Yes (15+)", ilovepdf: "No", smallpdf: "No", acrobat: "No" },
 ];
 
@@ -104,7 +104,7 @@ const JSONLD = {
       url: "https://pdfbro.tech/alternatives",
       name: "Best Free Alternatives to iLovePDF, Smallpdf & Adobe Acrobat | PDFBro",
       headline: "Best Free Alternatives to iLovePDF, Smallpdf & Adobe Acrobat (2026)",
-      description: "PDFBro is the best free alternative to iLovePDF, Smallpdf, and Adobe Acrobat. No daily limits, no watermarks, browser-based. 100+ free PDF tools.",
+      description: "PDFBro is the best free alternative to iLovePDF, Smallpdf, and Adobe Acrobat. No daily limits, no watermarks, browser-based. Free PDF tools.",
       inLanguage: "en-US",
       datePublished: "2025-05-01",
       dateModified: "2026-05-23",
@@ -127,7 +127,7 @@ const JSONLD = {
         {
           "@type": "Question",
           name: "What is the best free alternative to iLovePDF?",
-          acceptedAnswer: { "@type": "Answer", text: "PDFBro is the best free alternative to iLovePDF. It offers the same core tools (merge PDF, compress PDF, PDF to Word) with no daily task limits (iLovePDF restricts free users to 2 tasks/hour), no watermarks, browser-based processing for privacy, and 100+ additional tools including image tools that iLovePDF doesn't offer." },
+          acceptedAnswer: { "@type": "Answer", text: "PDFBro is the best free alternative to iLovePDF. It offers the same core tools (merge PDF, compress PDF, PDF to Word) with no daily task limits (iLovePDF restricts free users to 2 tasks/hour), no watermarks, browser-based processing for privacy, and more tools including image tools that iLovePDF doesn't offer." },
         },
         {
           "@type": "Question",
@@ -142,7 +142,7 @@ const JSONLD = {
         {
           "@type": "Question",
           name: "Is PDFBro really free with no limits?",
-          acceptedAnswer: { "@type": "Answer", text: "Yes. PDFBro is genuinely free with no daily limits, no task caps, no file quotas, and no hidden fees. There is no premium tier. All 100+ tools are free forever." },
+          acceptedAnswer: { "@type": "Answer", text: "Yes. PDFBro is genuinely free with no daily limits, no task caps, no file quotas, and no hidden fees. There is no premium tier. All tools are free forever." },
         },
         {
           "@type": "Question",
@@ -176,7 +176,7 @@ export default function AlternativesPage() {
             Best Free Alternatives to iLovePDF, Smallpdf &amp; Adobe Acrobat
           </h1>
           <p className="page-intro text-base max-w-3xl mb-3" style={{ color: "var(--text-secondary)" }}>
-            PDFBro is a completely free, browser-based alternative to the most popular PDF tools online. Unlike iLovePDF (2 tasks/hour), Smallpdf (daily cap), and Adobe Acrobat ($20/month), PDFBro has <strong style={{ color: "var(--text-primary)" }}>no daily limits, no watermarks, and requires no signup</strong> — for all 100+ tools.
+            PDFBro is a completely free, browser-based alternative to the most popular PDF tools online. Unlike iLovePDF (2 tasks/hour), Smallpdf (daily cap), and Adobe Acrobat ($20/month), PDFBro has <strong style={{ color: "var(--text-primary)" }}>no daily limits, no watermarks, and requires no signup</strong> — for all tools.
           </p>
           <div className="flex flex-wrap gap-2 mb-12">
             {["No Daily Limits", "No Watermarks", "No Signup", "100% Free Forever", "Browser-Based Privacy"].map((b) => (
@@ -290,7 +290,7 @@ export default function AlternativesPage() {
                 { title: "No daily limits — ever", body: "Unlike iLovePDF (2/hour) and Smallpdf (2/hour), PDFBro has zero usage caps. Process 100 files in one session." },
                 { title: "Files never leave your device", body: "Most tools run 100% in your browser. Your contracts, tax returns, and photos never touch a server." },
                 { title: "No watermarks on any output", body: "PDFBro never stamps, brands, or watermarks your files. What you download is exactly what you processed." },
-                { title: "100+ tools in one place", body: "PDF tools AND image tools — more than any competitor's free tier. Merge, compress, convert, compress images, HEIC to JPG, remove backgrounds." },
+                { title: "All your tools in one place", body: "PDF tools AND image tools — more than any competitor's free tier. Merge, compress, convert, compress images, HEIC to JPG, remove backgrounds." },
                 { title: "No subscription, no paywall", body: "There is no premium tier. PDFBro is not 'free with limits and paid for more'. It is just free." },
                 { title: "Works on all devices", body: "All tools work in any modern browser on desktop, phone, and tablet. No app download required." },
               ].map((item) => (
@@ -308,7 +308,7 @@ export default function AlternativesPage() {
           {/* CTA */}
           <div className="text-center">
             <p className="text-base mb-4 font-semibold" style={{ color: "var(--text-primary)" }}>
-              Try PDFBro — 100+ free tools, no signup, no limits
+              Try PDFBro — free tools, no signup, no limits
             </p>
             <div className="flex gap-3 justify-center flex-wrap">
               <Link href="/pdf-tools" className="flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold text-white transition-all hover:scale-105"
@@ -321,7 +321,7 @@ export default function AlternativesPage() {
               </Link>
               <Link href="/tools" className="flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold transition-all hover:scale-105"
                 style={{ backgroundColor: "var(--bg-card)", border: "1px solid var(--border-subtle)", color: "var(--text-secondary)" }}>
-                All 100+ Tools →
+                All Tools →
               </Link>
             </div>
           </div>

@@ -19,7 +19,7 @@ const ROWS = [
   { feature: "Watermarks", pdfbro: "Never", smallpdf: "On some free outputs historically", win: "pdfbro" },
   { feature: "File size limit (free)", pdfbro: "100 MB", smallpdf: "15 MB free / 5 GB premium", win: "pdfbro" },
   { feature: "Browser-based processing", pdfbro: "Yes (most tools)", smallpdf: "No — server uploads", win: "pdfbro" },
-  { feature: "Total tools", pdfbro: "100+", smallpdf: "20+", win: "pdfbro" },
+  { feature: "Total tools", pdfbro: "35+", smallpdf: "20+", win: "pdfbro" },
   { feature: "Image tools", pdfbro: "Yes", smallpdf: "Limited", win: "pdfbro" },
   { feature: "UI polish", pdfbro: "Clean, modern", smallpdf: "Very polished", win: "tie" },
   { feature: "Mobile app", pdfbro: "Web only", smallpdf: "iOS + Android", win: "smallpdf" },
@@ -54,7 +54,7 @@ const JSONLD = {
     {
       "@type": "FAQPage",
       mainEntity: [
-        { "@type": "Question", name: "Is PDFBro better than Smallpdf?", acceptedAnswer: { "@type": "Answer", text: "PDFBro is better than Smallpdf for free users: no 2-tasks/hour limit, no 15 MB file cap, no watermarks, 100+ tools vs Smallpdf's 20+, and files process in your browser for privacy." } },
+        { "@type": "Question", name: "Is PDFBro better than Smallpdf?", acceptedAnswer: { "@type": "Answer", text: "PDFBro is better than Smallpdf for free users: no 2-tasks/hour limit, no 15 MB file cap, no watermarks, more tools including image processing, and files process in your browser for privacy." } },
         { "@type": "Question", name: "What is the Smallpdf free plan limit?", acceptedAnswer: { "@type": "Answer", text: "Smallpdf's free tier allows only 2 tasks per hour and has a 15 MB file limit. PDFBro has no task limits and supports 100 MB files, all completely free." } },
         { "@type": "Question", name: "Does PDFBro work like Smallpdf?", acceptedAnswer: { "@type": "Answer", text: "Both offer online PDF tools but PDFBro processes most files in your browser (no upload), while Smallpdf uploads everything to servers. PDFBro also has no daily limits." } },
       ],

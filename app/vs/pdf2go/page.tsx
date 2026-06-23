@@ -20,7 +20,7 @@ const ROWS = [
   { feature: "Watermarks", pdfbro: "Never", pdf2go: "None", win: "tie" },
   { feature: "File size limit", pdfbro: "100 MB", pdf2go: "50 MB", win: "pdfbro" },
   { feature: "Browser-based", pdfbro: "Yes", pdf2go: "Server uploads always", win: "pdfbro" },
-  { feature: "Number of tools", pdfbro: "100+", pdf2go: "25+", win: "pdfbro" },
+  { feature: "Number of tools", pdfbro: "35+", pdf2go: "25+", win: "pdfbro" },
   { feature: "Image tools", pdfbro: "Yes 15+", pdf2go: "No", win: "pdfbro" },
   { feature: "OCR PDF", pdfbro: "Yes", pdf2go: "Yes", win: "tie" },
   { feature: "File privacy", pdfbro: "Browser-based", pdf2go: "Server-based", win: "pdfbro" },
@@ -57,7 +57,7 @@ const JSONLD = {
     {
       "@type": "FAQPage",
       mainEntity: [
-        { "@type": "Question", name: "Is PDFBro better than PDF2Go?", acceptedAnswer: { "@type": "Answer", text: "PDFBro is better than PDF2Go for free users because it has no daily task limits, processes files in the browser for better privacy, offers 100+ tools vs PDF2Go's 25+, and includes image tools that PDF2Go does not offer." } },
+        { "@type": "Question", name: "Is PDFBro better than PDF2Go?", acceptedAnswer: { "@type": "Answer", text: "PDFBro is better than PDF2Go for free users because it has no daily task limits, processes files in the browser for better privacy, and includes image tools that PDF2Go does not offer." } },
         { "@type": "Question", name: "What is the difference between PDFBro and PDF2Go?", acceptedAnswer: { "@type": "Answer", text: "PDFBro processes files in your browser with no server uploads, has no daily limits, and offers both PDF and image tools. PDF2Go uploads files to its servers, limits free tier usage, and focuses only on PDF tools without image processing capabilities." } },
         { "@type": "Question", name: "Is PDFBro free like PDF2Go?", acceptedAnswer: { "@type": "Answer", text: "Both PDFBro and PDF2Go are free to use, but PDFBro has no daily limits or task caps while PDF2Go restricts free tier users. PDFBro also offers larger file size limits (100 MB vs 50 MB) and batch processing up to 20 files." } },
         { "@type": "Question", name: "Which is more private, PDFBro or PDF2Go?", acceptedAnswer: { "@type": "Answer", text: "PDFBro is more private because it processes files locally in your browser. PDF2Go always uploads files to its servers for processing, which means your documents leave your device. If privacy matters, PDFBro is the better choice." } },

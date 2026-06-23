@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 const FAQS = [
   { section: "Pricing & Limits", items: [
-    { q: "Is PDFBro really free?", a: "Yes, completely free. All 100+ tools are free to use without any payment, subscription, or upgrade required. There are no hidden limits for standard use." },
+    { q: "Is PDFBro really free?", a: "Yes, completely free. All tools are free to use without any payment, subscription, or upgrade required. There are no hidden limits for standard use." },
     { q: "Are there daily usage limits?", a: "No. PDFBro has no daily task limits, no hourly caps, and no file quotas. You can process 100 files in one session if needed." },
     { q: "Will PDFBro add watermarks to my files?", a: "Never. PDFBro does not add any watermarks, logos, or branding to any output file — ever." },
     { q: "Is there a premium plan?", a: "No. PDFBro has no premium tier. Everything is free forever. We don't use a watermark-to-upgrade strategy." },

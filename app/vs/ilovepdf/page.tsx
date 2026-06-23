@@ -20,7 +20,7 @@ const ROWS = [
   { feature: "Watermarks on output", pdfbro: "Never", ilovepdf: "None on most tools", win: "tie" },
   { feature: "File size limit", pdfbro: "100 MB", ilovepdf: "100 MB", win: "tie" },
   { feature: "Browser-based processing", pdfbro: "Yes (most tools)", ilovepdf: "No — server uploads always", win: "pdfbro" },
-  { feature: "Number of tools", pdfbro: "100+", ilovepdf: "25+", win: "pdfbro" },
+  { feature: "Number of tools", pdfbro: "35+", ilovepdf: "25+", win: "pdfbro" },
   { feature: "Image tools", pdfbro: "Yes (15+ tools)", ilovepdf: "No", win: "pdfbro" },
   { feature: "QR code generator", pdfbro: "Yes", ilovepdf: "No", win: "pdfbro" },
   { feature: "Mobile app", pdfbro: "Web only", ilovepdf: "iOS + Android apps", win: "ilovepdf" },
@@ -57,7 +57,7 @@ const JSONLD = {
     {
       "@type": "FAQPage",
       mainEntity: [
-        { "@type": "Question", name: "Is PDFBro better than iLovePDF?", acceptedAnswer: { "@type": "Answer", text: "PDFBro is better than iLovePDF for free users because it has no daily task limits (iLovePDF limits free users to 2 tasks per hour), processes files in the browser for better privacy, offers 100+ tools vs iLovePDF's 25+, and includes image tools that iLovePDF does not offer." } },
+        { "@type": "Question", name: "Is PDFBro better than iLovePDF?", acceptedAnswer: { "@type": "Answer", text: "PDFBro is better than iLovePDF for free users because it has no daily task limits (iLovePDF limits free users to 2 tasks per hour), processes files in the browser for better privacy, offers more tools (PDF + image), and includes image tools that iLovePDF does not offer." } },
         { "@type": "Question", name: "What is the difference between PDFBro and iLovePDF?", acceptedAnswer: { "@type": "Answer", text: "PDFBro processes files in your browser with no server uploads, has no daily limits, and offers both PDF and image tools. iLovePDF uploads files to its servers, limits free users to 2 tasks per hour, and focuses only on PDF tools." } },
         { "@type": "Question", name: "Is PDFBro free like iLovePDF?", acceptedAnswer: { "@type": "Answer", text: "Both PDFBro and iLovePDF are free, but PDFBro has no daily limits or task caps while iLovePDF free tier restricts users to 2 tasks per hour. PDFBro is more generous for free users." } },
         { "@type": "Question", name: "Does PDFBro have a mobile app like iLovePDF?", acceptedAnswer: { "@type": "Answer", text: "PDFBro is web-only and works in mobile browsers. iLovePDF has dedicated iOS and Android apps. If you need a native mobile app, iLovePDF has an advantage there." } },

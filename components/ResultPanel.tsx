@@ -1,8 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { CheckCircle, Download, RotateCcw, FileText, Image, Archive } from "lucide-react";
+import Link from "next/link";
+import { CheckCircle, Download, RotateCcw, FileText, Image, Archive, ArrowRight } from "lucide-react";
 import { cn, formatBytes, downloadBlob, sizeReduction } from "@/lib/utils";
+import { getCrossSell } from "@/lib/crossSell";
 import type { ProcessingResult } from "@/lib/types";
 
 interface ResultPanelProps {
@@ -10,9 +12,12 @@ interface ResultPanelProps {
   originalSize?: number;
   onReset: () => void;
   accentColor?: string;
+  toolSlug?: string;
 }
 
-export default function ResultPanel({ result, originalSize, onReset, accentColor = "var(--accent-blue)" }: ResultPanelProps) {
+export default function ResultPanel({ result, originalSize, onReset, accentColor = "var(--accent-blue)", toolSlug }: ResultPanelProps) {
+  const detectedSlug = toolSlug ?? (typeof window !== "undefined" ? window.location.pathname.split("/tools/")[1]?.replace(/\/$/, "") : undefined);
+  const crossSellItems = detectedSlug ? getCrossSell(detectedSlug).slice(0, 3) : [];
   if (!result.success) return null;
 
   const totalOutputSize = result.files.reduce((sum, f) => sum + f.size, 0);
@@ -133,6 +138,31 @@ export default function ResultPanel({ result, originalSize, onReset, accentColor
           Process Another
         </button>
       </div>
+
+      {/* Cross-sell */}
+      {crossSellItems.length > 0 && (
+        <div className="mt-5 pt-4" style={{ borderTop: "1px solid var(--border-subtle)" }}>
+          <p className="text-xs font-semibold mb-3" style={{ color: "var(--text-muted)" }}>
+            You might also need:
+          </p>
+          <div className="space-y-2">
+            {crossSellItems.map((item) => (
+              <Link
+                key={item.slug}
+                href={`/tools/${item.slug}`}
+                className="flex items-center justify-between rounded-xl px-4 py-2.5 transition-all hover:scale-[1.01]"
+                style={{ backgroundColor: "var(--bg-secondary)", border: "1px solid var(--border-subtle)" }}
+              >
+                <div className="flex-1 min-w-0">
+                  <p className="text-sm font-medium" style={{ color: "var(--text-primary)" }}>{item.name}</p>
+                  <p className="text-xs truncate" style={{ color: "var(--text-muted)" }}>{item.reason}</p>
+                </div>
+                <ArrowRight className="h-3.5 w-3.5 ml-2 flex-shrink-0" style={{ color: "var(--accent-blue)" }} />
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Privacy note */}
       <p className="mt-4 text-center text-[11px]" style={{ color: "var(--text-muted)" }}>

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://pdfbro.tech/for/students" },
   openGraph: {
     title: "Free PDF Tools for Students — Merge, Compress, Convert | PDFBro",
-    description: "100+ free PDF and image tools for students. No signup, no limits, no watermarks. Everything a student needs for assignments, research, and applications.",
+    description: "Free PDF and image tools for students. No signup, no limits, no watermarks. Everything a student needs for assignments, research, and applications.",
     url: "https://pdfbro.tech/for/students",
     type: "website",
   },
@@ -58,7 +58,7 @@ const STUDENTS_JSONLD = {
     {
       "@type": "FAQPage",
       mainEntity: [
-        { "@type": "Question", name: "Are PDFBro tools free for students?", acceptedAnswer: { "@type": "Answer", text: "Yes. All 100+ PDFBro tools are completely free for students with no usage limits, no signup required, and no watermarks on output files. Unlike iLovePDF (2 tasks/hour limit) or Smallpdf (daily cap), PDFBro has zero restrictions." } },
+        { "@type": "Question", name: "Are PDFBro tools free for students?", acceptedAnswer: { "@type": "Answer", text: "Yes. All PDFBro tools are completely free for students with no usage limits, no signup required, and no watermarks on output files. Unlike iLovePDF (2 tasks/hour limit) or Smallpdf (daily cap), PDFBro has zero restrictions." } },
         { "@type": "Question", name: "Can I use PDFBro to merge assignment PDFs?", acceptedAnswer: { "@type": "Answer", text: "Yes. Use PDFBro's Merge PDF tool at pdfbro.tech/tools/merge-pdf to combine your cover page, assignment body, and appendices into one PDF. Upload up to 20 files, arrange them in order, and download the merged result. Works entirely in your browser with no file upload." } },
         { "@type": "Question", name: "How do I compress a PDF for university submission?", acceptedAnswer: { "@type": "Answer", text: "Use PDFBro's Compress PDF tool at pdfbro.tech/tools/compress-pdf. Most university portals require files under 5 MB. Upload your PDF, choose High compression for maximum reduction, or Medium for balanced quality. The compressed file downloads instantly with no signup required." } },
         { "@type": "Question", name: "Can I edit PDF research papers without Adobe Acrobat?", acceptedAnswer: { "@type": "Answer", text: "Yes. PDFBro's Edit PDF tool lets you highlight text, add comments, draw shapes, and annotate any PDF directly in your browser. No Adobe Acrobat subscription ($240/year) needed. All processing is local and private." } },
@@ -86,13 +86,13 @@ export default function ForStudentsPage() {
             Free PDF &amp; Image Tools for Students
           </h1>
           <p className="text-base max-w-2xl mb-3" style={{ color: "var(--text-secondary)" }}>
-            Students need PDF tools constantly — assignments, applications, research papers, forms, thesis submissions. PDFBro provides every tool students need, completely free, with no account and no daily limits. Not a trial. Not a limited version. Free forever for all 100+ tools.
+            Students need PDF tools constantly — assignments, applications, research papers, forms, thesis submissions. PDFBro provides every tool students need, completely free, with no account and no daily limits. Not a trial. Not a limited version. Free forever.
           </p>
           <p className="text-sm max-w-2xl mb-4" style={{ color: "var(--text-muted)" }}>
             Replace expensive software subscriptions (Adobe Acrobat: $19.99/month) with a free, browser-based alternative that processes files on your device — no uploads, no limits, no watermarks.
           </p>
           <div className="flex flex-wrap gap-2 mb-6">
-            {["No signup required", "No daily limits", "No watermarks", "Works on any device", "100+ tools free"].map((badge) => (
+            {["No signup required", "No daily limits", "No watermarks", "Works on any device", "All tools free"].map((badge) => (
               <span key={badge} className="rounded-full px-3 py-1 text-xs font-semibold" style={{ backgroundColor: "rgba(52,211,153,0.1)", color: "var(--accent-green)", border: "1px solid rgba(52,211,153,0.2)" }}>{badge}</span>
             ))}
           </div>
@@ -242,7 +242,7 @@ export default function ForStudentsPage() {
             </Link>
             <Link href="/tools" className="rounded-xl px-5 py-2.5 text-sm font-semibold"
               style={{ backgroundColor: "var(--bg-card)", border: "1px solid var(--border-subtle)", color: "var(--text-secondary)" }}>
-              Browse All 100+ Tools →
+              Browse All Tools →
             </Link>
           </div>
         </div>

@@ -4,10 +4,11 @@ import Script from "next/script";
 import { CheckCircle2, Shield, Zap, Globe, ArrowRight } from "lucide-react";
 import PageBackground from "@/components/PageBackground";
 import { TOOLS } from "@/lib/toolRegistry";
+const TOOLS_COUNT = TOOLS.length;
 
 export const metadata: Metadata = {
-  title: "PDFBro Features — 100+ Free PDF & Image Tools | Full Feature List",
-  description: "Full feature list for PDFBro: 100+ free PDF tools, 15+ image tools, 20+ converters. No signup, no limits, browser-based privacy. See everything PDFBro can do.",
+  title: `PDFBro Features — ${TOOLS_COUNT}+ Free PDF & Image Tools | Full Feature List`,
+  description: `Full feature list for PDFBro with ${TOOLS_COUNT}+ free PDF and image tools. No signup, no limits, browser-based privacy. See everything PDFBro can do.`,
   keywords: ["pdfbro features", "pdfbro tools list", "what can pdfbro do", "pdfbro free tools", "pdfbro pdf editor features"],
   alternates: { canonical: "https://pdfbro.tech/features" },
 } as Metadata;
@@ -30,7 +31,7 @@ const JSONLD = {
   "@type": "WebPage",
   name: "PDFBro Features — Complete Tool List",
   url: "https://pdfbro.tech/features",
-  description: "Full list of PDFBro features: 100+ free PDF and image tools.",
+  description: `Full list of PDFBro features: ${TOOLS_COUNT}+ free PDF and image tools.`,
 };
 
 export default function FeaturesPage() {

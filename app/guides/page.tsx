@@ -144,7 +144,7 @@ export default function GuidesIndexPage() {
                 </div>
                 <div>
                   <p className="text-sm font-semibold" style={{ color: "var(--text-primary)" }}>Browse All Tools</p>
-                  <p className="text-xs" style={{ color: "var(--text-secondary)" }}>100+ free PDF & image tools</p>
+                   <p className="text-xs" style={{ color: "var(--text-secondary)" }}>Free PDF & image tools</p>
                 </div>
               </Link>
               <Link href="/pdf-tools" className="group rounded-2xl p-5 flex items-center gap-4 transition-all hover:scale-[1.02]"

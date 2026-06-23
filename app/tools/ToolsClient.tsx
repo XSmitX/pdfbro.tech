@@ -39,7 +39,7 @@ export default function ToolsClient() {
             className="text-3xl font-bold mb-1"
             style={{ color: "var(--text-primary)" }}
           >
-            100+ Free PDF &amp; Image Tools Online
+            {TOOLS.length}+ Free PDF &amp; Image Tools Online
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 10 }}

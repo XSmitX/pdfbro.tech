@@ -392,10 +392,10 @@ export const LONGTAIL_GUIDES: GuideData[] = [
     slug: "free-pdf-tools-no-email-no-signup",
     title: "Free PDF Tools With No Email, No Signup, No Daily Limit",
     metaTitle: "Free PDF Tools No Email No Signup No Limit | PDFBro",
-    metaDescription: "Use 100+ free PDF tools without email, account, or daily limits. Merge, split, compress, convert PDFs — completely free forever with zero restrictions.",
+    metaDescription: "Use free PDF tools without email, account, or daily limits. Merge, split, compress, convert PDFs — completely free forever with zero restrictions.",
     category: "usecase",
     badge: "No Limits",
-    intro: "The pattern is always the same: 'free' PDF tools ask for your email, then limit you to 1–2 tasks per day, then push you to upgrade. PDFBro breaks this pattern. 100+ PDF and image tools. No email. No account. No daily limit. No upgrade required.",
+    intro: "The pattern is always the same: 'free' PDF tools ask for your email, then limit you to 1–2 tasks per day, then push you to upgrade. PDFBro breaks this pattern. PDF and image tools. No email. No account. No daily limit. No upgrade required.",
     toolSlug: undefined,
     sections: [
       {
@@ -413,7 +413,7 @@ export const LONGTAIL_GUIDES: GuideData[] = [
       },
     ],
     proTips: [
-      "Bookmark the PDFBro All Tools page (/tools) — one searchable page with all 100+ tools, no account needed.",
+      "Bookmark the PDFBro All Tools page (/tools) — one searchable page with all tools, no account needed.",
       "The search box on /tools finds tools by keyword — type 'compress', 'merge', 'convert' to jump directly to any tool.",
     ],
     faq: [

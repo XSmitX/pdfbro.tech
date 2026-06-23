@@ -7,7 +7,7 @@ import PageBackground from "@/components/PageBackground";
 export const metadata: Metadata = {
   title: "About PDFBro — Free PDF & Image Tools Built for Everyone",
   description:
-    "PDFBro is a free, browser-based PDF and image tool platform built for privacy and simplicity. No signup, no watermarks, 100+ tools. Learn about our mission and technology.",
+    "PDFBro is a free, browser-based PDF and image tool platform built for privacy and simplicity. No signup, no watermarks. Learn about our mission and technology.",
   alternates: { canonical: "https://pdfbro.tech/about" },
   openGraph: {
     title: "About PDFBro — Free PDF & Image Tools Built for Everyone",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 };
 
 const STATS = [
-  { value: "100+", label: "Free Tools", desc: "PDF, image, and conversion tools" },
+  { value: "35+", label: "Free Tools", desc: "PDF, image, and conversion tools" },
   { value: "0", label: "Signup Required", desc: "Use every tool without an account" },
   { value: "100%", label: "Browser-Based", desc: "Files never leave your device" },
   { value: "0₹/$", label: "Cost Forever", desc: "No plans, no paywalls" },
@@ -91,7 +91,7 @@ const JSONLD = {
       name: "PDFBro",
       alternateName: ["PDF Bro", "pdfbro.tech", "PDF Bro Tech"],
       url: "https://pdfbro.tech",
-      description: "PDFBro (pdfbro.tech) is a free, browser-based PDF and image tools platform offering 100+ free tools. No signup required. No watermarks. No daily limits. The best free alternative to iLovePDF, Smallpdf, and Adobe Acrobat.",
+          description: "PDFBro (pdfbro.tech) is a free, browser-based PDF and image tools platform. No signup required. No watermarks. No daily limits. The best free alternative to iLovePDF, Smallpdf, and Adobe Acrobat.",
       foundingDate: "2025",
       logo: {
         "@type": "ImageObject",

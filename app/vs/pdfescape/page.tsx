@@ -20,7 +20,7 @@ const ROWS = [
   { feature: "Watermarks", pdfbro: "Never", pdfescape: "On free tier", win: "pdfbro" },
   { feature: "File size limit", pdfbro: "100 MB", pdfescape: "10 MB free / 40 MB premium", win: "pdfbro" },
   { feature: "Browser-based", pdfbro: "Yes", pdfescape: "Yes", win: "tie" },
-  { feature: "Number of tools", pdfbro: "100+", pdfescape: "15+", win: "pdfbro" },
+  { feature: "Number of tools", pdfbro: "35+", pdfescape: "15+", win: "pdfbro" },
   { feature: "OCR PDF", pdfbro: "Yes", pdfescape: "No", win: "pdfbro" },
   { feature: "Image tools", pdfbro: "Yes 15+", pdfescape: "No", win: "pdfbro" },
   { feature: "PDF editing", pdfbro: "Annotations", pdfescape: "Full editor", win: "pdfescape" },
@@ -57,8 +57,8 @@ const JSONLD = {
     {
       "@type": "FAQPage",
       mainEntity: [
-        { "@type": "Question", name: "Is PDFBro better than PDFescape?", acceptedAnswer: { "@type": "Answer", text: "PDFBro is better than PDFescape for users wanting more tools (100+ vs 15+), no file size limits (100 MB vs 10 MB free), and completely free access without watermarks. PDFescape has a full PDF editor and Windows desktop app." } },
-        { "@type": "Question", name: "What is the difference between PDFBro and PDFescape?", acceptedAnswer: { "@type": "Answer", text: "PDFBro offers 100+ free PDF and image tools with browser-based processing, no signup, and no watermarks. PDFescape offers a full PDF text editor and form filler but limits free users to 10 MB files and adds watermarks on the free tier." } },
+        { "@type": "Question", name: "Is PDFBro better than PDFescape?", acceptedAnswer: { "@type": "Answer", text: "PDFBro is better than PDFescape for users wanting more tools, no file size limits (100 MB vs 10 MB free), and completely free access without watermarks. PDFescape has a full PDF editor and Windows desktop app." } },
+        { "@type": "Question", name: "What is the difference between PDFBro and PDFescape?", acceptedAnswer: { "@type": "Answer", text: "PDFBro offers free PDF and image tools with browser-based processing, no signup, and no watermarks. PDFescape offers a full PDF text editor and form filler but limits free users to 10 MB files and adds watermarks on the free tier." } },
         { "@type": "Question", name: "Is PDFBro free like PDFescape?", acceptedAnswer: { "@type": "Answer", text: "Both PDFBro and PDFescape offer free PDF tools, but PDFBro has no restrictions while PDFescape free tier limits file sizes to 10 MB, adds watermarks, and restricts daily usage. PDFBro is more generous for free users." } },
         { "@type": "Question", name: "Does PDFBro edit PDFs like PDFescape?", acceptedAnswer: { "@type": "Answer", text: "PDFBro offers annotation tools for PDFs (adding text, shapes, highlights). PDFescape offers a full PDF text editor that can modify existing text. For full text editing, PDFescape has an advantage, but PDFBro offers many more overall tools." } },
       ],
@@ -119,7 +119,7 @@ export default function VsPdfescape() {
 
           <div className="grid gap-4 sm:grid-cols-2 mb-10">
             {[
-              { title: "Choose PDFBro if you…", items: ["Want 100+ free tools with no limits", "Need OCR and image processing tools", "Don't want watermarks on output", "Value browser-based privacy"], color: "var(--accent-blue)" },
+              { title: "Choose PDFBro if you…", items: ["Want free tools with no limits", "Need OCR and image processing tools", "Don't want watermarks on output", "Value browser-based privacy"], color: "var(--accent-blue)" },
               { title: "Choose PDFescape if you…", items: ["Need a full PDF text editor", "Want a Windows desktop application", "Don't mind 10 MB file size limits", "Can work with the free tier restrictions"], color: "#f97316" },
             ].map((block) => (
               <div key={block.title} className="rounded-2xl p-5" style={{ backgroundColor: "var(--bg-card)", border: "1px solid var(--border-subtle)" }}>

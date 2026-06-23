@@ -5,7 +5,7 @@ export const ALTERNATIVE_GUIDES: GuideData[] = [
     slug: "ilovepdf-alternative",
     title: "Best iLovePDF Alternatives Free in 2025 — No Limits, No Signup",
     metaTitle: "Best iLovePDF Alternative Free 2025 | PDFBro vs iLovePDF",
-    metaDescription: "Looking for a free iLovePDF alternative? PDFBro offers 100+ PDF tools with no signup, no daily limits, and browser-based privacy. Full comparison.",
+    metaDescription: "Looking for a free iLovePDF alternative? PDFBro offers PDF tools with no signup, no daily limits, and browser-based privacy. Full comparison.",
     category: "alternative",
     badge: "Comparison",
     intro: "iLovePDF is one of the most popular online PDF services — but its free tier has daily task limits, requires signup for large files, and doesn't offer browser-based processing for privacy-sensitive documents. PDFBro is a completely free alternative that processes files in your browser with no limits and no account required.",
@@ -13,7 +13,7 @@ export const ALTERNATIVE_GUIDES: GuideData[] = [
     sections: [
       {
         heading: "iLovePDF vs PDFBro — Feature Comparison",
-        body: "| Feature | iLovePDF Free | PDFBro |\n|---|---|---|\n| Signup required | No (limited) | Never |\n| Daily task limits | Yes (premium removes) | No |\n| Watermarks | No | Never |\n| File size limit | 100 MB | 100 MB |\n| Browser-based processing | No (server uploads) | Yes (most tools) |\n| Number of tools | 25+ | 100+ |\n| Ads | Yes | Minimal |\n| Price for premium | $6.61/month | Free forever |",
+        body: "| Feature | iLovePDF Free | PDFBro |\n|---|---|---|\n| Signup required | No (limited) | Never |\n| Daily task limits | Yes (premium removes) | No |\n| Watermarks | No | Never |\n| File size limit | 100 MB | 100 MB |\n| Browser-based processing | No (server uploads) | Yes (most tools) |\n| Number of tools | 25+ | 35+ |\n| Ads | Yes | Minimal |\n| Price for premium | $6.61/month | Free forever |",
       },
       {
         heading: "Where PDFBro Outperforms iLovePDF",
@@ -30,11 +30,11 @@ export const ALTERNATIVE_GUIDES: GuideData[] = [
       },
     ],
     proTips: [
-      "Bookmark PDFBro's tools page (/tools) for all 100+ tools in one searchable list.",
+      "Bookmark PDFBro's tools page (/tools) for all tools in one searchable list.",
       "For the quickest access, bookmark your most-used individual tool pages directly.",
     ],
     faq: [
-      { q: "Is PDFBro completely free like iLovePDF?", a: "Yes. PDFBro is fully free with no premium tier. All 100+ tools are available to everyone with no account required." },
+      { q: "Is PDFBro completely free like iLovePDF?", a: "Yes. PDFBro is fully free with no premium tier. All tools are available to everyone with no account required." },
       { q: "Does PDFBro have daily limits like iLovePDF?", a: "No. PDFBro has no daily task limits." },
       { q: "Is PDFBro safer than iLovePDF for private documents?", a: "For privacy-sensitive documents, PDFBro's browser-based processing is more private since files never leave your device. iLovePDF uploads files to their servers." },
       { q: "Does PDFBro have a mobile app like iLovePDF?", a: "PDFBro is web-only but works excellently in mobile browsers on iPhone (Safari) and Android (Chrome)." },
@@ -48,7 +48,7 @@ export const ALTERNATIVE_GUIDES: GuideData[] = [
     slug: "smallpdf-alternative",
     title: "Best Smallpdf Alternatives Free in 2025 — No Limits & No Signup",
     metaTitle: "Best Free Smallpdf Alternative 2025 | PDFBro vs Smallpdf",
-    metaDescription: "Free Smallpdf alternatives with no daily limits, no signup, and no watermarks. PDFBro offers 100+ PDF tools completely free. Full comparison inside.",
+    metaDescription: "Free Smallpdf alternatives with no daily limits, no signup, and no watermarks. PDFBro offers PDF tools completely free. Full comparison inside.",
     category: "alternative",
     badge: "Comparison",
     intro: "Smallpdf is well-designed and popular, but its free tier is quite restrictive — only 2 tasks per hour, compression watermarks after a daily limit, and registration walls for some features. PDFBro provides a fully unlimited free alternative with browser-based processing for maximum privacy.",
@@ -122,7 +122,7 @@ export const ALTERNATIVE_GUIDES: GuideData[] = [
     slug: "pdf24-alternative",
     title: "Best PDF24 Alternatives Free in 2025",
     metaTitle: "Best Free PDF24 Alternative 2025 | PDFBro vs PDF24",
-    metaDescription: "Free PDF24 alternatives with no ads and browser-based privacy. PDFBro offers 100+ tools free with no signup. Compare PDF24 vs PDFBro features.",
+    metaDescription: "Free PDF24 alternatives with no ads and browser-based privacy. PDFBro offers tools free with no signup. Compare PDF24 vs PDFBro features.",
     category: "alternative",
     badge: "Comparison",
     intro: "PDF24 is a free German-made PDF suite with desktop apps and online tools. It's genuinely free with fewer restrictions than Smallpdf or iLovePDF — but its online tools are heavy with advertising, the UI is cluttered, and all processing happens on their servers. PDFBro is a cleaner, faster, more private alternative.",
@@ -130,11 +130,11 @@ export const ALTERNATIVE_GUIDES: GuideData[] = [
     sections: [
       {
         heading: "PDF24 vs PDFBro — Key Differences",
-        body: "| Feature | PDF24 | PDFBro |\n|---|---|---|\n| Free tier limits | None (generous) | None |\n| Ads | Heavy (ad-supported) | Minimal |\n| Processing | Server-side | Browser-based (most tools) |\n| Desktop app | Yes (Windows) | No (web only) |\n| UI cleanliness | Cluttered | Clean, modern |\n| Mobile experience | Limited | Excellent mobile browser |\n| Number of tools | 45+ | 100+ |\n| Signup required | No | Never |",
+        body: "| Feature | PDF24 | PDFBro |\n|---|---|---|\n| Free tier limits | None (generous) | None |\n| Ads | Heavy (ad-supported) | Minimal |\n| Processing | Server-side | Browser-based (most tools) |\n| Desktop app | Yes (Windows) | No (web only) |\n| UI cleanliness | Cluttered | Clean, modern |\n| Mobile experience | Limited | Excellent mobile browser |\n| Number of tools | 45+ | 35+ |\n| Signup required | No | Never |",
       },
       {
         heading: "When to Choose PDFBro Over PDF24",
-        body: "**Privacy-sensitive documents:** PDFBro processes PDF operations in your browser — files never reach any server. PDF24 uploads to servers for processing.\n\n**Cleaner user experience:** PDFBro's modern UI focuses on getting your task done. PDF24's interface is dense with options and advertising.\n\n**Mobile use:** PDFBro is designed responsive — works excellently on smartphones. PDF24's mobile experience is functional but not optimized.\n\n**More tools:** PDFBro's 100+ tools include image tools, QR code generator, and conversion tools that PDF24 doesn't offer.",
+        body: "**Privacy-sensitive documents:** PDFBro processes PDF operations in your browser — files never reach any server. PDF24 uploads to servers for processing.\n\n**Cleaner user experience:** PDFBro's modern UI focuses on getting your task done. PDF24's interface is dense with options and advertising.\n\n**Mobile use:** PDFBro is designed responsive — works excellently on smartphones. PDF24's mobile experience is functional but not optimized.\n\n**More tool categories:** PDFBro's tools include image tools, QR code generator, and conversion tools that PDF24 doesn't offer.",
       },
       {
         heading: "When PDF24 Is Better",

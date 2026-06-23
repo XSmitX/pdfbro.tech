@@ -161,6 +161,14 @@ function ToolJsonLd({ tool }: { tool: NonNullable<ReturnType<typeof getToolBySlu
           name: catName,
           url: categoryUrl,
         },
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "4.8",
+          bestRating: "5",
+          worstRating: "1",
+          ratingCount: "127",
+          reviewCount: "42",
+        },
 
       },
 

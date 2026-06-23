@@ -58,7 +58,7 @@ const JSONLD = {
       "@type": "FAQPage",
       mainEntity: [
         { "@type": "Question", name: "Is PDFBro better than Canva for PDFs?", acceptedAnswer: { "@type": "Answer", text: "Yes, PDFBro is significantly better than Canva for PDF processing. PDFBro offers 25+ dedicated PDF tools including merge, compress, OCR, and convert features. Canva has only 2-3 basic PDF features since it is primarily a design tool." } },
-        { "@type": "Question", name: "What is the difference between PDFBro and Canva?", acceptedAnswer: { "@type": "Answer", text: "PDFBro is a dedicated PDF processing platform with 100+ tools, no signup, and browser-based privacy. Canva is a graphic design platform with PDF export capabilities and 250,000+ templates, but very limited PDF-specific functionality." } },
+        { "@type": "Question", name: "What is the difference between PDFBro and Canva?", acceptedAnswer: { "@type": "Answer", text: "PDFBro is a dedicated PDF processing platform with no signup required and browser-based privacy. Canva is a graphic design platform with PDF export capabilities and 250,000+ templates, but very limited PDF-specific functionality." } },
         { "@type": "Question", name: "Is PDFBro free like Canva?", acceptedAnswer: { "@type": "Answer", text: "Both PDFBro and Canva offer free tiers, but PDFBro has no restrictions, no watermarks, and no signup required. Canva's free tier limits export formats, adds watermarks on premium features, and requires an account." } },
         { "@type": "Question", name: "Should I use PDFBro or Canva for PDF editing?", acceptedAnswer: { "@type": "Answer", text: "Use PDFBro for PDF processing tasks like merging, compressing, converting, and annotating PDFs. Use Canva for graphic design projects that include PDF export. They serve different purposes and work well together." } },
       ],
@@ -80,7 +80,7 @@ export default function VsCanva() {
             PDFBro vs Canva — 2025 Comparison
           </h1>
           <p className="text-base mb-10" style={{ color: "var(--text-secondary)" }}>
-            Canva is a popular graphic design platform with basic PDF export features. PDFBro is a dedicated PDF processing toolkit with 100+ free tools. They serve different purposes — here&apos;s how they compare.
+            Canva is a popular graphic design platform with basic PDF export features. PDFBro is a dedicated PDF processing toolkit. They serve different purposes — here&apos;s how they compare.
           </p>
 
           <div className="rounded-2xl overflow-hidden mb-10" style={{ border: "1px solid var(--border-subtle)" }}>

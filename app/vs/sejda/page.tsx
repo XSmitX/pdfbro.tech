@@ -20,7 +20,7 @@ const ROWS = [
   { feature: "Watermarks", pdfbro: "Never", sejda: "None on most tools", win: "tie" },
   { feature: "File size limit", pdfbro: "100 MB", sejda: "50 MB free", win: "pdfbro" },
   { feature: "Browser-based", pdfbro: "Yes", sejda: "Server uploads always", win: "pdfbro" },
-  { feature: "Number of tools", pdfbro: "100+", sejda: "30+", win: "pdfbro" },
+  { feature: "Number of tools", pdfbro: "35+", sejda: "30+", win: "pdfbro" },
   { feature: "Image tools", pdfbro: "Yes 15+", sejda: "No", win: "pdfbro" },
   { feature: "QR code generator", pdfbro: "Yes", sejda: "No", win: "pdfbro" },
   { feature: "Desktop app", pdfbro: "No", sejda: "Yes - paid", win: "sejda" },
@@ -57,7 +57,7 @@ const JSONLD = {
     {
       "@type": "FAQPage",
       mainEntity: [
-        { "@type": "Question", name: "Is PDFBro better than Sejda?", acceptedAnswer: { "@type": "Answer", text: "PDFBro is better than Sejda for free users because it has no daily task limits (Sejda limits free users to 3 tasks per hour), processes files in the browser for better privacy, offers 100+ tools vs Sejda's 30+, and includes image tools that Sejda does not offer." } },
+        { "@type": "Question", name: "Is PDFBro better than Sejda?", acceptedAnswer: { "@type": "Answer", text: "PDFBro is better than Sejda for free users because it has no daily task limits (Sejda limits free users to 3 tasks per hour), processes files in the browser for better privacy, offers PDF and image tools that Sejda does not offer." } },
         { "@type": "Question", name: "What is the difference between PDFBro and Sejda?", acceptedAnswer: { "@type": "Answer", text: "PDFBro processes files in your browser with no server uploads, has no daily limits, and offers both PDF and image tools. Sejda uploads files to its servers, limits free users to 3 tasks per hour, and has fewer tools but offers a paid desktop app." } },
         { "@type": "Question", name: "Is PDFBro free like Sejda?", acceptedAnswer: { "@type": "Answer", text: "Both PDFBro and Sejda offer free PDF processing, but PDFBro has no daily limits or task caps while Sejda free tier restricts users to 3 tasks per hour and smaller file sizes (50 MB vs PDFBro's 100 MB). PDFBro is more generous for free users." } },
         { "@type": "Question", name: "Does PDFBro have a desktop app like Sejda?", acceptedAnswer: { "@type": "Answer", text: "PDFBro is web-only and works in all modern browsers on any device. Sejda offers a paid desktop application. If you need offline desktop processing, Sejda has an advantage with its paid app." } },

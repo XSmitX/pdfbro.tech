@@ -1,8 +1,8 @@
 "use client";
 
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useEffect } from "react";
 import Link from "next/link";
-import { ChevronLeft, CheckCircle2, BookOpen } from "lucide-react";
+import { ChevronLeft, CheckCircle2, BookOpen, ShieldCheck } from "lucide-react";
 import { motion } from "framer-motion";
 import type { ToolConfig } from "@/lib/types";
 import type { ToolSeoContent } from "@/lib/toolFaq";
@@ -11,6 +11,7 @@ import ToolCard from "@/components/ToolCard";
 import PageBackground from "@/components/PageBackground";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import { TOOLS } from "@/lib/toolRegistry";
+import { useRecentTools } from "@/hooks/useRecentTools";
 
 const TOOL_RELATED_GUIDES: Record<string, { slug: string; title: string }[]> = {
   "merge-pdf": [
@@ -135,6 +136,53 @@ const TOOL_RELATED_GUIDES: Record<string, { slug: string; title: string }[]> = {
   "svg-to-png": [
     { slug: "how-to-convert-svg-to-png", title: "How to Convert SVG to PNG" },
   ],
+  "reorder-pdf-pages": [
+    { slug: "how-to-reorder-pdf-pages", title: "How to Reorder PDF Pages" },
+    { slug: "how-to-merge-pdf", title: "How to Merge PDF Files" },
+  ],
+  "edit-word": [
+    { slug: "how-to-convert-word-to-pdf", title: "How to Convert Word to PDF" },
+    { slug: "how-to-edit-pdf-online", title: "How to Edit PDF Online" },
+  ],
+  "mp4-to-gif": [
+    { slug: "how-to-convert-gif-to-mp4", title: "How to Convert GIF to MP4" },
+  ],
+  "svg-to-jpg": [
+    { slug: "how-to-convert-svg-to-png", title: "How to Convert SVG to PNG" },
+  ],
+  "webp-to-png": [
+    { slug: "how-to-convert-webp-to-jpg", title: "How to Convert WebP to JPG" },
+  ],
+  "word-counter": [
+    { slug: "best-free-pdf-tools-2025", title: "Best Free PDF Tools Online" },
+  ],
+  "json-formatter": [
+    { slug: "best-free-pdf-tools-2025", title: "Best Free PDF Tools Online" },
+  ],
+  "password-generator": [
+    { slug: "how-to-password-protect-pdf", title: "How to Password Protect PDF" },
+  ],
+  "url-encoder": [
+    { slug: "how-to-create-qr-code-free", title: "How to Create QR Code Free" },
+  ],
+  "markdown-to-html": [
+    { slug: "how-to-convert-image-to-webp", title: "How to Convert Image to WebP" },
+  ],
+  "base64-encoder": [
+    { slug: "how-to-convert-image-to-webp", title: "Optimize Images for the Web" },
+  ],
+  "color-contrast-checker": [
+    { slug: "how-to-compress-images-online", title: "Compress Images Online" },
+  ],
+  "hash-generator": [
+    { slug: "how-to-password-protect-pdf", title: "How to Password Protect PDF" },
+  ],
+  "lorem-ipsum": [
+    { slug: "how-to-convert-text-to-pdf", title: "How to Convert Text to PDF" },
+  ],
+  "uuid-generator": [
+    { slug: "how-to-password-protect-pdf", title: "How to Password Protect PDF" },
+  ],
 };
 
 const MergePDFTool = lazy(() => import("@/modules/ui/MergePDFTool"));
@@ -229,6 +277,13 @@ interface ToolPageClientProps {
 }
 
 export default function ToolPageClient({ tool, seoContent }: ToolPageClientProps) {
+  const { addRecentTool } = useRecentTools();
+
+  useEffect(() => {
+    addRecentTool(tool.slug, tool.name);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tool.slug]);
+
   const relatedTools = TOOLS
     .filter((t) => t.category === tool.category && t.slug !== tool.slug)
     .slice(0, 4);
@@ -369,19 +424,35 @@ export default function ToolPageClient({ tool, seoContent }: ToolPageClientProps
               </div>
             </div>
 
-            {/* Feature highlights */}
-            <div className="rounded-2xl p-4 space-y-2" style={{ backgroundColor: "rgba(52,211,153,0.06)", border: "1px solid rgba(52,211,153,0.15)" }}>
-              {[
-                "100% Free — no hidden fees",
-                "No signup or account needed",
-                "Files processed locally in browser",
-                "No watermarks added",
-              ].map((feat) => (
-                <div key={feat} className="flex items-center gap-2">
-                  <CheckCircle2 className="h-3.5 w-3.5 flex-shrink-0" style={{ color: "var(--accent-green)" }} />
-                  <p className="text-xs" style={{ color: "var(--text-secondary)" }}>{feat}</p>
-                </div>
-              ))}
+            {/* Trust & Privacy badges */}
+            <div className="rounded-2xl p-4 space-y-2" style={{ backgroundColor: "rgba(16,185,129,0.05)", border: "1px solid rgba(16,185,129,0.15)" }}>
+              <div className="flex items-center gap-2 mb-1">
+                <ShieldCheck className="h-4 w-4 flex-shrink-0" style={{ color: "var(--accent-green)" }} />
+                <span className="text-xs font-semibold" style={{ color: "var(--accent-green)" }}>Trust & Privacy</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <CheckCircle2 className="h-3 w-3 mt-0.5 flex-shrink-0" style={{ color: "var(--accent-green)" }} />
+                <p className="text-xs" style={{ color: "var(--text-secondary)" }}>
+                  {tool.processingType === "server"
+                    ? "Secure HTTPS — files auto-deleted within 1 hour"
+                    : "100% browser-based — files never leave your device"}
+                </p>
+              </div>
+              <div className="flex items-start gap-2">
+                <CheckCircle2 className="h-3 w-3 mt-0.5 flex-shrink-0" style={{ color: "var(--accent-green)" }} />
+                <p className="text-xs" style={{ color: "var(--text-secondary)" }}>No signup, no email, no credit card</p>
+              </div>
+              <div className="flex items-start gap-2">
+                <CheckCircle2 className="h-3 w-3 mt-0.5 flex-shrink-0" style={{ color: "var(--accent-green)" }} />
+                <p className="text-xs" style={{ color: "var(--text-secondary)" }}>No watermarks — clean output guaranteed</p>
+              </div>
+              <div className="flex items-start gap-2">
+                <CheckCircle2 className="h-3 w-3 mt-0.5 flex-shrink-0" style={{ color: "var(--accent-green)" }} />
+                <p className="text-xs" style={{ color: "var(--text-secondary)" }}>No daily limits — unlimited free use</p>
+              </div>
+              <p className="text-xs pt-1" style={{ color: "var(--text-muted)" }}>
+                Updated: {new Date().toISOString().split("T")[0]}
+              </p>
             </div>
 
             {/* Related tools */}
@@ -428,7 +499,7 @@ export default function ToolPageClient({ tool, seoContent }: ToolPageClientProps
               className="block rounded-2xl p-4 text-center text-sm font-semibold transition-all hover:scale-[1.02]"
               style={{ background: "linear-gradient(135deg, var(--accent-blue), var(--accent-violet))", color: "#fff" }}
             >
-              Browse All 100+ Tools →
+              Browse All Tools →
             </Link>
           </div>
         </div>

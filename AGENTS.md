@@ -8,7 +8,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 # PDFBro — Project Context
 
 ## What This Is
-**PDFBro** is a production SaaS platform offering **100+ free online PDF & image processing tools**. Browser-first architecture (~90% of tools process files locally, never touching the server). Zero signup, no watermarks, no daily limits. Competes with iLovePDF, Smallpdf, Adobe Acrobat. Live at https://pdfbro.tech.
+**PDFBro** is a production SaaS platform offering free online PDF & image processing tools. Browser-first architecture (~90% of tools process files locally, never touching the server). Zero signup, no watermarks, no daily limits. Competes with iLovePDF, Smallpdf, Adobe Acrobat. Live at https://pdfbro.tech.
 
 ## Tech Stack
 - **Framework:** Next.js 16.2.4 (App Router + Static Export)
@@ -120,7 +120,7 @@ Structured data on every page:
 app/          — Next.js App Router (pages, layouts)
  ├── api/     — API route handlers (not in static export)
  ├── tools/   — Tool listing + [slug] dynamic tool pages
- ├── guides/  — 60+ SEO how-to guide pages
+  ├── guides/  — SEO how-to guide pages
  ├── vs/      — Competitor comparison pages
  └── for/     — Audience landing pages
 components/   — 13 shared React components

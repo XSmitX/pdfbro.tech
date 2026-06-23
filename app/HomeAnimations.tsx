@@ -4,9 +4,10 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Zap } from "lucide-react";
 import PageBackground from "@/components/PageBackground";
+import { TOOLS } from "@/lib/toolRegistry";
 
 const STATS = [
-  { value: "100+", label: "Tools Available" },
+  { value: `${TOOLS.length}+`, label: "Tools Available" },
   { value: "0", label: "Signup Required" },
   { value: "∞", label: "Files Processed" },
   { value: "100%", label: "Browser-Based" },
@@ -57,7 +58,7 @@ export function HeroSection() {
           style={{ color: "var(--text-secondary)" }}
         >
           Merge PDF, compress PDF, convert PDF to Word, compress images, remove backgrounds
-          and 100+ more tools — all{" "}
+          and {TOOLS.length}+ more tools — all{" "}
           <span style={{ color: "var(--text-primary)", fontWeight: 500 }}>
             100% free, browser-based, and private
           </span>.

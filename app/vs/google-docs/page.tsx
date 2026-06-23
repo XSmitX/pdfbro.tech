@@ -21,7 +21,7 @@ const ROWS = [
   { feature: "Merge PDF", pdfbro: "Yes", googledocs: "No native support", win: "pdfbro" },
   { feature: "Compress PDF", pdfbro: "Yes", googledocs: "No native support", win: "pdfbro" },
   { feature: "OCR PDF", pdfbro: "Yes", googledocs: "No", win: "pdfbro" },
-  { feature: "Number of tools", pdfbro: "100+", googledocs: "3-4 PDF features", win: "pdfbro" },
+  { feature: "Number of tools", pdfbro: "35+", googledocs: "3-4 PDF features", win: "pdfbro" },
   { feature: "Image tools", pdfbro: "Yes 15+", googledocs: "No", win: "pdfbro" },
   { feature: "Sign PDF", pdfbro: "Yes", googledocs: "No", win: "pdfbro" },
   { feature: "Convert PDF to Word", pdfbro: "Yes", googledocs: "Via export", win: "pdfbro" },
@@ -57,8 +57,8 @@ const JSONLD = {
     {
       "@type": "FAQPage",
       mainEntity: [
-        { "@type": "Question", name: "Is PDFBro better than Google Docs for PDFs?", acceptedAnswer: { "@type": "Answer", text: "Yes, PDFBro is significantly better than Google Docs for PDF processing. PDFBro offers 100+ dedicated PDF tools including merge, compress, OCR, and sign features. Google Docs has only basic PDF viewing and export capabilities with limited native PDF support." } },
-        { "@type": "Question", name: "What is the difference between PDFBro and Google Docs?", acceptedAnswer: { "@type": "Answer", text: "PDFBro is a dedicated PDF processing platform with 100+ tools, no signup required, and browser-based privacy. Google Docs is a cloud-based document editor with basic PDF viewing and export but no native merge, compress, OCR, or sign features." } },
+        { "@type": "Question", name: "Is PDFBro better than Google Docs for PDFs?", acceptedAnswer: { "@type": "Answer", text: "Yes, PDFBro is significantly better than Google Docs for PDF processing. PDFBro offers dedicated PDF tools including merge, compress, OCR, and sign features. Google Docs has only basic PDF viewing and export capabilities with limited native PDF support." } },
+        { "@type": "Question", name: "What is the difference between PDFBro and Google Docs?", acceptedAnswer: { "@type": "Answer", text: "PDFBro is a dedicated PDF processing platform with no signup required and browser-based privacy. Google Docs is a cloud-based document editor with basic PDF viewing and export but no native merge, compress, OCR, or sign features." } },
         { "@type": "Question", name: "Can I use PDFBro without a Google account?", acceptedAnswer: { "@type": "Answer", text: "Yes, PDFBro requires no signup or account of any kind. Google Docs requires a Google account to create, edit, or export documents. PDFBro is completely anonymous and free to use." } },
         { "@type": "Question", name: "Should I use PDFBro or Google Docs for working with PDFs?", acceptedAnswer: { "@type": "Answer", text: "Use PDFBro for all PDF processing tasks like merging, compressing, converting, annotating, and signing PDFs. Use Google Docs for creating and editing documents that you plan to export as PDFs. They complement each other well." } },
       ],
@@ -80,7 +80,7 @@ export default function VsGoogleDocs() {
             PDFBro vs Google Docs — 2025 Comparison
           </h1>
           <p className="text-base mb-10" style={{ color: "var(--text-secondary)" }}>
-            Google Docs is a popular cloud-based document editor with basic PDF support. PDFBro is a dedicated PDF processing toolkit with 100+ free tools. Here&apos;s how they compare for PDF-related tasks.
+            Google Docs is a popular cloud-based document editor with basic PDF support. PDFBro is a dedicated PDF processing toolkit with free tools. Here&apos;s how they compare for PDF-related tasks.
           </p>
 
           <div className="rounded-2xl overflow-hidden mb-10" style={{ border: "1px solid var(--border-subtle)" }}>

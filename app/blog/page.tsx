@@ -95,7 +95,7 @@ export default function BlogPage() {
           <div className="mt-12 text-center">
             <Link href="/tools" className="inline-flex items-center gap-2 rounded-2xl px-6 py-3 text-sm font-semibold text-white transition-all hover:scale-105"
               style={{ background: "linear-gradient(135deg, var(--accent-blue), var(--accent-violet))" }}>
-              <BookOpen className="h-4 w-4" /> Browse All 100+ Tools →
+              <BookOpen className="h-4 w-4" /> Browse All Tools →
             </Link>
           </div>
         </div>

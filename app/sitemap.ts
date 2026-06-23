@@ -3,6 +3,29 @@ import { TOOLS } from "@/lib/toolRegistry";
 import { GUIDES } from "@/lib/guides/index";
 import { BLOG_POSTS } from "@/lib/blog/data";
 
+const PASSPORT_COUNTRIES = [
+  "us","uk","canada","australia","india","germany","france","spain","italy",
+  "netherlands","uae","singapore","japan","china","brazil","mexico",
+  "south-africa","nigeria","philippines","malaysia","new-zealand",
+  "ireland","switzerland","sweden","saudi-arabia",
+];
+
+const RESIZE_PLATFORMS = [
+  "instagram-post","instagram-story","facebook-cover","facebook-profile",
+  "twitter-header","twitter-post","linkedin-banner","linkedin-profile",
+  "youtube-thumbnail","youtube-banner","tiktok-video","whatsapp-dp",
+];
+
+const KEYWORD_PAGES = [
+  "merge-pdf-without-watermark","pdf-to-word-no-email","remove-background-free",
+  "compress-pdf-for-email","heic-to-jpg-batch","convert-jpg-to-pdf-multiple",
+  "add-page-numbers-to-pdf-online","split-pdf-online-free","unlock-pdf-online-free",
+  "edit-pdf-online-free-no-signup","sign-pdf-online-free","pdf-to-excel-free-online",
+  "ocr-pdf-free-online","pdf-to-powerpoint-free-online","fill-pdf-form-online-free",
+];
+
+const AUDIENCE_PAGES = ["lawyers","teachers","job-seekers","freelancers"];
+
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -44,6 +67,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/vs/pdfescape`, lastModified: seoUpdateDate, changeFrequency: "monthly", priority: 0.85 },
     { url: `${baseUrl}/vs/canva`, lastModified: seoUpdateDate, changeFrequency: "monthly", priority: 0.85 },
     { url: `${baseUrl}/vs/google-docs`, lastModified: seoUpdateDate, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${baseUrl}/vs/pdf24`, lastModified: seoUpdateDate, changeFrequency: "monthly", priority: 0.82 },
+    { url: `${baseUrl}/vs/tinywow`, lastModified: seoUpdateDate, changeFrequency: "monthly", priority: 0.82 },
+    { url: `${baseUrl}/vs/pdfcandy`, lastModified: seoUpdateDate, changeFrequency: "monthly", priority: 0.82 },
+    { url: `${baseUrl}/vs/dochub`, lastModified: seoUpdateDate, changeFrequency: "monthly", priority: 0.82 },
+    { url: `${baseUrl}/vs/foxit`, lastModified: seoUpdateDate, changeFrequency: "monthly", priority: 0.80 },
+    { url: `${baseUrl}/vs/nitro-pdf`, lastModified: seoUpdateDate, changeFrequency: "monthly", priority: 0.80 },
+    { url: `${baseUrl}/vs/sodapdf`, lastModified: seoUpdateDate, changeFrequency: "monthly", priority: 0.80 },
+    { url: `${baseUrl}/vs/lightpdf`, lastModified: seoUpdateDate, changeFrequency: "monthly", priority: 0.80 },
+    { url: `${baseUrl}/changelog`, lastModified: seoUpdateDate, changeFrequency: "weekly", priority: 0.65 },
+    // New audience pages
+    ...AUDIENCE_PAGES.map((slug) => ({
+      url: `${baseUrl}/for/${slug}`,
+      lastModified: seoUpdateDate,
+      changeFrequency: "monthly" as const,
+      priority: 0.76,
+    })),
     // Blog
     { url: `${baseUrl}/blog`, lastModified: seoUpdateDate, changeFrequency: "weekly", priority: 0.85 },
   ];
@@ -88,6 +127,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/compress-pdf-to/1mb`, lastModified: seoUpdateDate, changeFrequency: "monthly", priority: 0.92 },
     { url: `${baseUrl}/compress-pdf-to/2mb`, lastModified: seoUpdateDate, changeFrequency: "monthly", priority: 0.85 },
     { url: `${baseUrl}/compress-pdf-to/5mb`, lastModified: seoUpdateDate, changeFrequency: "monthly", priority: 0.82 },
+    { url: `${baseUrl}/compress-pdf-to/10mb`, lastModified: seoUpdateDate, changeFrequency: "monthly", priority: 0.82 },
+    { url: `${baseUrl}/compress-pdf-to/15mb`, lastModified: seoUpdateDate, changeFrequency: "monthly", priority: 0.80 },
+    { url: `${baseUrl}/compress-pdf-to/20mb`, lastModified: seoUpdateDate, changeFrequency: "monthly", priority: 0.82 },
+    { url: `${baseUrl}/compress-pdf-to/25mb`, lastModified: seoUpdateDate, changeFrequency: "monthly", priority: 0.82 },
+    { url: `${baseUrl}/compress-pdf-to/under-100kb`, lastModified: seoUpdateDate, changeFrequency: "monthly", priority: 0.88 },
+    { url: `${baseUrl}/compress-pdf-to/under-500kb`, lastModified: seoUpdateDate, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${baseUrl}/compress-pdf-to/under-1mb`, lastModified: seoUpdateDate, changeFrequency: "monthly", priority: 0.88 },
+    { url: `${baseUrl}/compress-pdf-to/under-2mb`, lastModified: seoUpdateDate, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${baseUrl}/compress-pdf-to/for-email`, lastModified: seoUpdateDate, changeFrequency: "monthly", priority: 0.90 },
+    { url: `${baseUrl}/compress-pdf-to/for-government-portal`, lastModified: seoUpdateDate, changeFrequency: "monthly", priority: 0.88 },
+    { url: `${baseUrl}/compress-pdf-to/for-whatsapp`, lastModified: seoUpdateDate, changeFrequency: "monthly", priority: 0.85 },
   ];
 
   const blogRoutes: MetadataRoute.Sitemap = BLOG_POSTS.map((post) => ({
@@ -97,5 +147,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.82,
   }));
 
-  return [...staticRoutes, ...toolRoutes, ...guideRoutes, ...compressPdfToRoutes, ...blogRoutes];
+  const keywordPageRoutes: MetadataRoute.Sitemap = KEYWORD_PAGES.map((slug) => ({
+    url: `${baseUrl}/${slug}`,
+    lastModified: seoUpdateDate,
+    changeFrequency: "monthly" as const,
+    priority: 0.88,
+  }));
+
+  const resizeImageForRoutes: MetadataRoute.Sitemap = RESIZE_PLATFORMS.map((platform) => ({
+    url: `${baseUrl}/resize-image-for/${platform}`,
+    lastModified: seoUpdateDate,
+    changeFrequency: "monthly" as const,
+    priority: 0.85,
+  }));
+
+  const passportPhotoRoutes: MetadataRoute.Sitemap = PASSPORT_COUNTRIES.map((country) => ({
+    url: `${baseUrl}/passport-photo/${country}`,
+    lastModified: seoUpdateDate,
+    changeFrequency: "monthly" as const,
+    priority: 0.85,
+  }));
+
+  return [...staticRoutes, ...toolRoutes, ...guideRoutes, ...compressPdfToRoutes, ...blogRoutes, ...keywordPageRoutes, ...resizeImageForRoutes, ...passportPhotoRoutes];
 }

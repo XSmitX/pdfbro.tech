@@ -72,6 +72,7 @@ const FOOTER_LINKS: Record<string, { label: string; href: string }[]> = {
     { label: "Site Map", href: "/sitemap-html" },
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms of Service", href: "/terms" },
+    { label: "Changelog", href: "/changelog" },
     { label: "Contact", href: "/contact" },
   ],
 };
@@ -98,7 +99,7 @@ export default function Footer() {
             </Link>
 
             <p className="text-sm leading-relaxed mb-4" style={{ color: "var(--text-secondary)", maxWidth: "18rem" }}>
-              100+ free online tools for PDF and image processing. No signup, no limits, no watermarks.
+              Free online tools for PDF and image processing. No signup, no limits, no watermarks.
             </p>
 
             <div

@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://pdfbro.tech/for/business" },
   openGraph: {
     title: "Free PDF Tools for Business — No Subscription, No Limits | PDFBro",
-    description: "100+ free PDF and image tools for business teams. Replace expensive per-seat software with a free, private, browser-based alternative.",
+    description: "Free PDF and image tools for business teams. Replace expensive per-seat software with a free, private, browser-based alternative.",
     url: "https://pdfbro.tech/for/business",
     type: "website",
   },
@@ -76,7 +76,7 @@ export default function ForBusinessPage() {
             Free PDF Tools for Business
           </h1>
           <p className="text-base max-w-2xl mb-3" style={{ color: "var(--text-secondary)" }}>
-            PDFBro replaces expensive per-seat PDF software for everyday business tasks across your entire team. Finance, HR, Sales, Operations — every department has PDF needs. All 100+ tools are covered for free with no per-user licensing, no subscription tiers, and no usage limits.
+            PDFBro replaces expensive per-seat PDF software for everyday business tasks across your entire team. Finance, HR, Sales, Operations — every department has PDF needs. All tools are covered for free with no per-user licensing, no subscription tiers, and no usage limits.
           </p>
           <p className="text-sm max-w-2xl mb-4" style={{ color: "var(--text-muted)" }}>
             Unlike enterprise PDF suites that cost $20–$50/user/month, PDFBro processes most files in your browser for maximum privacy. Your confidential contracts, financial reports, and HR documents never leave your device.
@@ -88,7 +88,7 @@ export default function ForBusinessPage() {
             </p>
           </div>
           <div className="flex flex-wrap gap-2">
-            {["No per-user pricing", "No subscription", "No daily limits", "No signup", "Browser-based privacy", "100+ tools free"].map((badge) => (
+            {["No per-user pricing", "No subscription", "No daily limits", "No signup", "Browser-based privacy", "All tools free"].map((badge) => (
               <span key={badge} className="rounded-full px-3 py-1 text-xs font-semibold" style={{ backgroundColor: "rgba(52,211,153,0.1)", color: "var(--accent-green)", border: "1px solid rgba(52,211,153,0.2)" }}>{badge}</span>
             ))}
           </div>
@@ -194,7 +194,7 @@ export default function ForBusinessPage() {
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 flex flex-wrap gap-3 items-center justify-between">
           <div>
             <p className="text-sm font-semibold" style={{ color: "var(--text-primary)" }}>Ready to eliminate PDF software costs?</p>
-            <p className="text-xs" style={{ color: "var(--text-muted)" }}>All 100+ tools are free. No per-user pricing. No limits. Start now.</p>
+            <p className="text-xs" style={{ color: "var(--text-muted)" }}>All tools are free. No per-user pricing. No limits. Start now.</p>
           </div>
           <div className="flex gap-3">
             <Link href="/guides/pdf-tools-for-business" className="flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-white"

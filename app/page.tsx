@@ -4,6 +4,7 @@ import Link from "next/link";
 import Script from "next/script";
 import { ArrowRight, Shield, Zap, Globe, CheckCircle2 } from "lucide-react";
 import ToolCard from "@/components/ToolCard";
+import RecentTools from "@/components/RecentTools";
 import { TOOLS, getToolsByCategory } from "@/lib/toolRegistry";
 import { getOrganizationSchema } from "@/lib/seo/jsonld";
 import { HeroSection, CTASection } from "./HomeAnimations";
@@ -11,7 +12,7 @@ import { HeroSection, CTASection } from "./HomeAnimations";
 export const metadata: Metadata = {
   title: "PDFBro — Free PDF Tools Online | Merge, Compress, Convert PDF No Signup",
   description:
-    "PDFBro: 100+ free online PDF and image tools. Merge PDF, split PDF, compress PDF, convert PDF to Word, PDF to Excel, sign PDF, remove background, compress images, HEIC to JPG, QR code generator. No signup, no watermarks. 100% browser-based.",
+    `PDFBro: ${TOOLS.length}+ free online PDF and image tools. Merge PDF, split PDF, compress PDF, convert PDF to Word, PDF to Excel, sign PDF, remove background, compress images, HEIC to JPG, QR code generator. No signup, no watermarks. 100% browser-based.`,
   keywords: [
     "free PDF tools online",
     "merge PDF free",
@@ -34,13 +35,13 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: "https://pdfbro.tech" },
   openGraph: {
-    title: "PDFBro — 100+ Free PDF & Image Tools | No Signup, No Watermarks",
+    title: `PDFBro — ${TOOLS.length}+ Free PDF & Image Tools | No Signup, No Watermarks`,
     description: "Merge PDF, compress PDF, convert PDF to Word, Excel, PowerPoint. Compress images, HEIC to JPG, remove backgrounds. Free, no signup, browser-based.",
     url: "https://pdfbro.tech",
   },
   twitter: {
     card: "summary_large_image",
-    title: "PDFBro — 100+ Free PDF & Image Tools Online",
+    title: `PDFBro — ${TOOLS.length}+ Free PDF & Image Tools Online`,
     description: "Merge, compress, convert PDFs and images. Free, no signup, no watermarks.",
   },
 };
@@ -65,7 +66,7 @@ const FEATURES = [
   {
     icon: Globe,
     title: "No Signup, No Watermarks, Ever",
-    description: "All 100+ tools are free with zero registration required. We never add watermarks to your files.",
+    description: "Every tool is free with zero registration required. We never add watermarks to your files.",
     color: "var(--accent-violet)",
     bg: "rgba(139,106,245,0.1)",
   },
@@ -104,7 +105,7 @@ const TOP_IMAGE_TOOLS = [
 const HOME_FAQ = [
   {
     q: "Are PDFBro tools really free with no hidden limits?",
-    a: "Yes. All 100+ tools on PDFBro are completely free with no daily limits, no file quotas, and no hidden fees. Unlike iLovePDF (2 tasks/hour limit on free tier) or Smallpdf (daily limit), PDFBro has no usage caps.",
+    a: `Yes. All ${TOOLS.length}+ tools on PDFBro are completely free with no daily limits, no file quotas, and no hidden fees. Unlike iLovePDF (2 tasks/hour limit on free tier) or Smallpdf (daily limit), PDFBro has no usage caps.`,
   },
   {
     q: "Do I need to create an account or sign up?",
@@ -120,7 +121,7 @@ const HOME_FAQ = [
   },
   {
     q: "What's the best free alternative to iLovePDF?",
-    a: "PDFBro is a leading iLovePDF alternative — it offers the same core tools (merge PDF, split PDF, compress PDF, convert PDF) plus 100+ additional tools, with no daily limits, no watermarks, and browser-based processing for stronger privacy.",
+    a: `PDFBro is a leading iLovePDF alternative — it offers the same core tools (merge PDF, split PDF, compress PDF, convert PDF) plus ${TOOLS.length}+ tools total, with no daily limits, no watermarks, and browser-based processing for stronger privacy.`,
   },
   {
     q: "What's the best free alternative to Adobe Acrobat?",
@@ -164,6 +165,43 @@ export default function HomePage() {
         {/* ── Hero ── */}
         <HeroSection />
 
+        {/* ── Recently Used Tools ── */}
+        <Suspense fallback={null}>
+          <RecentTools />
+        </Suspense>
+
+        {/* ── Quick Actions ── */}
+        <section className="py-12" style={{ backgroundColor: "var(--bg-primary)", borderBottom: "1px solid var(--border-subtle)" }}>
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <h2 className="text-xl font-bold mb-6 text-center" style={{ color: "var(--text-primary)" }}>
+              What do you need to do?
+            </h2>
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+              {[
+                { label: "Merge PDFs", href: "/tools/merge-pdf", icon: "📄" },
+                { label: "Compress PDF", href: "/tools/compress-pdf", icon: "📦" },
+                { label: "PDF to Word", href: "/tools/pdf-to-word", icon: "📝" },
+                { label: "Sign PDF", href: "/tools/sign-pdf", icon: "✍️" },
+                { label: "Remove Background", href: "/tools/remove-bg", icon: "🖼️" },
+                { label: "HEIC to JPG", href: "/tools/heic-to-jpg", icon: "📱" },
+                { label: "Compress Image", href: "/tools/compress-image", icon: "🖼️" },
+                { label: "QR Code", href: "/tools/qr-code-generator", icon: "📱" },
+              ].map((action) => (
+                <Link
+                  key={action.href}
+                  href={action.href}
+                  className="group rounded-2xl p-4 text-center transition-all hover:scale-[1.02]"
+                  style={{ backgroundColor: "var(--bg-card)", border: "1px solid var(--border-subtle)" }}
+                >
+                  <span className="text-2xl block mb-2">{action.icon}</span>
+                  <span className="text-sm font-semibold group-hover:underline underline-offset-2" style={{ color: "var(--text-primary)" }}>{action.label}</span>
+                  <span className="block text-xs mt-1" style={{ color: "var(--accent-blue)" }}>Try now →</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ── Popular Tools ── */}
         <section className="py-20" style={{ backgroundColor: "var(--bg-secondary)" }}>
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -178,7 +216,7 @@ export default function HomePage() {
                 </p>
               </div>
               <Link href="/tools" className="flex items-center gap-1.5 text-sm font-semibold shrink-0" style={{ color: "var(--accent-blue)" }}>
-                View all 100+ <ArrowRight className="h-3.5 w-3.5" />
+                View all {TOOLS.length}+ <ArrowRight className="h-3.5 w-3.5" />
               </Link>
             </div>
             <Suspense fallback={<ToolsGridSkeleton count={8} />}>
@@ -266,7 +304,7 @@ export default function HomePage() {
                       ["No signup needed", "✓", "✓", "✓ (limited)", "✗"],
                       ["No watermarks", "✓", "✓", "Sometimes", "✓"],
                       ["Browser-based (private)", "✓", "✗", "✗", "✗"],
-                      ["Number of tools", "100+", "25+", "20+", "30+"],
+                      ["Number of tools", `${TOOLS.length}+`, "25+", "20+", "30+"],
                       ["PDF + Image tools", "✓", "PDF only", "PDF only", "PDF only"],
                     ].map(([feature, ...vals]) => (
                       <tr key={String(feature)} style={{ borderTop: "1px solid var(--border-subtle)" }}>
@@ -368,7 +406,7 @@ export default function HomePage() {
                   Free File Conversion Tools — PDF, Word, Excel, Images
                 </h2>
                 <p className="mt-2 text-sm" style={{ color: "var(--text-secondary)" }}>
-                  PDF to Word, Word to PDF, HEIC to JPG, Image to WebP and 30+ converters
+                   PDF to Word, Word to PDF, HEIC to JPG, Image to WebP and {convertTools.length}+ converters
                 </p>
               </div>
               <Link href="/convert-tools" className="flex items-center gap-1.5 text-sm font-semibold shrink-0" style={{ color: "var(--accent-blue)" }}>
@@ -397,7 +435,7 @@ export default function HomePage() {
                 { title: "No Daily Limits", body: "Process unlimited files every day. No 2/hour cap like iLovePDF free tier.", icon: "∞" },
                 { title: "No File Uploads", body: "Files processed in browser — never sent to servers. More private than iLovePDF or Smallpdf.", icon: "🔒" },
                 { title: "No Watermarks", body: "Your output files are clean. No PDFBro branding added to your documents.", icon: "✓" },
-                { title: "100+ Tools Free", body: "PDF tools + image tools. More than iLovePDF (25+ tools) or Smallpdf (20+ tools).", icon: "🛠" },
+                { title: `${TOOLS.length}+ Tools Free`, body: "PDF tools + image tools. More than iLovePDF (25+ tools) or Smallpdf (20+ tools).", icon: "🛠" },
               ].map((item) => (
                 <div key={item.title} className="rounded-2xl p-5" style={{ backgroundColor: "var(--bg-card)", border: "1px solid var(--border-subtle)" }}>
                   <div className="text-2xl mb-3">{item.icon}</div>
@@ -461,8 +499,35 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* ── Features checklist ── */}
+        {/* ── Social Proof ── */}
         <section className="py-16" style={{ backgroundColor: "var(--bg-primary)" }}>
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-10">
+              <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: "var(--accent-violet)" }}>
+                Trusted Worldwide
+              </p>
+              <h2 className="text-xl font-bold sm:text-2xl mb-3" style={{ color: "var(--text-primary)" }}>
+                Join Thousands Who Use PDFBro Every Day
+              </h2>
+            </div>
+            <div className="grid gap-5 sm:grid-cols-3">
+              {[
+                { stat: "0", label: "Signup Required", desc: "Use every tool instantly — no account, no email, no credit card." },
+                { stat: "∞", label: "Daily Limits", desc: "No caps. No 2/hour like iLovePDF. Process as many files as you need." },
+                { stat: "100%", label: "Browser-Based", desc: "Files never leave your device. Private, secure, instant processing." },
+              ].map((s) => (
+                <div key={s.label} className="rounded-2xl p-6 text-center" style={{ backgroundColor: "var(--bg-card)", border: "1px solid var(--border-subtle)" }}>
+                  <p className="text-3xl font-extrabold gradient-text mb-2">{s.stat}</p>
+                  <p className="text-sm font-semibold" style={{ color: "var(--text-primary)" }}>{s.label}</p>
+                  <p className="text-xs mt-2 leading-relaxed" style={{ color: "var(--text-secondary)" }}>{s.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Features checklist ── */}
+        <section className="py-16" style={{ backgroundColor: "var(--bg-secondary)" }}>
           <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
             <h2 className="text-xl font-bold mb-8 text-center" style={{ color: "var(--text-primary)" }}>
               Everything Included — 100% Free, Always

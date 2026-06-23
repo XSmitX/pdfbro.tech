@@ -507,7 +507,7 @@ export default async function GuidePage({ params }: PageProps) {
                 className="block rounded-2xl p-4 text-center text-sm font-semibold transition-all hover:scale-[1.02]"
                 style={{ backgroundColor: "var(--bg-card)", border: "1px solid var(--border-subtle)", color: "var(--text-secondary)" }}
               >
-                Browse All 100+ Tools →
+                Browse All Tools →
               </Link>
             </aside>
           </div>
